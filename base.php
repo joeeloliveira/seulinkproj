@@ -933,7 +933,7 @@ if(!$linkValidado18){
     echo "Atenção, informe um link maior que 10 caracteres e menor que 650, por favor<br>";
     exit;
 }else{
-    //--o curl NETSHOES
+    //--o curl NIKE
     $curl = curl_init($linkValidado18);
     curl_setopt($curl, CURLOPT_URL, $linkValidado18);
     curl_setopt($curl, CURLOPT_ENCODING, "gzip");
@@ -977,7 +977,7 @@ if(!$linkValidado19){
     echo "Atenção, informe um link maior que 10 caracteres e menor que 650, por favor<br>";
     exit;
 }else{
-    //--o curl NETSHOES
+    //--o curl ADIDAS
     $curl = curl_init($linkValidado19);
     curl_setopt($curl, CURLOPT_URL, $linkValidado19);
     curl_setopt($curl, CURLOPT_ENCODING, "gzip");
@@ -1114,7 +1114,7 @@ if(!$linkValidado22){
     echo "Atenção, informe um link maior que 10 caracteres e menor que 650, por favor<br>";
     exit;
 }else{
-    //--o curl DAFITI
+    //--o curl RENNER
     $curl = curl_init($linkValidado22);
     curl_setopt($curl, CURLOPT_URL, $linkValidado22);
     curl_setopt($curl, CURLOPT_ENCODING, "gzip");
@@ -1203,7 +1203,7 @@ if(!$linkValidado24){
     echo "Atenção, informe um link maior que 10 caracteres e menor que 650, por favor<br>";
     exit;
 }else{
-    //--o curl OLX
+    //--o curl ELO7
     $curl = curl_init($linkValidado24);
     curl_setopt($curl, CURLOPT_URL, $linkValidado24);
     curl_setopt($curl, CURLOPT_ENCODING, "gzip");
