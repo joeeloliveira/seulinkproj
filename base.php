@@ -142,6 +142,16 @@
 <select name="escolha" id="escolha">
 <option value="paguemenos"> PAGUE MENOS</option>
 </select>
+<br>
+<input type="url" name="link29">
+<select name="escolha" id="escolha">
+<option value="drogasil"> DROGASIL</option>
+</select>
+<br>
+<input type="url" name="link30">
+<select name="escolha" id="escolha">
+<option value="growth"> GROWTH SUPLEMENTOS</option>
+</select>
 <br><br>
 <input type="submit" value="Enviar" style="width: 200px; height: 40px;">
 </form>
@@ -183,6 +193,9 @@ $link25 = $_POST["link25"];
 $link26 = $_POST["link26"];
 $link27 = $_POST["link27"];
 $link28 = $_POST["link28"];
+$link29 = $_POST["link29"];
+$link30 = $_POST["link30"];
+
 
 /* PRIMEIRA VALIDAÇÃO CASO BURLE O HTML E ANTISPAM / LINK 1 */
 
@@ -1415,6 +1428,153 @@ if(!$linkValidado28){
     echo "<br>";
     echo "<font style='color:#404040;'>"."Link do produto: "."</font>";
     echo "<a href=\"$linkValidado28\" target=\"_blank\">$linkValidado28</a>";
+}
+
+
+echo "<br><hr><br>";
+
+
+/* SEGUNDA VALIDAÇÃO CASO BURLE O HTML E ANTISPAM / LINK 29*/
+
+$linkValidado29 = filter_var($link29, FILTER_VALIDATE_URL);
+if(!$linkValidado29){
+    echo "informe um link meu nobre<br>";
+}elseif(strlen($linkValidado29) <= 10 or strlen($linkValidado29) >= 550){
+    echo "Atenção, informe um link maior que 10 caracteres e menor que 650, por favor<br>";
+    exit;
+}else{
+    //--o curl OLX
+    $curl = curl_init($linkValidado29);
+    curl_setopt($curl, CURLOPT_URL, $linkValidado29);
+    curl_setopt($curl, CURLOPT_ENCODING, "gzip");
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+    $headers = array(
+        "Host: www.drogasil.com.br",
+        "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+        "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    );
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    //for debug only!
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    $resp = curl_exec($curl);
+
+    //--as partes puxadas com a getStr
+
+    $nomeProd29 = getStr($resp, 'class="Titlestyles__TitleStyles-sc-6rxg4t-0 fDKOTS">','</h1>');
+    $fotoProd29 = getStr($resp, '<img src="','"');
+    $valorProd29 = getStr($resp, '<span>R$</span>','</div>');
+
+    //--exibindo os detalhes
+    echo $nomeProd29 . "<br>R$ " . $valorProd29 . "<br>";
+    echo '<img src="'.$fotoProd29.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
+    echo "<br>";
+    echo "<font style='color:#404040;'>"."Link do produto: "."</font>";
+    echo "<a href=\"$linkValidado29\" target=\"_blank\">$linkValidado29</a>";
+}
+
+
+echo "<br><hr><br>";
+
+
+
+/* SEGUNDA VALIDAÇÃO CASO BURLE O HTML E ANTISPAM / LINK 30*/
+
+$linkValidado30 = filter_var($link30, FILTER_VALIDATE_URL);
+if(!$linkValidado30){
+    echo "informe um link meu nobre<br>";
+}elseif(strlen($linkValidado30) <= 10 or strlen($linkValidado30) >= 550){
+    echo "Atenção, informe um link maior que 10 caracteres e menor que 650, por favor<br>";
+    exit;
+}else{
+    //--o curl OLX
+    $curl = curl_init($linkValidado30);
+    curl_setopt($curl, CURLOPT_URL, $linkValidado30);
+    curl_setopt($curl, CURLOPT_ENCODING, "gzip");
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+    $headers = array(
+        "Host: www.gsuplementos.com.br",
+        "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+        "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    );
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    //for debug only!
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    $resp = curl_exec($curl);
+
+    //--as partes puxadas com a getStr
+
+    $nomeProd30 = getStr($resp, '<h1 class="topoDetalhe-boxRight-nome">','</h1>');
+    $valorProd30 = getStr($resp, 'data-desconto-boleto-valor>','</');
+    $fotoProd = getStr($resp, '>
+          <img src="','"');
+
+$fotoProd2 = getStr($resp, '<img class="z-2" src="','"');
+
+$fotoProd3 = getStr($resp, '>
+                    <img src="','"');
+
+$fotoProd4 = getStr($resp, '>
+      <img src="','"');
+
+$fotoProd5 = getStr($resp, '>
+                        <img src="','"');
+
+
+    //--exibindo os detalhes
+
+    function encontrarURLpng($texto) {
+        $padrao = '/https?:\/\/[^\s]*\.png/i';
+        preg_match($padrao, $texto, $correspondencias);
+        return $correspondencias[0];
+    }
+
+    echo $nomeProd30 . "<br>" . $valorProd30 . "<br>";
+
+    $variavel_de_controle = false;
+    
+    if (!empty($fotoProd)) {
+        echo '<img src="'.$fotoProd.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
+    }
+    
+    if (!empty($fotoProd2) and $variavel_de_controle = false) {
+        $url_png = encontrarURLpng($fotoProd2);
+            if (!empty($url_png)) {
+                echo '<img src="'.$fotoProd2.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
+                $variavel_de_controle = true;
+            }
+    }
+    
+    if (!empty($fotoProd3) and $variavel_de_controle = false) {
+        $url_png = encontrarURLpng($fotoProd3);
+            if (!empty($url_png)) {
+                echo '<img src="'.$fotoProd3.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
+                $variavel_de_controle = true;
+            }
+    }
+    
+    if (!empty($fotoProd4) and $variavel_de_controle = false) {
+        $url_png = encontrarURLpng($fotoProd4);
+            if (!empty($url_png)) {
+                echo '<img src="'.$fotoProd4.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
+                $variavel_de_controle = true;
+            }
+    }
+    
+    if (!empty($fotoProd5) and $variavel_de_controle = false) {
+        $url_png = encontrarURLpng($fotoProd5);
+            if (!empty($url_png)) {
+                echo '<img src="'.$fotoProd5.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
+                $variavel_de_controle = true;
+            }
+    }
+
+    echo "<br>";
+    echo "<font style='color:#404040;'>"."Link do produto: "."</font>";
+    echo "<a href=\"$linkValidado30\" target=\"_blank\">$linkValidado30</a>";
 }
 
 
