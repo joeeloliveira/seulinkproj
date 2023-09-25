@@ -152,11 +152,21 @@
 <select name="escolha" id="escolha">
 <option value="growth"> GROWTH SUPLEMENTOS</option>
 </select>
+<br>
+<input type="url" name="link31">
+<select name="escolha" id="escolha">
+<option value="maxtita"> MAX TITANIUM</option>
+</select>
+<br>
+<input type="url" name="link32">
+<select name="escolha" id="escolha">
+<option value="kalunga"> KALUNGA</option>
+</select>
 <br><br>
 <input type="submit" value="Enviar" style="width: 200px; height: 40px;">
 </form>
 <?php
-//error_reporting(0);
+error_reporting(0);
 echo "<center>";
 
 function getStr($string, $start, $end) {
@@ -195,6 +205,8 @@ $link27 = $_POST["link27"];
 $link28 = $_POST["link28"];
 $link29 = $_POST["link29"];
 $link30 = $_POST["link30"];
+$link31 = $_POST["link31"];
+$link32 = $_POST["link32"];
 
 
 /* PRIMEIRA VALIDAÇÃO CASO BURLE O HTML E ANTISPAM / LINK 1 */
@@ -1534,47 +1546,139 @@ $fotoProd5 = getStr($resp, '>
 
     echo $nomeProd30 . "<br>" . $valorProd30 . "<br>";
 
-    $variavel_de_controle = false;
+    $variavel_de_controle = true;
     
     if (!empty($fotoProd)) {
         echo '<img src="'.$fotoProd.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
     }
     
-    if (!empty($fotoProd2) and $variavel_de_controle = false) {
+   if (!empty($fotoProd2) and $variavel_de_controle = true) {
         $url_png = encontrarURLpng($fotoProd2);
             if (!empty($url_png)) {
                 echo '<img src="'.$fotoProd2.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
-                $variavel_de_controle = true;
             }
+            $variavel_de_controle = false;
     }
     
-    if (!empty($fotoProd3) and $variavel_de_controle = false) {
+    if (!empty($fotoProd3) and $variavel_de_controle = true) {
         $url_png = encontrarURLpng($fotoProd3);
             if (!empty($url_png)) {
                 echo '<img src="'.$fotoProd3.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
-                $variavel_de_controle = true;
             }
+            $variavel_de_controle = false;
     }
     
-    if (!empty($fotoProd4) and $variavel_de_controle = false) {
+    if (!empty($fotoProd4) and $variavel_de_controle = true) {
         $url_png = encontrarURLpng($fotoProd4);
             if (!empty($url_png)) {
                 echo '<img src="'.$fotoProd4.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
-                $variavel_de_controle = true;
             }
+            $variavel_de_controle = false;
     }
     
-    if (!empty($fotoProd5) and $variavel_de_controle = false) {
+    if (!empty($fotoProd5) and $variavel_de_controle = true) {
         $url_png = encontrarURLpng($fotoProd5);
             if (!empty($url_png)) {
                 echo '<img src="'.$fotoProd5.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
-                $variavel_de_controle = true;
             }
+            $variavel_de_controle = false;
     }
 
     echo "<br>";
     echo "<font style='color:#404040;'>"."Link do produto: "."</font>";
     echo "<a href=\"$linkValidado30\" target=\"_blank\">$linkValidado30</a>";
+}
+
+
+echo "<br><hr><br>";
+
+
+
+/* SEGUNDA VALIDAÇÃO CASO BURLE O HTML E ANTISPAM / LINK 31*/
+
+$linkValidado31 = filter_var($link31, FILTER_VALIDATE_URL);
+if(!$linkValidado31){
+    echo "informe um link meu nobre<br>";
+}elseif(strlen($linkValidado31) <= 10 or strlen($linkValidado31) >= 550){
+    echo "Atenção, informe um link maior que 10 caracteres e menor que 650, por favor<br>";
+    exit;
+}else{
+    //--o curl MAXTITANIUM
+    $curl = curl_init($linkValidado31);
+    curl_setopt($curl, CURLOPT_URL, $linkValidado31);
+    curl_setopt($curl, CURLOPT_ENCODING, "gzip");
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+    $headers = array(
+        "Host: www.maxtitanium.com.br",
+        "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+        "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    );
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    //for debug only!
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    $resp = curl_exec($curl);
+
+    //--as partes puxadas com a getStr
+
+    $nomeProd31 = getStr($resp, ',"name":"','",');
+    $fotoProd31 = getStr($resp, 'as="image" href="','"');
+    $valorProd31 = getStr($resp, '"price":',',"');
+    $valor_formatado31 = str_replace('.', ',', $valorProd31);
+
+    //--exibindo os detalhes
+    echo $nomeProd31 . "<br>R$ " . $valor_formatado31 . "<br>";
+    echo '<img src="'.$fotoProd31.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
+    echo "<br>";
+    echo "<font style='color:#404040;'>"."Link do produto: "."</font>";
+    echo "<a href=\"$linkValidado31\" target=\"_blank\">$linkValidado31</a>";
+}
+
+
+echo "<br><hr><br>";
+
+
+
+
+/* SEGUNDA VALIDAÇÃO CASO BURLE O HTML E ANTISPAM / LINK 32*/
+
+$linkValidado32 = filter_var($link32, FILTER_VALIDATE_URL);
+if(!$linkValidado32){
+    echo "informe um link meu nobre<br>";
+}elseif(strlen($linkValidado32) <= 10 or strlen($linkValidado32) >= 650){
+    echo "Atenção, informe um link maior que 10 caracteres e menor que 650, por favor<br>";
+    exit;
+}else{
+    //--o curl KALUNGA
+    $curl = curl_init($linkValidado32);
+    curl_setopt($curl, CURLOPT_URL, $linkValidado32);
+    curl_setopt($curl, CURLOPT_ENCODING, "gzip");
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+    $headers = array(
+        "Host: www.kalunga.com.br",
+        "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+        "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    );
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    //for debug only!
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    $resp = curl_exec($curl);
+
+    //--as partes puxadas com a getStr
+
+    $nomeProd32 = getStr($resp, "pageTitle':'","',");
+    $fotoProd32 = getStr($resp, 'data-src="','"');
+    $valorProd32 = getStr($resp, '<span id="hfprecovista">','</span>');
+
+    //--exibindo os detalhes
+    echo $nomeProd32 . "<br>" . $valorProd32 . "<br>";
+    echo '<img src="'.$fotoProd32.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
+    echo "<br>";
+    echo "<font style='color:#404040;'>"."Link do produto: "."</font>";
+    echo "<a href=\"$linkValidado32\" target=\"_blank\">$linkValidado32</a>";
 }
 
 
