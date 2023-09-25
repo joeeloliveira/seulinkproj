@@ -167,6 +167,11 @@
 <select name="escolha" id="escolha">
 <option value="bangod"> BANGGOOD</option>
 </select>
+<br>
+<input type="url" name="link34">
+<select name="escolha" id="escolha">
+<option value="mizuno"> MIZUNO</option>
+</select>
 <br><br>
 <input type="submit" value="Enviar" style="width: 200px; height: 40px;">
 </form>
@@ -213,6 +218,8 @@ $link30 = $_POST["link30"];
 $link31 = $_POST["link31"];
 $link32 = $_POST["link32"];
 $link33 = $_POST["link33"];
+$link34 = $_POST["link34"];
+
 
 /* PRIMEIRA VALIDAÇÃO CASO BURLE O HTML E ANTISPAM / LINK 1 */
 
@@ -1735,5 +1742,50 @@ if(!$linkValidado33){
 
 echo "<br><hr><br>";
 
+
+
+/* SEGUNDA VALIDAÇÃO CASO BURLE O HTML E ANTISPAM / LINK 34*/
+
+$linkValidado34 = filter_var($link34, FILTER_VALIDATE_URL);
+if(!$linkValidado34){
+    echo "informe um link meu nobre<br>";
+}elseif(strlen($linkValidado34) <= 10 or strlen($linkValidado34) >= 550){
+    echo "Atenção, informe um link maior que 10 caracteres e menor que 650, por favor<br>";
+    exit;
+}else{
+    //--o curl MIZUNO
+    $curl = curl_init($linkValidado34);
+    curl_setopt($curl, CURLOPT_URL, $linkValidado34);
+    curl_setopt($curl, CURLOPT_ENCODING, "gzip");
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+    $headers = array(
+        "Host: www.mizuno.com.br",
+        "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+        "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    );
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    //for debug only!
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    $resp = curl_exec($curl);
+
+    //--as partes puxadas com a getStr
+
+    $nomeProd34 = getStr($resp, 'name="description" content="','"');
+    $fotoProd34 = getStr($resp, '"image":"','?');
+    $valorProd34 = getStr($resp, '"product:price:amount" content="','"');
+    $valor_formatado34 = str_replace('.', ',', $valorProd34);
+
+    //--exibindo os detalhes
+    echo $nomeProd34 . "<br>R$ " . $valor_formatado34 . "<br>";
+    echo '<img src="'.$fotoProd34.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
+    echo "<br>";
+    echo "<font style='color:#404040;'>"."Link do produto: "."</font>";
+    echo "<a href=\"$linkValidado34\" target=\"_blank\">$linkValidado34</a>";
+}
+
+
+echo "<br><hr><br>";
 
 ?>
