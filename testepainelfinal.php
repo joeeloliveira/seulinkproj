@@ -20,8 +20,8 @@
                 <div id="campos">
                     <div>
                         <select name="escolha[]">
-                            <option value="amazon">AMAZON</option>
-                            <option value="kabum">KABUM</option>
+                            <option name="amazon" value="amazon">AMAZON</option>
+                            <option name="kabum" value="kabum">KABUM</option>
                             <option value="terceiro">TERCEIRO</option>
                             <!-- Adicione mais opções aqui conforme necessário -->
                         </select>
@@ -76,10 +76,6 @@ function getStr($string, $start, $end) {
 }
 
 
-$amazon = $_POST["amazon"];
-$kabum = $_POST["kabum"];
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $links = $_POST["link"];
     $escolhas = $_POST["escolha"];
@@ -90,40 +86,95 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$linkValidado) {
             echo "Informe um link válido para " . $escolhas[$index] . "<br>";
             continue;
-        }
+        }elseif(strlen($linkValidado) <= 10 or strlen($linkValidado) > 1400){
+            echo "Informe um link valido maior que 10 caracteres e menor que 1400 caracteres<br>";
+            exit;
+        }else{
 
+            $curl = curl_init($linkValidado);
+            curl_setopt($curl, CURLOPT_URL, $linkValidado);
+            curl_setopt($curl, CURLOPT_ENCODING, "gzip");
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    
+            $headers = array(
+                "Host: " . parse_url($linkValidado, PHP_URL_HOST),
+                "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+                "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            );
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+            //for debug only!
+            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+            $resp = curl_exec($curl);
+    
+            //--as partes puxadas com a getStr
+
+            if (isset($_POST["escolha"])) {
+                $escolha = $_POST["escolha"][0];
+            
+                if ($escolha == "amazon") {
+                    $nomeProd = getStr($resp, '<span id="productTitle" class="a-size-large product-title-word-break">', '</span>');
+                    $fotoProd = getStr($resp, '"hiRes":"', '"');
+                    $valorProd = getStr($resp, '<span class="a-offscreen">', '</span>');
+
+                    echo "<p>Nome do Produto: " . $nomeProd . "</p>";
+                    echo "<p>Valor do Produto: " . $valorProd . "</p>";
+                    echo '<img src="' . $fotoProd . '" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
+                    echo "<br>";
+                    echo "<font style='color:#404040;'>" . "Link do produto: " . "</font>";
+                    echo "<a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+            
+                }
+
+                elseif ($escolha == "kabum") {
+                    $nomeProd = getStr($resp, '<h1 class="sc-89bddf0f-6 dDYTAu">','</h1>');
+                    $fotoProd = getStr($resp, '\"g\":[\"','\",');
+                    $valorProd = getStr($resp, '<h4 class="sc-d6a30908-1 WlsMM finalPrice">','</h4>');
+            
+                    echo "<p>Nome do Produto: " . $nomeProd . "</p>";
+                    echo "<p>Valor do Produto: " . $valorProd . "</p>";
+                    echo '<img src="' . $fotoProd . '" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
+                    echo "<br>";
+                    echo "<font style='color:#404040;'>" . "Link do produto: " . "</font>";
+                    echo "<a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+                }
+            }
+            
+            /* 
+                            case $_POST["kabum"];
+                    $nomeProd = getStr($resp, '<h1 class="sc-89bddf0f-6 dDYTAu">','</h1>');
+                    $fotoProd = getStr($resp, '\"g\":[\"','\",');
+                    $valorProd = getStr($resp, '<h4 class="sc-d6a30908-1 WlsMM finalPrice">','</h4>');
+
+                    echo "<p>Nome do Produto: " . $nomeProd . "</p>";
+                    echo "<p>Valor do Produto: " . $valorProd . "</p>";
+                    echo '<img src="'.$fotoProd.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
+                    echo "<br>";
+                    echo "<font style='color:#404040;'>"."Link do produto: "."</font>"; echo "<a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+                break;
+            */
+            
+        }
         // Realize sua solicitação CURL e extração de informações aqui
         // Substitua o código abaixo pela sua lógica de CURL e exibição de informações
-
-        $curl = curl_init($linkValidado);
-        curl_setopt($curl, CURLOPT_URL, $linkValidado);
-        curl_setopt($curl, CURLOPT_ENCODING, "gzip");
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-        $headers = array(
-            "Host: " . parse_url($linkValidado, PHP_URL_HOST),
-            "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
-            "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-        );
-        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-        //for debug only!
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        $resp = curl_exec($curl);
-
-        //--as partes puxadas com a getStr
-        $nomeProd = getStr($resp, '<span id="productTitle" class="a-size-large product-title-word-break">','</span>');
-        $fotoProd = getStr($resp, '"hiRes":"','"');
-        $valorProd = getStr($resp, '<span class="a-offscreen">','</span>');
-
-        //--exibindo os detalhes
-        //echo "<h2>" . $escolhas[$index] . "</h2>";
-        echo "<p>Nome do Produto: " . $nomeProd . "</p>";
-        echo "<p>Valor do Produto: " . $valorProd . "</p>";
-        echo '<img src="'.$fotoProd.'" style="border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 180px;" />';
-        echo "<br>";
-        echo "<font style='color:#404040;'>"."Link do produto: "."</font>"; echo "<a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
     }
 }
+
+
+
+
+  
+
+/*
+
+switch($_POST["escolha[]"]){
+                case $_POST["kabum"];
+                    $nomeProd = getStr($resp, '<h1 class="sc-89bddf0f-6 dDYTAu">','</h1>');
+                    $fotoProd = getStr($resp, '\"g\":[\"','\",');
+                    $valorProd = getStr($resp, '<h4 class="sc-d6a30908-1 WlsMM finalPrice">','</h4>');
+                break;
+            }
+}
+*/
 ?>
 </div>
