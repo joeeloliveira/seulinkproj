@@ -1075,6 +1075,152 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
+        elseif ($escolha == "dafiti")
+        {
+            $titulo = getStr($resp, '<title>', ' - Compre Agora | Dafiti Brasil');
+            $titulo_formatado = str_replace('<title>', '', $titulo);
+            $titulo_formatado = str_replace(' - Compre Agora | Dafiti Brasil', '', $titulo_formatado);
+            
+
+            $preco = getStr($resp, '<span class="catalog-detail-price-value" data-field="finalPrice" itemprop="price" content="', '">');
+            $preco_formatado = str_replace('<span class="catalog-detail-price-value" data-field="finalPrice" itemprop="price" content="', '', $preco);
+            $preco_formatado = str_replace('">', '', $preco_formatado);
+            $preco_formatado = str_replace('.', ',', $preco_formatado);
+
+
+            $imagem = getStr($resp, 'data-img-zoom="', '"');
+            $foto_formatada = str_replace('data-img-zoom="', '', $imagem);
+            $foto_formatada = str_replace('"', '', $foto_formatada);
+            //$foto_formatada = str_replace('content="', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">Produto na <span style="color: #CCCCCC;"><strong>DAFITI</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
+            $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong>R$ $preco_formatado </p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
+        elseif ($escolha == "renner")
+        {
+            $titulo = getStr($resp, 'type":"Product","name":"', '",');
+            $titulo_formatado = str_replace('type":"Product","name":"', '', $titulo);
+            $titulo_formatado = str_replace('",', '', $titulo_formatado);
+            
+
+            $preco = getStr($resp, 'listPriceFormatted":"', '"');
+            $preco_formatado = str_replace('listPriceFormatted":"', '', $preco);
+            $preco_formatado = str_replace('"', '', $preco_formatado);
+            //$preco_formatado = str_replace('.', ',', $preco_formatado);
+
+
+            $imagem = getStr($resp, 'as="image" href="', '"');
+            $foto_formatada = str_replace('as="image" href="', '', $imagem);
+            $foto_formatada = str_replace('"', '', $foto_formatada);
+            //$foto_formatada = str_replace('content="', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">Produto na <span style="color: #CF594A;"><strong>RENNER</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
+            $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong>$preco_formatado </p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
+        elseif ($escolha == "olx")
+        {
+            $titulo = getStr($resp, '<meta property="og:title" content="', '"');
+            $titulo_formatado = str_replace('<meta property="og:title" content="', '', $titulo);
+            $titulo_formatado = str_replace('"', '', $titulo_formatado);
+            
+
+            $preco = getStr($resp, 'priceValue&quot;:&quot;', '&');
+            $preco_formatado = str_replace('priceValue&quot;:&quot;', '', $preco);
+            $preco_formatado = str_replace('&', '', $preco_formatado);
+            //$preco_formatado = str_replace('.', ',', $preco_formatado);
+
+
+            $imagem = getStr($resp, '"og:image" content="', '"');
+            $foto_formatada = str_replace('"og:image" content="', '', $imagem);
+            $foto_formatada = str_replace('"', '', $foto_formatada);
+            //$foto_formatada = str_replace('content="', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #80CF4A;">Anuncio na <span style="color: #CF824A;"><strong>OLX</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
+            $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong>$preco_formatado </p></strong><br>";
+
+            $response1 .= ">Link do anuncio: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
+        elseif ($escolha == "elo7")
+        {
+            $titulo = getStr($resp, '<title>', '</title>');
+            $titulo_formatado = str_replace("<title>", '', $titulo);
+            $titulo_formatado = str_replace('</title>', '', $titulo_formatado);
+            
+
+            $preco = getStr($resp, "<meta name='twitter:data1' content='", "'");
+            $preco_formatado = str_replace("<meta name='twitter:data1' content='", '', $preco);
+            $preco_formatado = str_replace("'", '', $preco_formatado);
+            //$preco_formatado = str_replace('.', ',', $preco_formatado);
+
+
+            $imagem = getStr($resp, "data-zoom='", "'");
+            $foto_formatada = str_replace("data-zoom='", '', $imagem);
+            $foto_formatada = str_replace("'", '', $foto_formatada);
+            //$foto_formatada = str_replace('content="', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">Produto na <span style="color: #EADD57;"><strong>ELO7</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
+            $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong>$preco_formatado </p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
+        elseif ($escolha == "mobly")
+        {
+            $titulo = getStr($resp, '<title>', '</title>');
+            $titulo_formatado = str_replace("<title>", '', $titulo);
+            $titulo_formatado = str_replace('</title>', '', $titulo_formatado);
+            
+
+            $preco = getStr($resp, '"lowestPriceAvailable":', ',"');
+            $preco_formatado = str_replace('"lowestPriceAvailable":', '', $preco);
+            $preco_formatado = str_replace(',"', '', $preco_formatado);
+            $preco_formatado = str_replace('.', ',', $preco_formatado);
+            //$preco_formatado = str_replace('.', ',', $preco_formatado);
+
+
+            $imagem = getStr($resp, 'data-image-big="', '">');
+            $foto_formatada = str_replace('data-image-big="', '', $imagem);
+            $foto_formatada = str_replace('">', '', $foto_formatada);
+            //$foto_formatada = str_replace('content="', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">Produto na <span style="color: #EAA257;"><strong>MOBLY</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
+            $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong>R$ $preco_formatado </p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
         
 
 
