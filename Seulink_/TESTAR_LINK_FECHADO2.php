@@ -303,6 +303,17 @@
                         <option value="mercado_livre">MERCADO LIVRE</option>
                         <option value="americanas">AMERICANAS</option>
                         <option value="casas_bahia">CASAS BAHIA</option>
+                        <option value="submarino">SUBMARINO</option>
+                        <option value="shoptime">SHOPTIME</option>
+                        <option value="extra">EXTRA</option>
+                        <option value="ponto_frio">PONTO FRIO</option>
+                        <option value="nagem">NAGEM</option>
+                        <option value="carrefour">CARREFOUR</option>
+                        <option value="havan">HAVAN</option>
+                        <option value="kalunga">KALUNGA</option>
+                        <option value="netshoes">NETSHOES</option>
+                        <option value="nike">NIKE</option>
+                        <option value="adidas">ADIDAS</option>
                     </select>
                     <h6><strong>Copie e cole</strong> o url abaixo ↴ </h6>
                     <input type="url" name="link[]">
@@ -645,6 +656,143 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $foto_formatada = str_replace('"/', '', $foto_formatada);
 
             $response1 .= '<p style="font-size: 20px; color: #E75A64;">Produto na <span style="color: #1C3A7D;"><strong>CASAS BAHIA</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
+            $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong>$preco_formatado</p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
+        elseif ($escolha == "submarino")
+        {
+            $titulo = getStr($resp, '<h1 class="src__Title-sc-1xq3hsd-0 eEEsym">', '</h1>');
+            $titulo_formatado = str_replace('<h1 class="src__Title-sc-1xq3hsd-0 eEEsym">', '', $titulo);
+            $titulo_formatado = str_replace('</h1>', '', $titulo_formatado);
+            
+
+            $preco = getStr($resp, '<div class="src__BestPrice-sc-1jnodg3-5 ykHPU priceSales">', '</div>');
+            $preco_formatado = str_replace('<div class="src__BestPrice-sc-1jnodg3-5 ykHPU priceSales">', '', $preco);
+            $preco_formatado = str_replace('</div>', '', $preco_formatado);
+           
+
+            $imagem = getStr($resp, 'Compartilhar</p></div></div><div class="src__Container-sc-138zmhp-0 lwzyO"><div class="src__WrapperItem-sc-138zmhp-1 cgVRkG"><div class="image__WrapperImages-sc-oakrdw-1 kOCIiH"><div class="src__Wrapper-sc-xr9q25-1 ebFfaU"><picture class="src__Picture-sc-xr9q25-2 jAziSf"><img loading="lazy" src="', '"');
+            $foto_formatada = str_replace('Compartilhar</p></div></div><div class="src__Container-sc-138zmhp-0 lwzyO"><div class="src__WrapperItem-sc-138zmhp-1 cgVRkG"><div class="image__WrapperImages-sc-oakrdw-1 kOCIiH"><div class="src__Wrapper-sc-xr9q25-1 ebFfaU"><picture class="src__Picture-sc-xr9q25-2 jAziSf"><img loading="lazy" src="', '', $imagem);
+            $foto_formatada = str_replace('"', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">Produto no <span style="color: #1568E0;"><strong>SUBMARINO</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
+            $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong>$preco_formatado</p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
+        elseif ($escolha == "shoptime")
+        {
+            $titulo = getStr($resp, '<h1 class="src__Title-sc-79cth1-0 ilzqUG">', '</h1>');
+            $titulo_formatado = str_replace('<h1 class="src__Title-sc-79cth1-0 ilzqUG">', '', $titulo);
+            $titulo_formatado = str_replace('</h1>', '', $titulo_formatado);
+            
+
+            $preco = getStr($resp, '<div class="src__BestPrice-sc-17hp6jc-5 iyyimP priceSales">', '</div>');
+            $preco_formatado = str_replace('<div class="src__BestPrice-sc-17hp6jc-5 iyyimP priceSales">', '', $preco);
+            $preco_formatado = str_replace('</div>', '', $preco_formatado);
+           
+
+            $imagem = getStr($resp, 'srcSet="https://images-americanas.b2w.io/produtos', '"');
+            $foto_formatada = str_replace('srcSet="https://images-americanas.b2w.io/produtos', '', $imagem);
+            $foto_formatada = str_replace('"', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #922F7E;">Produto no <span style="color: #E07515;"><strong>SHOPTIME</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
+            $response1 .= "<img src='https://images-americanas.b2w.io/produtos$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong>$preco_formatado</p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
+        elseif ($escolha == "extra")
+        {
+            $titulo = getStr($resp, '"name":"', '",');
+            $titulo_formatado = str_replace('"name":"', '', $titulo);
+            $titulo_formatado = str_replace('",', '', $titulo_formatado);
+            
+
+            $preco = getStr($resp, 'id="product-price">', '</p>');
+            $preco_formatado = str_replace('id="product-price">', '', $preco);
+            $preco_formatado = str_replace('</div>', '', $preco_formatado);
+           
+
+            $imagem = getStr($resp, 'sizes="16x16"/><link rel="preload" as="image" href="', '"');
+            $foto_formatada = str_replace('sizes="16x16"/><link rel="preload" as="image" href="', '', $imagem);
+            $foto_formatada = str_replace('"', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #4099D4;">Produto no <span style="color: #D4404A;"><strong>EXTRA</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
+            $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong>$preco_formatado</p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
+        elseif ($escolha == "ponto_frio")
+        {
+            $titulo = getStr($resp, '","name":"', '",');
+            $titulo_formatado = str_replace('","name":"', '', $titulo);
+            $titulo_formatado = str_replace('",', '', $titulo_formatado);
+            
+
+            $preco = getStr($resp, 'id="product-price">', '</p>');
+            $preco_formatado = str_replace('id="product-price">', '', $preco);
+            $preco_formatado = str_replace('</p>', '', $preco_formatado);
+           
+
+            $imagem = getStr($resp, 'sizes="16x16"/><link rel="preload" as="image" href="', '"');
+            $foto_formatada = str_replace('sizes="16x16"/><link rel="preload" as="image" href="', '', $imagem);
+            $foto_formatada = str_replace('"', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #404040;">Produto no <span style="color: #D49040;"><strong>PONTOFRIO</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
+            $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong>$preco_formatado</p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
+        elseif ($escolha == "nagem")
+        {
+            $titulo = getStr($resp, '<h1 class="produto-descricao">', '<small>');
+            $titulo_formatado = str_replace('<h1 class="produto-descricao">', '', $titulo);
+            $titulo_formatado = str_replace('<small>', '', $titulo_formatado);
+            
+
+            $preco = getStr($resp, '<span class="precoPOR-detalhe tit-26rem precoMaior">', '</span>');
+            $preco_formatado = str_replace('<span class="precoPOR-detalhe tit-26rem precoMaior">', '', $preco);
+            $preco_formatado = str_replace('</span>', '', $preco_formatado);
+           
+
+            $imagem = getStr($resp, '<div class="active carousel-item" data-slide-number="0">
+                                                        <img src="', '" class="img-fluid d-block w-100 zoom">');
+            $foto_formatada = str_replace('<div class="active carousel-item" data-slide-number="0">
+                                                        <img src="', '', $imagem);
+            $foto_formatada = str_replace('" class="img-fluid d-block w-100 zoom">', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">Produto na <span style="color: #15457A;"><strong>NAGEM</span></strong></p>';
 
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
             $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
