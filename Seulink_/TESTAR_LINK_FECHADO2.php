@@ -448,8 +448,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
         } 
         elseif ($escolha == "kabum") 
         {
-            $titulo = getStr($resp, 'h1 class="sc-89bddf0f-6 dDYTAu">', '</h1');
-            $titulo_formatado = str_replace('h1 class="sc-89bddf0f-6 dDYTAu">', '', $titulo);
+            $titulo = getStr($resp, '"name": "', '",');
+            $titulo_formatado = str_replace('"name": "', '', $titulo);
+            $titulo_formatado = str_replace('",', '', $titulo_formatado);
 
             $preco = getStr($resp, 'h4 class="sc-d6a30908-1 WlsMM finalPrice">', '</h4');
             $preco_formatado = str_replace('h4 class="sc-d6a30908-1 WlsMM finalPrice">', '', $preco);
