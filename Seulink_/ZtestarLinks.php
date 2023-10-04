@@ -11,7 +11,7 @@
     <style>
             /* Reset de margens e preenchimentos padrão */
             body, html {
-                background-color: #0A0C0F;
+                background: linear-gradient(180deg, #0F1115 0%, #17191C 100%);
                 font-family: "Lucida Console", Courier, monospace;
                 margin: 0;
                 padding: 0;
@@ -29,7 +29,7 @@
             }
 
             .bottom-bar {
-                background-color: #0F1115; /* Cor de fundo da barra */
+                background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%); /* Cor de fundo da barra */
                 width: 100%; /* Largura total da página */
                 height: 70px; /* Altura da barra */
                 position: fixed; /* Fixa a barra na parte inferior da página */
@@ -155,7 +155,7 @@
             }
 
             .botao-adicionar {
-                background: #1D9BB9; /* Cor de fundo em RGB */
+                background: radial-gradient(50% 50% at 50% 50%, #2DC6C8 0%, #2DFBA4 100%); /* Cor de fundo em RGB */
                 color: #fff; /* Cor do texto */
                 border: none;
                 padding: 5px 10px;
@@ -167,11 +167,11 @@
             }
 
             .botao-adicionar:hover {
-                background: linear-gradient(to bottom, #1D9BB9, #32A7C3); /* Gradiente RGB ao passar o mouse */
+                background: linear-gradient(to bottom, #2DC6C8, #2DFBA4); /* Gradiente RGB ao passar o mouse */
             }
 
             .botao-remover {
-                background: #F07580; /* Cor de fundo em RGB */
+                background: linear-gradient(180deg, #FF5862 0%, #2E5692 100%); /* Cor de fundo em RGB */
                 color: #fff; /* Cor do texto */
                 border: none;
                 padding: 5px 10px;
@@ -183,11 +183,11 @@
             }
 
             .botao-remover:hover {
-                background: linear-gradient(to bottom, #F07580, #E95553); /* Gradiente RGB ao passar o mouse */
+                background: linear-gradient(to bottom, #FF5862, #2E5692); /* Gradiente RGB ao passar o mouse */
             }
 
             input[type="submit"] {
-                background: #1D9BB9; /* Cor de fundo em RGB */
+                background: radial-gradient(80% 80% at 80% 80%, #2DC6C8 0%, #2E5692 100%); /* Cor de fundo em RGB */
                 color: #fff; /* Cor do texto */
                 border: none;
                 padding: 10px 20px;
@@ -202,7 +202,7 @@
             }
 
             input[type="submit"]:hover {
-                background: linear-gradient(to bottom, #1D9BB9, #32A7C3); /* Gradiente RGB ao passar o mouse */
+                background: linear-gradient(to bottom, #2DC6C8, #2E5692); /* Gradiente RGB ao passar o mouse */
             }
 
             /* Estilos do segundo container vazio */
@@ -210,7 +210,7 @@
                 height: 500px;
                 width: 780px;
                 margin-right: 1px; /* Margem à direita */
-                background-color: #0F1115;
+                background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%);
                 border-radius: 10px;
                 box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
                 display: inline-block;
@@ -273,7 +273,7 @@
                     width: 780px;
                     margin-left: 20px;
                     margin-top: 50px;
-                    background-color: #0F1115;
+                    background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%);
                     border-radius: 10px;
                     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
                     display: inline-block;
@@ -1384,18 +1384,90 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
         }
         elseif ($escolha == "steam")
         {//aqui eu nao consigo puxar jogo que pede verificação de idade +18 
-            $titulo = getStr($resp, '<div id="appHubAppName" class="apphub_AppName">', '</div>');
+
+            $app = getStr($linkValidado, "app/", "/"); 
+
+            
+            // AQUI UTILIZEI PRA PUXAR O session id
+            $url = "https://store.steampowered.com";
+            $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_ENCODING, "gzip");
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+            $headers = array(
+                "Host: store.steampowered.com",
+                "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+                "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            );
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+            //for debug only!
+            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+            $resp = curl_exec($curl);
+
+            $session_id = getStr($resp, 'var g_sessionID = "','";');
+
+
+            ///colocar a idade no post
+            $url = "https://store.steampowered.com/agecheckset/app/".$coisado."/";
+
+            $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_ENCODING, "gzip");
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+            $headers = array(
+                "Host: store.steampowered.com",
+                "Content-Type: application/x-www-form-urlencoded; charset=UTF-8",
+                "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+                "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            );
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+            $data = "sessionid=$session_id&ageDay=1&ageMonth=January&ageYear=1998";
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+            //for debug only!
+            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+            $resp2 = curl_exec($curl);
+
+
+            ///ultima parte
+            $url = $linkValidado;
+
+            $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_ENCODING, "gzip");
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+            $headers = array(
+                "Host: store.steampowered.com",
+                "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+                "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+                "Cookie: wants_mature_content=1; steamCountry=BR%7C68dc3b94f4fe8ebe48f86d211eae9a98; browserid=2997766105101581475; sessionid=$session_id; timezoneOffset=-10800,0; birthtime=880948801; lastagecheckage=1-0-1998",
+            );
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+            $data = "snr=1_direct-navigation__";
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+            //for debug only!
+            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+            $resp3 = curl_exec($curl);
+
+
+
+            $titulo = getStr($resp3, '<div id="appHubAppName" class="apphub_AppName">', '</div>');
             $titulo_formatado = str_replace('<div id="appHubAppName" class="apphub_AppName">', '', $titulo);
             $titulo_formatado = str_replace('</div>', '', $titulo_formatado);
             
 
-            $preco = getStr($resp, '<meta itemprop="price" content="', '"');
+            $preco = getStr($resp3, '<meta itemprop="price" content="', '"');
             $preco_formatado = str_replace('<meta itemprop="price" content="', '', $preco);
             $preco_formatado = str_replace('"', '', $preco_formatado);
             //$preco_formatado = str_replace('.', ',', $preco_formatado);
 
 
-            $imagem = getStr($resp, '<img class="game_header_image_full" src="', '"');
+            $imagem = getStr($resp3, '<img class="game_header_image_full" src="', '"');
             $foto_formatada = str_replace('<img class="game_header_image_full" src="', '', $imagem);
             $foto_formatada = str_replace('"', '', $foto_formatada);
             //$foto_formatada = str_replace('content="', '', $foto_formatada);
