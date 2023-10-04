@@ -1416,6 +1416,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $titulo = getStr($resp, '<title data-react-helmet="true">Comprar o ', ' | Xbox</title>');
             $titulo_formatado = str_replace('<title data-react-helmet="true">Comprar o ', '', $titulo);
             $titulo_formatado = str_replace(' | Xbox</title>', '', $titulo_formatado);
+
+            $titulo2 = getStr($resp, '<title data-react-helmet="true">Obter o ', ' | Xbox</title>');
+            $titulo_formatado_ = str_replace('<title data-react-helmet="true">Obter o ', '', $titulo2);
+            $titulo_formatado_ = str_replace(' | Xbox</title>', '', $titulo_formatado_);
             
 
             $preco = getStr($resp, '>R$', '</');
@@ -1434,10 +1438,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 250px;';
             $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
 
-            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
-
-            $response1 .= "<p>Preço: <strong>R$ $preco_formatado </p></strong><br>";
-
+            if(empty(!$titulo_formatado)){
+                $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+                $response1 .= "<p>Preço: <strong>R$ $preco_formatado </p></strong><br>";
+            }elseif(!empty($titulo_formatado_)){
+                $response1 .= "<br><p>Titulo: <strong>$titulo_formatado_</p></strong>";
+                $response1 .= "<p>Preço: <strong> GRATUITO :) </p></strong><br>";
+            }
+            
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
         elseif ($escolha == "playstation")
@@ -1453,6 +1461,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             //$preco_formatado = str_replace('+', '', $preco_formatado);
 
 
+            $imagem0 = getStr($resp, '"image":"', '","offers"');
+            $foto_formatada0 = str_replace('"image":"', '', $imagem0);
+            $foto_formatada0 = str_replace('","offers"', '', $foto_formatada0);
+
+
             $imagem = getStr($resp, 'class="psw-blur psw-center psw-l-fit-contain" src="', '?');
             $foto_formatada = str_replace('class="psw-blur psw-center psw-l-fit-contain" src="', '', $imagem);
             $foto_formatada = str_replace('?', '', $foto_formatada);
@@ -1465,15 +1478,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $imagem3 = getStr($resp, '"role":"GAMEHUB_COVER_ART","url":"', '"');
             $foto_formatada__ = str_replace('"role":"GAMEHUB_COVER_ART","url":"', '', $imagem3);
             $foto_formatada__ = str_replace('"', '', $foto_formatada__);
+
+
+            $imagem4 = getStr($resp, 'class="psw-blur psw-center psw-l-fit-cover" src="', '?');
+            $foto_formatada___ = str_replace('class="psw-blur psw-center psw-l-fit-cover" src="', '', $imagem4);
+            $foto_formatada___ = str_replace('?', '', $foto_formatada___);
+
+
+            $imagem5 = getStr($resp, 'fit-cover" src="', '?');
+            $foto_formatada____ = str_replace('fit-cover" src="', '', $imagem5);
+            $foto_formatada____ = str_replace('?', '', $foto_formatada____);
+
+            //chata pra garai essa sony, não tem foto dos role fixo
             //$foto_formatada = str_replace('content="', '', $foto_formatada);
 
             $response1 .= '<p style="font-size: 20px; color: #236EB8;">Produto na <span style="color: #D2D9E0;"><strong>PLAYSTATION</span></strong></p>';
 
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 300px; height: 190px;';
-            if(!empty($foto_formatada)){
+            if(!empty($foto_formatada0)){
+                $response1 .= "<img src='$foto_formatada0' alt='Imagem do Produto' style='$imgStyle'><br>";
+            }elseif(!empty($foto_formatada)){
                 $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
             }elseif(!empty($foto_formatada_)){
                 $response1 .= "<img src='$foto_formatada_' alt='Imagem do Produto' style='$imgStyle'><br>";
+            }elseif(!empty($foto_formatada___)){
+                $response1 .= "<img src='$foto_formatada___' alt='Imagem do Produto' style='$imgStyle'><br>";
+            }elseif(!empty($foto_formatada____)){
+                $response1 .= "<img src='$foto_formatada____' alt='Imagem do Produto' style='$imgStyle'><br>";
             }elseif(!empty($foto_formatada__)){
                 $response1 .= "<img src='$foto_formatada__' alt='Imagem do Produto' style='$imgStyle'><br>";
             }
