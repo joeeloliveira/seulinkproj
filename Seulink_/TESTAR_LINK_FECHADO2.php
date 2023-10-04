@@ -1411,6 +1411,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
+        elseif ($escolha == "microsoft")
+        {
+            $titulo = getStr($resp, '<title data-react-helmet="true">Comprar o ', ' | Xbox</title>');
+            $titulo_formatado = str_replace('<title data-react-helmet="true">Comprar o ', '', $titulo);
+            $titulo_formatado = str_replace(' | Xbox</title>', '', $titulo_formatado);
+            
+
+            $preco = getStr($resp, '>R$', '</');
+            $preco_formatado = str_replace('>R$', '', $preco);
+            $preco_formatado = str_replace('</', '', $preco_formatado);
+            $preco_formatado = str_replace('+', '', $preco_formatado);
+
+
+            $imagem = getStr($resp, 'class="ProductDetailsHeader-module__productImageContainer___gOb9c"><img src="', '"');
+            $foto_formatada = str_replace('class="ProductDetailsHeader-module__productImageContainer___gOb9c"><img src="', '', $imagem);
+            $foto_formatada = str_replace('"', '', $foto_formatada);
+            //$foto_formatada = str_replace('content="', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #EAECE9;">Produto na <span style="color: #69C341;"><strong>XBOX/MICROSOFT</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 180px; height: 250px;';
+            $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong>R$ $preco_formatado </p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
         
 
 
