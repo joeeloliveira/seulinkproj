@@ -1440,6 +1440,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
+        elseif ($escolha == "playstation")
+        {
+            $titulo = getStr($resp, '"Product","name":"', '",');
+            $titulo_formatado = str_replace('"Product","name":"', '', $titulo);
+            $titulo_formatado = str_replace('",', '', $titulo_formatado);
+            
+
+            $preco = getStr($resp, '"priceOrText":"', '"');
+            $preco_formatado = str_replace('"priceOrText":"', '', $preco);
+            $preco_formatado = str_replace('"', '', $preco_formatado);
+            //$preco_formatado = str_replace('+', '', $preco_formatado);
+
+
+            $imagem = getStr($resp, 'class="psw-blur psw-center psw-l-fit-contain" src="', '?');
+            $foto_formatada = str_replace('class="psw-blur psw-center psw-l-fit-contain" src="', '', $imagem);
+            $foto_formatada = str_replace('?', '', $foto_formatada);
+
+            $imagem2 = getStr($resp, '<source srcset="', '"');
+            $foto_formatada_ = str_replace('<source srcset="', '', $imagem2);
+            $foto_formatada_ = str_replace('"', '', $foto_formatada_);
+
+
+            $imagem3 = getStr($resp, '"role":"GAMEHUB_COVER_ART","url":"', '"');
+            $foto_formatada__ = str_replace('"role":"GAMEHUB_COVER_ART","url":"', '', $imagem3);
+            $foto_formatada__ = str_replace('"', '', $foto_formatada__);
+            //$foto_formatada = str_replace('content="', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #236EB8;">Produto na <span style="color: #D2D9E0;"><strong>PLAYSTATION</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 300px; height: 190px;';
+            if(!empty($foto_formatada)){
+                $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+            }elseif(!empty($foto_formatada_)){
+                $response1 .= "<img src='$foto_formatada_' alt='Imagem do Produto' style='$imgStyle'><br>";
+            }elseif(!empty($foto_formatada__)){
+                $response1 .= "<img src='$foto_formatada__' alt='Imagem do Produto' style='$imgStyle'><br>";
+            }
+            
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong> $preco_formatado </p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
         
 
 
