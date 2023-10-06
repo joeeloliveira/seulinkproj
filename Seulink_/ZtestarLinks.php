@@ -332,6 +332,7 @@
                         <option value="playstation">PLAYSTATION</option>
                         <option value="ubisoft">UBISOFT</option>
                         <option value="gog">GOG.com</option>
+                        <option value="battlenet">BATTLE.NET</option>
                     </select>
                     <h6><strong>Copie e cole</strong> o url abaixo ↴ </h6>
                     <input type="url" name="link[]">
@@ -1654,6 +1655,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
 
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong>R$ $preco_formatado </p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
+        elseif ($escolha == "battlenet")
+        {
+            $titulo = getStr($resp, '<title>', '- ');
+            $titulo_formatado = str_replace('<title>', '', $titulo);
+            $titulo_formatado = str_replace('- ', '', $titulo_formatado);
+            
+
+            $titulo2 = getStr($resp, 'Only", "name": "', '"');
+            $titulo_formatado2 = str_replace('Only", "name": "', '', $titulo2);
+            $titulo_formatado2 = str_replace('"', '', $titulo_formatado2);
+
+
+            $preco = getStr($resp, '"price": ', ',');
+            $preco_formatado = str_replace('"price": ', '', $preco);
+            $preco_formatado = str_replace(',', '', $preco_formatado);
+            $preco_formatado = str_replace('"0"', 'GRATUITO :)', $preco_formatado);
+            $preco_formatado = str_replace('"', '', $preco_formatado);
+            $preco_formatado = str_replace('"', '', $preco_formatado);
+
+
+            $imagem = getStr($resp, '<meta property="og:image" content="', '"');
+            $foto_formatada = str_replace('<meta property="og:image" content="', '', $imagem);
+            $foto_formatada = str_replace('"', '', $foto_formatada);
+            //$foto_formatada = str_replace('content="', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #EAE7EE;">Produto na <span style="color: #3E63E5;"><strong>Battle.net</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
+            $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado - $titulo_formatado2</p></strong>";
 
             $response1 .= "<p>Preço: <strong>R$ $preco_formatado </p></strong><br>";
 
