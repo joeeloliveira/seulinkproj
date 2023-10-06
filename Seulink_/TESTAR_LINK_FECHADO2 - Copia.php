@@ -1383,7 +1383,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
         elseif ($escolha == "steam")
-        {//aqui eu nao consigo puxar jogo que pede verificação de idade +18 
+        {
 
             $app = getStr($linkValidado, "app/", "/"); 
 
