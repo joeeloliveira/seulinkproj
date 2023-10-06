@@ -331,6 +331,7 @@
                         <option value="microsoft">MICROSOFT/XBOX</option>
                         <option value="playstation">PLAYSTATION</option>
                         <option value="ubisoft">UBISOFT</option>
+                        <option value="gog">GOG.com</option>
                     </select>
                     <h6><strong>Copie e cole</strong> o url abaixo ↴ </h6>
                     <input type="url" name="link[]">
@@ -1629,7 +1630,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
                 $response1 .= "<p>Preço: <strong> $preco_formatado </p></strong><br>";
                 $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
             }
+        }
+        elseif ($escolha == "gog")
+        {
+            $titulo = getStr($resp, '<meta property="og:title" content="', '">');
+            $titulo_formatado = str_replace('<meta property="og:title" content="', '', $titulo);
+            $titulo_formatado = str_replace('">', '', $titulo_formatado);
+            
 
+            $preco = getStr($resp, '"price": "', '",');
+            $preco_formatado = str_replace('"price": "', '', $preco);
+            $preco_formatado = str_replace('",', '', $preco_formatado);
+
+
+            $imagem = getStr($resp, '<img class="productcard-thumbnails-slider__image" src="', '"');
+            $foto_formatada = str_replace('<img class="productcard-thumbnails-slider__image" src="', '', $imagem);
+            $foto_formatada = str_replace('"', '', $foto_formatada);
+            //$foto_formatada = str_replace('content="', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #EAE7EE;">Produto na <span style="color: #965CE6;"><strong>GOG.com</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
+            $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong>R$ $preco_formatado </p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
         
         
