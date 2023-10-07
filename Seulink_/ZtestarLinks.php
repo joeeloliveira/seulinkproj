@@ -312,6 +312,7 @@
                         <option value="carrefour">CARREFOUR</option>
                         <option value="havan">HAVAN</option>
                         <option value="kalunga">KALUNGA</option>
+                        <option value="dell">DELL</option>
                         <option value="" style="color: white; background-color: #5CE156;">⨠ 🎒 ROUPAS E CALÇADOS</option>
                         <option value="netshoes">NETSHOES</option>
                         <option value="nike">NIKE</option>
@@ -1795,6 +1796,57 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
 
             $response1 .= "<p>Preço: <strong> $preco_formatado </p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
+        elseif ($escolha == "dell")
+        {
+            $titulo = getStr($resp, '<title>', ' | Dell Brasil');
+            $titulo_formatado = str_replace('<title>', '', $titulo);
+            $titulo_formatado = str_replace(' | Dell Brasil', '', $titulo_formatado);
+
+
+            $preco = getStr($resp, '<span class="h3 font-weight-bold mb-1 text-nowrap sale-price">', '</span>');
+            $preco_formatado = str_replace('<span class="h3 font-weight-bold mb-1 text-nowrap sale-price">', '', $preco);
+            $preco_formatado = str_replace('</span>', '', $preco_formatado);
+
+
+            $preco_ = getStr($resp, 'o</span> <span>R$ ', '</');
+            $preco_formatado_ = str_replace('o</span> <span>R$ ', '', $preco_);
+            $preco_formatado_ = str_replace('</', '', $preco_formatado_);
+
+
+            $preco__ = getStr($resp, 'js-tooltip js-is-clickable data-price="', '">');
+            $preco_formatado__ = str_replace('js-tooltip js-is-clickable data-price="', '', $preco__);
+            $preco_formatado__ = str_replace('">', '', $preco_formatado__);
+
+
+            $preco___ = getStr($resp, 'dellPrice&quot;:&quot;R$', '&');
+            $preco_formatado___ = str_replace('dellPrice&quot;:&quot;R$', '', $preco___);
+            $preco_formatado___ = str_replace('&', '', $preco_formatado___);
+
+
+            $imagem = getStr($resp, 'data-full-img="', '?');
+            $foto_formatada = str_replace('data-full-img="', '', $imagem);
+            $foto_formatada = str_replace('?', '', $foto_formatada);
+            //$foto_formatada = str_replace('content="', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #F9F6F6;">Produto <span style="color: #F9F6F6;"><strong>na</strong></span><span style="color: #1A8CD5;"><strong> DELL</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
+            $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            if(!empty($preco_formatado)){
+                $response1 .= "<p>Preço: <strong> $preco_formatado </p></strong><br>";
+            }elseif(!empty($preco_formatado_)){
+                $response1 .= "<p>Preço: <strong> $preco_formatado_ </p></strong><br>";
+            }elseif(!empty($preco_formatado__)){
+                $response1 .= "<p>Preço: <strong> R$ $preco_formatado__,00</p></strong><br>";
+            }elseif(!empty($preco_formatado___)){
+                $response1 .= "<p>Preço: <strong> R$ $preco_formatado___ </p></strong><br>";
+            }
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
