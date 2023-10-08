@@ -16,7 +16,7 @@
                 margin: 0;
                 padding: 0;
                 height: 100vh;
-                        }
+            }
 
             /* Estilos da barra superior */
             .topbar {
@@ -294,7 +294,7 @@
                 <div>
                     <select name="escolha[]">
                         <option value="">⨠ Escolha o website desejado</option>
-                        <option value="" style="color: white; background-color: #56E1DB;">⨠ 🛍️ E-COMMERCE</option>
+                        <option value="" style="color: white; background: #56E1DB;">⨠ 🛍️ E-COMMERCE</option>
                         <option value="amazon">AMAZON</option>
                         <option value="kabum">KABUM</option>
                         <option value="magazine">MAGAZINE LUIZA</option>
@@ -332,6 +332,8 @@
                         <option value="droga_raia">DROGA RAIA</option>
                         <option value="drogasil">DROGASIL</option>
                         <option value="max_titanium">MAX TITANIUM</option>
+                        <option value="integral_medica">INTEGRAL MEDICA</option>
+                        <option value="new_nutrition">NEW NUTRITION</option>
                         <option value="" style="color: white; background-color: #2046B6;">⨠ 🎮 GAMES </option>
                         <option value="steam">STEAM</option>
                         <option value="microsoft">MICROSOFT/XBOX</option>
@@ -1391,6 +1393,63 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
 
             $response1 .= "<p>Preço: <strong>R$ ".$preco_formatado." </p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
+        elseif ($escolha == "integral_medica")
+        {
+            $titulo = getStr($resp, '<title>', ' - integralmedica</title>');
+            $titulo_formatado = str_replace('<title>', '', $titulo);
+            $titulo_formatado = str_replace(' - integralmedica</title>', '', $titulo_formatado);
+            
+
+            $preco = getStr($resp, '"fullSellingPrice":"', '",');
+            $preco_formatado = str_replace('"fullSellingPrice":"', '', $preco);
+            $preco_formatado = str_replace('",', '', $preco_formatado);
+
+
+            $imagem = getStr($resp, '<a href="https://integralmedica.vteximg.com.br', '?');
+            $foto_formatada = str_replace('<a href="https://integralmedica.vteximg.com.br', '', $imagem);
+            $foto_formatada = str_replace('?', '', $foto_formatada);
+            //$foto_formatada = str_replace('content="', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #3D424C;">Produto na <span style="color: #C65F58;"><strong>MAX TITANIUM</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 220px; height: 160px;';
+            $response1 .= "<img src='https://integralmedica.vteximg.com.br$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong> ".$preco_formatado." </p></strong><br>";
+
+            $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
+        }
+        elseif ($escolha == "new_nutrition")
+        {
+            $titulo = getStr($resp, '<meta property="og:title" content="', '">');
+            $titulo_formatado = str_replace('<meta property="og:title" content="', '', $titulo);
+            $titulo_formatado = str_replace('">', '', $titulo_formatado);
+            
+
+            $preco = getStr($resp, 'itemprop="price" content="', '"');
+            $preco_formatado = str_replace('itemprop="price" content="', '', $preco);
+            $preco_formatado = str_replace('"', '', $preco_formatado);
+            $preco_formatado = str_replace('.', ',', $preco_formatado);
+
+
+            $imagem = getStr($resp, 'data-src="//io.convertiez.com.br/m/newnutrition/shop/products/images/', '"');
+            $foto_formatada = str_replace('data-src="//io.convertiez.com.br/m/newnutrition/shop/products/images/', '', $imagem);
+            $foto_formatada = str_replace('"', '', $foto_formatada);
+            //$foto_formatada = str_replace('content="', '', $foto_formatada);
+
+            $response1 .= '<p style="font-size: 20px; color: #5872C6;">Produto na <span style="color: #C66258;"><strong>NEW NUTRITION</span></strong></p>';
+
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 220px; height: 160px;';
+            $response1 .= "<img src='https://io.convertiez.com.br/m/newnutrition/shop/products/images/$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
+
+            $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
+
+            $response1 .= "<p>Preço: <strong> R$ ".$preco_formatado." </p></strong><br>";
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
