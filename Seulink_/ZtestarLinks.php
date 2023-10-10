@@ -500,7 +500,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $foto_formatada = str_replace('"g":["', '', $imagem);
             $foto_formatada = str_replace('",', '', $foto_formatada);
 
-            $response1 .= '<p style="font-size: 20px; color: #E8B35E;">Produto na <span style="color: #5E96E8;"><strong>Kabum</span></strong></p><img src="icones/amazon.png" alt="Kabum Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 10px;">';
+            $response1 .= '<p style="font-size: 20px; color: #E8B35E;">Produto na <span style="color: #5E96E8;"><strong>Kabum</span></strong></p><img src="icones/kabum.png" alt="Kabum Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 10px;">';
 
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
             $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
