@@ -302,66 +302,101 @@
                     }
                 }
         </style>
+        <style>
+            .custom-select-2 {
+            position: relative;
+            width: 250px;
+            height: 50px;
+        }
+
+        .select-styled {
+            display: flex;
+            align-items: center; /* Alinhar o conteúdo verticalmente */
+            height: 100%; /* Definir a altura igual à altura do select */
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .select-styled img {
+            margin-right: 10px; /* Espaço entre a imagem e o texto */
+            max-width: 30px; /* Largura máxima da imagem */
+            max-height: 30px; /* Altura máxima da imagem */
+        }
+
+        .select-styled:after {
+            content: "\25BC"; /* Triângulo para baixo */
+            margin-left: auto; /* Mover o triângulo para a direita */
+        }
+
+        .select-options {
+            display: none;
+            position: absolute;
+            width: 100%; /* Definir a largura igual à largura do select */
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            z-index: 1;
+        }
+
+        .select-options ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .select-options li {
+            padding: 10px 15px;
+            background-color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .select-options li img {
+            margin-right: 10px; /* Espaço entre a imagem e o texto */
+            max-width: 30px; /* Largura máxima da imagem */
+            max-height: 30px; /* Altura máxima da imagem */
+        }
+
+        .select-options li:hover {
+            background-color: #f0f0f0;
+        }   
+        </style>
                 <div class="container">
 
         <img src="logooo1.png" alt="Seulink">
         <h4>⇵ Escolha o website: </h4>
+
+        
         <form action="" method="post">
-            <div id="campos">
-                <div>
-                    <select name="escolha[]" style="font-size: 18px;">
-                        <option value="">⨠ Escolha o website desejado</option>
-                        <option value="" style="color: white; background: #56E1DB;">⨠ 🛍️ E-COMMERCE</option>
-                        <option value="amazon">AMAZON</option>
-                        <option value="kabum">KABUM</option>
-                        <option value="magazine">MAGAZINE LUIZA</option>
-                        <option value="aliexpress">ALIEXPRESS</option>
-                        <option value="banggood">BANGGOOD</option>
-                        <option value="shein">SHEIN</option>
-                        <option value="mercado_livre">MERCADO LIVRE</option>
-                        <option value="americanas">AMERICANAS</option>
-                        <option value="casas_bahia">CASAS BAHIA</option>
-                        <option value="submarino">SUBMARINO</option>
-                        <option value="shoptime">SHOPTIME</option>
-                        <option value="extra">EXTRA</option>
-                        <option value="ponto_frio">PONTO FRIO</option>
-                        <option value="nagem">NAGEM</option>
-                        <option value="carrefour">CARREFOUR</option>
-                        <option value="havan">HAVAN</option>
-                        <option value="kalunga">KALUNGA</option>
-                        <option value="dell">DELL</option>
-                        <option value="" style="color: white; background-color: #5CE156;">⨠ 🎒 ROUPAS E CALÇADOS</option>
-                        <option value="netshoes">NETSHOES</option>
-                        <option value="nike">NIKE</option>
-                        <option value="adidas">ADIDAS</option>
-                        <option value="mizuno">MIZUNO</option>
-                        <option value="lacoste">LACOSTE</option>
-                        <option value="centauro">CENTAURO</option>
-                        <option value="dafiti">DAFITI</option>
-                        <option value="renner">RENNER</option>
-                        <option value="" style="color: white; background-color: #712EB8;">⨠ 🛋️ CASA E CIA</option>
-                        <option value="olx">OLX</option>
-                        <option value="elo7">ELO7</option>
-                        <option value="mobly">MOBLY</option>
-                        <option value="madeira">MADEIRA Madeira</option>
-                        <option value="" style="color: white; background-color: #B82E3F;">⨠ 💊 SAUDE E FITNESS</option>
-                        <option value="pague_menos">PAGUE MENOS</option>
-                        <option value="droga_raia">DROGA RAIA</option>
-                        <option value="drogasil">DROGASIL</option>
-                        <option value="max_titanium">MAX TITANIUM</option>
-                        <option value="integral_medica">INTEGRAL MEDICA</option>
-                        <option value="new_nutrition">NEW NUTRITION</option>
-                        <option value="" style="color: white; background-color: #2046B6;">⨠ 🎮 GAMES </option>
-                        <option value="steam">STEAM</option>
-                        <option value="microsoft">MICROSOFT/XBOX</option>
-                        <option value="playstation">PLAYSTATION</option>
-                        <option value="ubisoft">UBISOFT</option>
-                        <option value="gog">GOG.com</option>
-                        <option value="battlenet">BATTLE.NET</option>
-                        <option value="nuuvem">NUUVEM</option>
-                        <option value="g2a">G2A</option>
-                        <option value="eneba">ENEBA</option>
-                    </select>
+        <div id="campos">
+            <div>
+                <select name="escolha[]" style="font-size: 17px; font-family: 'Courier New', Courier, monospace;">
+                    <option value="">⨠ Escolha o website desejado</option>
+                    <option value="" style="color: white; background: #56E1DB;">⨠ 🛍️ E-COMMERCE</option>
+                    <option value="amazon"><strong>AMAZON</strong></option>
+                    <option value="kabum">KABUM</option>
+                    <option value="magazine">MAGAZINE LUIZA</option>
+                    <option value="aliexpress">ALIEXPRESS</option>
+                </select>
+
+                <div class="custom-select-2">
+                    <div class="select-styled"><img src="icones/amazon.png" alt="Imagem 1"> Selecione uma opção</div>
+                    <div class="select-options" name="escolha[]">
+                        <ul>
+                            <li data-value="amazon" value="amazon"><img src="icones/amazon.png" alt="Imagem 1"> Opção 1</li>
+                            <li data-value="kabum" value="kabum"><img src="icones/kabum.png" alt="Imagem 2"> Opção 2</li>
+                            <li data-value="magazine" value="magazine"><img src="icones/magalu.png" alt="Imagem 3"> Opção 3</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
                     <h6><strong>Copie e cole</strong> o url abaixo ↴ </h6>
                     <input type="url" name="link[]">
                     <button type="button" class="botao-remover" onclick="removerCampo(this)">- Remover</button>
@@ -382,49 +417,65 @@
 
     <!-- SCRIPT DAS TABELAS !-->
     <script>
-            let contadorCampos = 1;
+             let contadorCampos = 1;
 
-            function adicionarCampo() {
-                contadorCampos++;
-                var campos = document.getElementById("campos");
-                var campoClone = campos.firstElementChild.cloneNode(true);
-                var select = campoClone.querySelector('select');
-                var linkInput = campoClone.querySelector('input[type="url"]');
-                select.name = "escolha[]";
-                linkInput.name = "link[]";
-                campoClone.querySelector('button').addEventListener('click', function() {
-                    removerCampo(this);
-                });
-                campos.appendChild(campoClone);
-            }
+function adicionarCampo() {
+    contadorCampos++;
+    var campos = document.getElementById("campos");
+    var campoClone = campos.firstElementChild.cloneNode(true);
+    var select = campoClone.querySelector('select');
+    var linkInput = campoClone.querySelector('input[type="url"]');
+    select.name = "escolha[]";
+    linkInput.name = "link[]";
+    campoClone.querySelector('button').addEventListener('click', function () {
+        removerCampo(this);
+    });
+    campos.appendChild(campoClone);
+}
 
-            function removerCampo(botao) {
-                var campo = botao.parentNode;
-                campo.parentNode.removeChild(campo);
-            }
+function removerCampo(botao) {
+    var campo = botao.parentNode;
+    campo.parentNode.removeChild(campo);
+}
 
-            function atualizarConteudo() {
-                var escolhas = document.getElementsByName("escolha[]");
-                var links = document.getElementsByName("link[]");
+function atualizarConteudo() {
+    var escolhas = document.getElementsByName("escolha[]");
+    var links = document.getElementsByName("link[]");
 
-                var response1 = "";
+    var response1 = "";
 
-                for (var i = 0; i < escolhas.length; i++) {
-                    var escolha = escolhas[i].value;
-                    var link = links[i].value;
+    for (var i = 0; i < escolhas.length; i++) {
+        var escolha = escolhas[i].value;
+        var link = links[i].value;
 
-                    // Validação do link aqui (se necessário)
+        // Validação do link aqui (se necessário)
 
-                    // Código para buscar informações do produto aqui
+        // Código para buscar informações do produto aqui
 
-                    // Montar a resposta com as informações do produto
-                    var produtoInfo = "Escolha: " + escolha + "<br>Link: " + link + "<br><br>";
+        // Montar a resposta com as informações do produto
+        var produtoInfo = "Escolha: " + escolha + "<br>Link: " + link + "<br><br>";
 
-                    response1 += produtoInfo;
-                }
+        response1 += produtoInfo;
+    }
 
-                document.getElementById("container-right").innerHTML = response1;
-            }
+    document.getElementById("container-right").innerHTML = response1;
+}
+
+// Adicione o evento "change" para atualizar o select personalizado
+var select = document.querySelector('select[name="escolha[]"]');
+var selectStyled = document.querySelector(".select-styled");
+
+select.addEventListener("change", function () {
+    var selectedValue = select.value;
+    var customSelectOptions = document.querySelectorAll('.custom-select-2 .select-options li');
+    customSelectOptions.forEach(function (option) {
+        if (option.getAttribute("data-value") === selectedValue) {
+            selectStyled.innerHTML = option.innerHTML;
+        }
+    });
+});
+
+            
             </script>
     <!-- SCRIPT DAS TABELAS !-->
 </body>
