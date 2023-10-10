@@ -902,14 +902,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $foto_formatada = str_replace('" />', '', $foto_formatada);
             $foto_formatada = str_replace('content="', '', $foto_formatada);
 
-            $response1 .= '<p style="font-size: 20px; color: #3871E0;">📌 Produto na <span style="color: #FFFFFF;"><strong>HAVAN</span></strong></p>';
+            $response1 .= '<p style="font-size: 20px; color: #3871E0;">📌 Produto na <span style="color: #FFFFFF;"><strong>HAVAN</span></strong></p><img src="icones/havan.jpg" alt="havan Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 10px; border-radius: 10px">';
 
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
             $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
 
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
 
-            $response1 .= "<p>Preço: <strong>$preco_formatado</p></strong><br>";
+            $response1 .= "<p>Preço: <strong>$preco_formatado</p></strong>";
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
@@ -923,6 +923,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $preco = getStr($resp, '<span id="hfprecovista">', '</span>');
             $preco_formatado = str_replace('<span id="hfprecovista">', '', $preco);
             $preco_formatado = str_replace('</span>', '', $preco_formatado);
+
+
+            $preco_ = getStr($resp, '<p class="carrinhoflutuante__price text-nowrap pe-2">', '</p>');
+            $preco_formatado_ = str_replace('<p class="carrinhoflutuante__price text-nowrap pe-2">', '', $preco_);
+            $preco_formatado_ = str_replace('</p>', '', $preco_formatado_);
             //$preco_formatado = str_replace('"', '', $preco_formatado);
 
             $imagem = getStr($resp, 'data-src="', '"');
@@ -930,14 +935,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $foto_formatada = str_replace('"', '', $foto_formatada);
             //$foto_formatada = str_replace('content="', '', $foto_formatada);
 
-            $response1 .= '<p style="font-size: 20px; color: #424448;">📌 Produto na <span style="color: #FFFFFF;"><strong>KALUNGA</span></strong></p>';
+            $response1 .= '<p style="font-size: 20px; color: #424448;">📌 Produto na <span style="color: #FFFFFF;"><strong>KALUNGA</span></strong></p><img src="icones/kalunga.png" alt="kalunga Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 10px; border-radius: 10px">';
 
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
             $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
 
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
 
-            $response1 .= "<p>Preço: <strong>$preco_formatado</p></strong><br>";
+            if(!empty($preco_formatado)){
+                $response1 .= "<br><p>Titulo: <strong>$preco_formatado</p></strong>";
+            }elseif(!empty($preco_formatado_)){
+                $response1 .= "<br><p>Titulo: <strong>$preco_formatado_</p></strong>";
+            }
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
@@ -958,14 +967,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $foto_formatada = str_replace('"', '', $foto_formatada);
             //$foto_formatada = str_replace('content="', '', $foto_formatada);
 
-            $response1 .= '<p style="font-size: 20px; color: #6C396F;">📌 Produto na <span style="color: #FFFFFF;"><strong>NETSHOES</span></strong></p>';
+            $response1 .= '<p style="font-size: 20px; color: #6C396F;">📌 Produto na <span style="color: #FFFFFF;"><strong>NETSHOES</span></strong></p><img src="icones/netshoes.png" alt="netshoes Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 10px; border-radius: 10px">';
 
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
             $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
 
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
 
-            $response1 .= "<p>Preço: <strong>$preco_formatado</p></strong><br>";
+            $response1 .= "<p>Preço: <strong>$preco_formatado</p></strong>";
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
@@ -986,14 +995,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $foto_formatada = str_replace('"/', '', $foto_formatada);
             //$foto_formatada = str_replace('content="', '', $foto_formatada);
 
-            $response1 .= '<p style="font-size: 20px; color: #7D7D7D;">📌 Produto na <span style="color: #FFFFFF;"><strong>NIKE</span></strong></p>';
+            $response1 .= '<p style="font-size: 20px; color: #7D7D7D;">📌 Produto na <span style="color: #FFFFFF;"><strong>NIKE</span></strong></p><img src="icones/nike.jpg" alt="nike Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 10px; border-radius: 10px">';
 
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
             $response1 .= "<img src='https://imgnike-a.akamaihd.net$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
 
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
 
-            $response1 .= "<p>Preço: <strong>$preco_formatado</p></strong><br>";
+            $response1 .= "<p>Preço: <strong>$preco_formatado</p></strong>";
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
@@ -1016,16 +1025,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $imagem = getStr($resp, '"image":["', '",');
             $foto_formatada = str_replace('"image":["', '', $imagem);
             $foto_formatada = str_replace('",', '', $foto_formatada);
+
+
+            $imagem_ = getStr($resp, 'media="(min-width: 960px)"><img src="', '"');
+            $foto_formatada_ = str_replace('media="(min-width: 960px)"><img src="', '', $imagem_);
+            $foto_formatada_ = str_replace('"', '', $foto_formatada_);
             //$foto_formatada = str_replace('content="', '', $foto_formatada);
 
-            $response1 .= '<p style="font-size: 20px; color: #7D7D7D;">📌 Produto na <span style="color: #FFFFFF;"><strong>ADIDAS</span></strong></p>';
+            $response1 .= '<p style="font-size: 20px; color: #7D7D7D;">📌 Produto na <span style="color: #FFFFFF;"><strong>ADIDAS</span></strong></p><img src="icones/adidas.jpg" alt="adidas Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 10px; border-radius: 10px">';
 
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
-            $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
-
+            if(!empty($foto_formatada_)){
+                $response1 .= "<img src='$foto_formatada_' alt='Imagem do Produto' style='$imgStyle'><br>";
+            }
+            
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
 
-            $response1 .= "<p>Preço: <strong>$preco_formatado $preco_formatado_ </p></strong><br>";
+            $response1 .= "<p>Preço: <strong>$preco_formatado $preco_formatado_ </p></strong>";
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
@@ -1047,14 +1063,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $foto_formatada = str_replace('?', '', $foto_formatada);
             //$foto_formatada = str_replace('content="', '', $foto_formatada);
 
-            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">📌 Produto na <span style="color: #193886;"><strong>MIZUNO</span></strong></p>';
+            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">📌 Produto na <span style="color: #193886;"><strong>MIZUNO</span></strong></p><img src="icones/mizuno.jpg" alt="mizuno Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 10px; border-radius: 10px">';
 
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
             $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
 
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
 
-            $response1 .= "<p>Preço: <strong>R$ $preco_formatado </p></strong><br>";
+            $response1 .= "<p>Preço: <strong>R$ $preco_formatado </p></strong>";
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
@@ -1076,14 +1092,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $foto_formatada = str_replace('"', '', $foto_formatada);
             //$foto_formatada = str_replace('content="', '', $foto_formatada);
 
-            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">📌 Produto na <span style="color: #86DE2B;"><strong>LACOSTE</span></strong></p>';
+            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">📌 Produto na <span style="color: #2EBA21;"><strong>LACOSTE</span></strong></p><img src="icones/lacoste.png" alt="lacoste Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 10px; border-radius: 10px">';
 
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
             $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
 
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
 
-            $response1 .= "<p>Preço: <strong>R$ $preco_formatado </p></strong><br>";
+            $response1 .= "<p>Preço: <strong>R$ $preco_formatado </p></strong>";
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
@@ -1105,14 +1121,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $foto_formatada = str_replace('"/', '', $foto_formatada);
             //$foto_formatada = str_replace('content="', '', $foto_formatada);
 
-            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">📌 Produto na <span style="color: #D12F1F;"><strong>CENTAURO</span></strong></p>';
+            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">📌 Produto na <span style="color: #D12F1F;"><strong>CENTAURO</span></strong></p><img src="icones/centauro.png" alt="centauro Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 10px; border-radius: 10px">';
 
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
             $response1 .= "<img src='https://imgcentauro$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
 
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
 
-            $response1 .= "<p>Preço: <strong>$preco_formatado </p></strong><br>";
+            $response1 .= "<p>Preço: <strong>$preco_formatado </p></strong>";
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
@@ -1134,14 +1150,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $foto_formatada = str_replace('"', '', $foto_formatada);
             //$foto_formatada = str_replace('content="', '', $foto_formatada);
 
-            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">📌 Produto na <span style="color: #CCCCCC;"><strong>DAFITI</span></strong></p>';
+            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">📌 Produto na <span style="color: #CCCCCC;"><strong>DAFITI</span></strong></p><img src="icones/dafiti.png" alt="dafiti Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 10px; border-radius: 10px">';
 
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
             $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
 
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
 
-            $response1 .= "<p>Preço: <strong>R$ $preco_formatado </p></strong><br>";
+            $response1 .= "<p>Preço: <strong>R$ $preco_formatado </p></strong>";
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
@@ -1163,14 +1179,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $foto_formatada = str_replace('"', '', $foto_formatada);
             //$foto_formatada = str_replace('content="', '', $foto_formatada);
 
-            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">📌 Produto na <span style="color: #CF594A;"><strong>RENNER</span></strong></p>';
+            $response1 .= '<p style="font-size: 20px; color: #FFFFFF;">📌 Produto na <span style="color: #CF594A;"><strong>RENNER</span></strong></p><img src="icones/renner.jpg" alt="renner Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 10px; border-radius: 10px">';
 
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
             $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
 
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
 
-            $response1 .= "<p>Preço: <strong>$preco_formatado </p></strong><br>";
+            $response1 .= "<p>Preço: <strong>$preco_formatado </p></strong>";
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
@@ -1914,7 +1930,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $foto_formatada = str_replace('?', '', $foto_formatada);
             //$foto_formatada = str_replace('content="', '', $foto_formatada);
 
-            $response1 .= '<p style="font-size: 20px; color: #F9F6F6;">📌 Produto <span style="color: #F9F6F6;"><strong>na</strong></span><span style="color: #1A8CD5;"><strong> DELL</span></strong></p>';
+            $response1 .= '<p style="font-size: 20px; color: #F9F6F6;">📌 Produto <span style="color: #F9F6F6;"><strong>na</strong></span><span style="color: #1A8CD5;"><strong> DELL</span></strong></p><img src="icones/dell.png" alt="dell Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 10px; border-radius: 10px">';
 
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
             $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
@@ -1922,13 +1938,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
 
             if(!empty($preco_formatado)){
-                $response1 .= "<p>Preço: <strong> $preco_formatado </p></strong><br>";
+                $response1 .= "<p>Preço: <strong> $preco_formatado </p></strong>";
             }elseif(!empty($preco_formatado_)){
-                $response1 .= "<p>Preço: <strong> $preco_formatado_ </p></strong><br>";
+                $response1 .= "<p>Preço: <strong> $preco_formatado_ </p></strong>";
             }elseif(!empty($preco_formatado__)){
-                $response1 .= "<p>Preço: <strong> R$ $preco_formatado__,00</p></strong><br>";
+                $response1 .= "<p>Preço: <strong> R$ $preco_formatado__,00</p></strong>";
             }elseif(!empty($preco_formatado___)){
-                $response1 .= "<p>Preço: <strong> R$ $preco_formatado___ </p></strong><br>";
+                $response1 .= "<p>Preço: <strong> R$ $preco_formatado___ </p></strong>";
             }
 
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
