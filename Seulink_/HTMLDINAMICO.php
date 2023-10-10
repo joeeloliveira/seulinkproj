@@ -293,8 +293,9 @@
             <div id="campos">
                 <div>
                     <select name="escolha[]">
-                        <option value="">⨠Escolha o website desejado</option>
-                        <option value="amazon">AMAZON</option>
+                        <option value="">⨠ Escolha o website desejado</option>
+                        <option value="" style="color: white; background: #56E1DB;">⨠ 🛍️ E-COMMERCE</option>
+                        <option value="amazon">AMAZON BRASIL </option>
                         <option value="kabum">KABUM</option>
                         <option value="magazine">MAGAZINE LUIZA</option>
                         <option value="aliexpress">ALIEXPRESS</option>
@@ -311,6 +312,8 @@
                         <option value="carrefour">CARREFOUR</option>
                         <option value="havan">HAVAN</option>
                         <option value="kalunga">KALUNGA</option>
+                        <option value="dell">DELL</option>
+                        <option value="" style="color: white; background-color: #5CE156;">⨠ 🎒 ROUPAS E CALÇADOS</option>
                         <option value="netshoes">NETSHOES</option>
                         <option value="nike">NIKE</option>
                         <option value="adidas">ADIDAS</option>
@@ -319,17 +322,28 @@
                         <option value="centauro">CENTAURO</option>
                         <option value="dafiti">DAFITI</option>
                         <option value="renner">RENNER</option>
+                        <option value="" style="color: white; background-color: #712EB8;">⨠ 🛋️ CASA E CIA</option>
                         <option value="olx">OLX</option>
                         <option value="elo7">ELO7</option>
                         <option value="mobly">MOBLY</option>
                         <option value="madeira">MADEIRA Madeira</option>
+                        <option value="" style="color: white; background-color: #B82E3F;">⨠ 💊 SAUDE E FITNESS</option>
                         <option value="pague_menos">PAGUE MENOS</option>
                         <option value="droga_raia">DROGA RAIA</option>
                         <option value="drogasil">DROGASIL</option>
                         <option value="max_titanium">MAX TITANIUM</option>
+                        <option value="integral_medica">INTEGRAL MEDICA</option>
+                        <option value="new_nutrition">NEW NUTRITION</option>
+                        <option value="" style="color: white; background-color: #2046B6;">⨠ 🎮 GAMES </option>
                         <option value="steam">STEAM</option>
                         <option value="microsoft">MICROSOFT/XBOX</option>
                         <option value="playstation">PLAYSTATION</option>
+                        <option value="ubisoft">UBISOFT</option>
+                        <option value="gog">GOG.com</option>
+                        <option value="battlenet">BATTLE.NET</option>
+                        <option value="nuuvem">NUUVEM</option>
+                        <option value="g2a">G2A</option>
+                        <option value="eneba">ENEBA</option>
                     </select>
                     <h6><strong>Copie e cole</strong> o url abaixo ↴ </h6>
                     <input type="url" name="link[]">
