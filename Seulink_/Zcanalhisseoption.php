@@ -112,6 +112,7 @@
             }
         }
 
+
             /* Estilos CSS aqui, se necessário */
             input[type="url"] {
                 animation: mudarCor 0.8s linear infinite alternate;
@@ -305,15 +306,15 @@
         <style>
             .custom-select-2 {
             position: relative;
-            width: 250px;
-            height: 50px;
+            width: 145px;
+            height: 30px;
         }
 
         .select-styled {
             display: flex;
             align-items: center; /* Alinhar o conteúdo verticalmente */
             height: 100%; /* Definir a altura igual à altura do select */
-            padding: 10px 15px;
+            padding: 10px 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #fff;
@@ -321,7 +322,7 @@
         }
 
         .select-styled img {
-            margin-right: 10px; /* Espaço entre a imagem e o texto */
+            margin-right: 5px; /* Espaço entre a imagem e o texto */
             max-width: 30px; /* Largura máxima da imagem */
             max-height: 30px; /* Altura máxima da imagem */
         }
@@ -339,6 +340,7 @@
             border-top: none;
             border-radius: 0 0 5px 5px;
             z-index: 1;
+            padding-left: 2px;
         }
 
         .select-options ul {
@@ -348,7 +350,7 @@
         }
 
         .select-options li {
-            padding: 10px 15px;
+            padding: 10px 10px;
             background-color: #fff;
             cursor: pointer;
             display: flex;
@@ -357,13 +359,33 @@
 
         .select-options li img {
             margin-right: 10px; /* Espaço entre a imagem e o texto */
-            max-width: 30px; /* Largura máxima da imagem */
-            max-height: 30px; /* Altura máxima da imagem */
+            max-width: 25px; /* Largura máxima da imagem */
+            max-height: 25px; /* Altura máxima da imagem */
         }
 
         .select-options li:hover {
             background-color: #f0f0f0;
         }   
+
+
+        @keyframes mudarCor1 {
+            0% {
+                color: #9C9C9C;
+            }
+            25% {
+                color: #7A7A7A; 
+            }
+            50% {
+                color: #5E5E5E;
+            }
+            75% {
+                color: #4A4A4A; 
+            }
+            100% {
+                color: #404040; 
+            }
+        }
+
         </style>
                 <div class="container">
 
@@ -381,15 +403,70 @@
                     <option value="kabum">KABUM</option>
                     <option value="magazine">MAGAZINE LUIZA</option>
                     <option value="aliexpress">ALIEXPRESS</option>
+                    <option value="banggood">BANGGOOD</option>
+                        <option value="shein">SHEIN</option>
+                        <option value="mercado_livre">MERCADO LIVRE</option>
+                        <option value="americanas">AMERICANAS</option>
+                        <option value="casas_bahia">CASAS BAHIA</option>
+                        <option value="submarino">SUBMARINO</option>
+                        <option value="shoptime">SHOPTIME</option>
+                        <option value="extra">EXTRA</option>
+                        <option value="ponto_frio">PONTO FRIO</option>
+                        <option value="nagem">NAGEM</option>
+                        <option value="carrefour">CARREFOUR</option>
+                        <option value="havan">HAVAN</option>
+                        <option value="kalunga">KALUNGA</option>
+                        <option value="dell">DELL</option>
+                        <option value="" style="color: white; background-color: #5CE156;">⨠ 🎒 ROUPAS E CALÇADOS</option>
+                        <option value="netshoes">NETSHOES</option>
+                        <option value="nike">NIKE</option>
+                        <option value="adidas">ADIDAS</option>
+                        <option value="mizuno">MIZUNO</option>
+                        <option value="lacoste">LACOSTE</option>
+                        <option value="centauro">CENTAURO</option>
+                        <option value="dafiti">DAFITI</option>
+                        <option value="renner">RENNER</option>
+                        <option value="" style="color: white; background-color: #712EB8;">⨠ 🛋️ CASA E CIA</option>
+                        <option value="olx">OLX</option>
+                        <option value="elo7">ELO7</option>
+                        <option value="mobly">MOBLY</option>
+                        <option value="madeira">MADEIRA Madeira</option>
+                        <option value="" style="color: white; background-color: #B82E3F;">⨠ 💊 SAUDE E FITNESS</option>
+                        <option value="pague_menos">PAGUE MENOS</option>
+                        <option value="droga_raia">DROGA RAIA</option>
+                        <option value="drogasil">DROGASIL</option>
+                        <option value="max_titanium">MAX TITANIUM</option>
+                        <option value="integral_medica">INTEGRAL MEDICA</option>
+                        <option value="new_nutrition">NEW NUTRITION</option>
+                        <option value="" style="color: white; background-color: #2046B6;">⨠ 🎮 GAMES </option>
+                        <option value="steam">STEAM</option>
+                        <option value="microsoft">MICROSOFT/XBOX</option>
+                        <option value="playstation">PLAYSTATION</option>
+                        <option value="ubisoft">UBISOFT</option>
+                        <option value="gog">GOG.com</option>
+                        <option value="battlenet">BATTLE.NET</option>
+                        <option value="nuuvem">NUUVEM</option>
+                        <option value="g2a">G2A</option>
+                        <option value="eneba">ENEBA</option>
                 </select>
 
                 <div class="custom-select-2">
-                    <div class="select-styled"><img src="icones/amazon.png" alt="Imagem 1"> Selecione uma opção</div>
+                    <div class="select-styled"><img src="seulinkLOGO1.png" style="width: 80px; height: 80px; margin-left: 2px;" alt="Imagem 0"><span style="animation: mudarCor1 3s linear infinite alternate;"> Opção ▲ </span></div>
                     <div class="select-options" name="escolha[]">
                         <ul>
-                            <li data-value="amazon" value="amazon"><img src="icones/amazon.png" alt="Imagem 1"> Opção 1</li>
-                            <li data-value="kabum" value="kabum"><img src="icones/kabum.png" alt="Imagem 2"> Opção 2</li>
-                            <li data-value="magazine" value="magazine"><img src="icones/magalu.png" alt="Imagem 3"> Opção 3</li>
+                            <li data-value="amazon" value="amazon">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/amazon.png" alt="Imagem 1"> <span style="animation: mudarCor1 3s linear infinite alternate;">Amazon ▲ </span></li>
+                            <li data-value="kabum" value="kabum">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/kabum.png" alt="Imagem 2"> <span style="animation: mudarCor1 3s linear infinite alternate;">Kabum  ▲ </span></li>
+                            <li data-value="magazine" value="magazine">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/magalu.png" alt="Imagem 3"> <span style="animation: mudarCor1 3s linear infinite alternate;">Magalu ▲ </span></li>
+                            <li data-value="aliexpress" value="aliexpress">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/aliex.png" alt="Imagem 4"> <span style="animation: mudarCor1 3s linear infinite alternate;"> Aliexp ▲ </span></li>
+                            <li data-value="banggood" value="banggood">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/bang.png" alt="Imagem 5"><span style="animation: mudarCor1 3s linear infinite alternate;">Banggo ▲ </span></li>
+                            <li data-value="shein" value="shein">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/shien.png" alt="Imagem 6"><span style="animation: mudarCor1 3s linear infinite alternate;">Shein ▲ </span></li>
+                                
                         </ul>
                     </div>
                 </div>
@@ -417,66 +494,60 @@
 
     <!-- SCRIPT DAS TABELAS !-->
     <script>
-             let contadorCampos = 1;
+    let contadorCampos = 1;
 
-function adicionarCampo() {
-    contadorCampos++;
-    var campos = document.getElementById("campos");
-    var campoClone = campos.firstElementChild.cloneNode(true);
-    var select = campoClone.querySelector('select');
-    var linkInput = campoClone.querySelector('input[type="url"]');
-    select.name = "escolha[]";
-    linkInput.name = "link[]";
-    campoClone.querySelector('button').addEventListener('click', function () {
-        removerCampo(this);
-    });
-    campos.appendChild(campoClone);
-}
+    function adicionarCampo() {
+        contadorCampos++;
+        var campos = document.getElementById("campos");
+        var campoClone = campos.firstElementChild.cloneNode(true);
 
-function removerCampo(botao) {
-    var campo = botao.parentNode;
-    campo.parentNode.removeChild(campo);
-}
+        // Alterar o nome do select e do input clonados
+        var select = campoClone.querySelector('select');
+        var linkInput = campoClone.querySelector('input[type="url"]');
+        select.name = "escolha[]";
+        linkInput.name = "link[]";
 
-function atualizarConteudo() {
-    var escolhas = document.getElementsByName("escolha[]");
-    var links = document.getElementsByName("link[]");
+        // Limpar a seleção do custom-select-2 clonado
+        var customSelect = campoClone.querySelector('.custom-select-2');
+        customSelect.querySelector('.select-styled').textContent = "Opção ▲";
 
-    var response1 = "";
+        // Adicionar um evento de change ao novo select
+        select.addEventListener("change", function () {
+            atualizarCustomSelect(this, customSelect);
+        });
 
-    for (var i = 0; i < escolhas.length; i++) {
-        var escolha = escolhas[i].value;
-        var link = links[i].value;
+        // Adicionar evento de click ao botão remover
+        campoClone.querySelector('button').addEventListener('click', function () {
+            removerCampo(this);
+        });
 
-        // Validação do link aqui (se necessário)
-
-        // Código para buscar informações do produto aqui
-
-        // Montar a resposta com as informações do produto
-        var produtoInfo = "Escolha: " + escolha + "<br>Link: " + link + "<br><br>";
-
-        response1 += produtoInfo;
+        campos.appendChild(campoClone);
     }
 
-    document.getElementById("container-right").innerHTML = response1;
-}
+    function atualizarCustomSelect(select, customSelect) {
+        var selectedValue = select.value;
+        var customSelectOptions = customSelect.querySelector('.select-options').querySelectorAll('li');
+        customSelectOptions.forEach(function (option) {
+            if (option.getAttribute("data-value") === selectedValue) {
+                customSelect.querySelector('.select-styled').innerHTML = option.innerHTML;
+            }
+        });
+    }
 
-// Adicione o evento "change" para atualizar o select personalizado
-var select = document.querySelector('select[name="escolha[]"]');
-var selectStyled = document.querySelector(".select-styled");
+    function removerCampo(botao) {
+        var campo = botao.parentNode;
+        campo.parentNode.removeChild(campo);
+    }
 
-select.addEventListener("change", function () {
-    var selectedValue = select.value;
-    var customSelectOptions = document.querySelectorAll('.custom-select-2 .select-options li');
-    customSelectOptions.forEach(function (option) {
-        if (option.getAttribute("data-value") === selectedValue) {
-            selectStyled.innerHTML = option.innerHTML;
-        }
+    // Adicionar o evento "change" para atualizar o select personalizado dos campos iniciais
+    var selects = document.querySelectorAll('select[name="escolha[]"]');
+    var customSelects = document.querySelectorAll('.custom-select-2');
+    selects.forEach(function (select, index) {
+        select.addEventListener("change", function () {
+            atualizarCustomSelect(select, customSelects[index]);
+        });
     });
-});
-
-            
-            </script>
+</script>
     <!-- SCRIPT DAS TABELAS !-->
 </body>
 </html>
