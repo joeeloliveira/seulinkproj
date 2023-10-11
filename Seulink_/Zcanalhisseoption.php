@@ -455,17 +455,41 @@
                     <div class="select-options" name="escolha[]">
                         <ul>
                             <li data-value="amazon" value="amazon">
-                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/amazon.png" alt="Imagem 1"> <span style="animation: mudarCor1 3s linear infinite alternate;">Amazon ▲ </span></li>
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/amazon.png" alt="Imagem 1"> <span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
                             <li data-value="kabum" value="kabum">
-                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/kabum.png" alt="Imagem 2"> <span style="animation: mudarCor1 3s linear infinite alternate;">Kabum  ▲ </span></li>
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/kabum.png" alt="Imagem 2"> <span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
                             <li data-value="magazine" value="magazine">
-                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/magalu.png" alt="Imagem 3"> <span style="animation: mudarCor1 3s linear infinite alternate;">Magalu ▲ </span></li>
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/magalu.png" alt="Imagem 3"> <span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
                             <li data-value="aliexpress" value="aliexpress">
-                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/aliex.png" alt="Imagem 4"> <span style="animation: mudarCor1 3s linear infinite alternate;"> Aliexp ▲ </span></li>
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/aliex.png" alt="Imagem 4"> <span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
                             <li data-value="banggood" value="banggood">
-                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/bang.png" alt="Imagem 5"><span style="animation: mudarCor1 3s linear infinite alternate;">Banggo ▲ </span></li>
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/bang.png" alt="Imagem 5"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
                             <li data-value="shein" value="shein">
-                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/shien.png" alt="Imagem 6"><span style="animation: mudarCor1 3s linear infinite alternate;">Shein ▲ </span></li>
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/shien.png" alt="Imagem 6"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
+                            <li data-value="mercado_livre" value="mercado_livre">
+                                <img style="width: 26px; height: 24px; margin-left: 1px;" src="icones/ml.png" alt="Imagem 7"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
+                            <li data-value="americanas" value="americanas">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/americanas.png" alt="Imagem 8"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
+                            <li data-value="casas_bahia" value="casas_bahia">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/casas.jpg" alt="Imagem 9"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
+                            <li data-value="submarino" value="submarino">
+                                <img style="width: 26px; height: 26px; margin-left: 1px;" src="icones/sub.png" alt="Imagem 10"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
+                            <li data-value="shoptime" value="shoptime">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/shop.png" alt="Imagem 10"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
+                            <li data-value="extra" value="extra">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/extra.png" alt="Imagem 10"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
+                            <li data-value="ponto_frio" value="ponto_frio">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/ponto.jpg" alt="Imagem 10"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
+                            <li data-value="nagem" value="nagem">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/nagem.png" alt="Imagem 10"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
+                            <li data-value="carrefour" value="carrefour">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/carrefour.png" alt="Imagem 10"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
+                            <li data-value="havan" value="havan">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/havan.jpg" alt="Imagem 10"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
+                            <li data-value="kalunga" value="kalunga">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/kalunga.png" alt="Imagem 10"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
+                            <li data-value="dell" value="dell">
+                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/dell.png" alt="Imagem 10"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 10px;">Selecionada ▲ </span></li>
                                 
                         </ul>
                     </div>
