@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="https://jaukia.github.io/zoomooz/jquery.zoomooz.min.js"></script>
 <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-Qt9Hug5NfnQDGMoaQYXN1+PiQvda7poO7/5k4qAmMN6evu0oDFMJTyjqaoTGHdqf" crossorigin="anonymous">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 <head>
@@ -116,7 +117,7 @@
             /* Estilos CSS aqui, se necessário */
             input[type="url"] {
                 animation: mudarCor 0.8s linear infinite alternate;
-                width: 75%;
+                width: 79%;
                 padding: 10px;
                 margin-bottom: 55px;
                 border: 2px solid #fff;
@@ -162,7 +163,7 @@
                 padding: 5px 10px;
                 border-radius: 3px;
                 cursor: pointer;
-                margin-top: 10px;
+                margin-top: -10px;
                 font-family: "Lucida Console", Courier, monospace; /* Tipo de fonte desejada */
                 transition: background 6s; /* Transição mais suave */
             }
@@ -246,6 +247,7 @@
             </style>
 </head>
 <body>
+    
     <div class="topbar"></div>
     <div class="blue-line"></div>
     <h7 style="font-size: 15px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #0C1312; position: fixed; top: 0; left: 50%; transform: translateX(-50%);margin-top: 8px;">
@@ -387,13 +389,55 @@
             }
         }
 
+        .zoom-control {
+            top: 10px;
+            right: 10px;
+        }
+
+        .zoom-control button {
+            font-size: 15px;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
         </style>
                 <div class="container">
 
         <img src="logooo1.png" alt="Seulink">
         <h4>⇵ Escolha o website: </h4>
 
-        
+        <button class="zoom-button" id="zoom-in">➕</button>
+        <button class="zoom-button" id="zoom-out">➖</button>
+        <button class="zoom-button" id="zoom-reset">Reset</button>
+        <script>
+        const zoomInButton = document.getElementById('zoom-in');
+        const zoomOutButton = document.getElementById('zoom-out');
+        const zoomResetButton = document.getElementById('zoom-reset');
+
+        zoomInButton.addEventListener('click', () => {
+            zoom(0.8); // Increase zoom level
+        });
+
+        zoomOutButton.addEventListener('click', () => {
+            zoom(1.2); // Decrease zoom level
+        });
+
+        zoomResetButton.addEventListener('click', () => {
+            resetZoom(); // Reset zoom to 100%
+        });
+
+        function zoom(level) {
+            const currentZoom = parseFloat(document.body.style.zoom) || 1;
+            const newZoom = currentZoom * level;
+            document.body.style.zoom = newZoom;
+        }
+
+        function resetZoom() {
+            document.body.style.zoom = 1;
+        }
+       
+    </script>
+
         <form action="" method="post">
         <div id="campos">
             <div>
@@ -604,7 +648,7 @@
 
         // Crie o conteúdo personalizado que você deseja
         var conteudoPersonalizado = document.createElement('div');
-        conteudoPersonalizado.innerHTML = '<img src="seulinkLOGO1.png" style="width: 80px; height: 80px; margin-left: 1px;" alt="Imagem 0"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 13px;">Escolha </span>';
+        conteudoPersonalizado.innerHTML = '<img src="seulinkLOGO1.png" style="width: 80px; height: 80px; margin-left: 1px;" alt="Imagem 0"><span style="animation: mudarCor1 3s linear infinite alternate; font-size: 13px;">Escolhas</span>';
 
         // Limpe o conteúdo existente do selectStyled
         while (selectStyled.firstChild) {
@@ -650,6 +694,7 @@
             atualizarCustomSelect(select, customSelects[index]);
         });
     });
+
 </script>
     <!-- SCRIPT DAS TABELAS !-->
 </body>
