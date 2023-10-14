@@ -79,7 +79,7 @@
             img {
                 width: 250px;
                 height: 150px;
-                margin-left: 10px;
+                margin-left: 25px;
             }
 
             h4 {
@@ -182,6 +182,7 @@
                 margin-top: 10px;
                 font-family: "Lucida Console", Courier, monospace; /* Tipo de fonte desejada */
                 transition: background 6s; /* Transição mais suave */
+                width: 141.5px; height: 33px;
             }
 
             .botao-remover:hover {
@@ -389,37 +390,50 @@
             }
         }
 
-        .zoom-control {
-            top: 10px;
-            right: 10px;
+        #zoom-controls {
+            display: inline-block;
+            margin: 10px;
         }
 
-        .zoom-control button {
-            font-size: 15px;
+        .zoom-button {
+            background-color: #0F1115;
+            color: #fff;
+            font-family: "Lucida Console", Courier, monospace;
+            font-size: 13px;
             padding: 5px 10px;
-            border-radius: 10px;
+            border: 2px solid #fff;
+            border-radius: 7px;
+            cursor: pointer;
+            position: relative;
+            top: -17%;
+            left: -1%;
         }
 
         </style>
                 <div class="container">
 
+                <h7 style="color: #EDF0F3; position: relative;
+            top: -17%;
+            left: -1%;
+            font-size: 15px;
+            ">🔎 Ajuste o Zoom se desejar ↪ </h7>
+                <button class="zoom-button" id="zoom-in">➕</button>
+                <button class="zoom-button" id="zoom-out">➖</button>
+                <button class="zoom-button" id="zoom-reset">Reset </button>
         <img src="logooo1.png" alt="Seulink">
         <h4>⇵ Escolha o website: </h4>
-
-        <button class="zoom-button" id="zoom-in">➕</button>
-        <button class="zoom-button" id="zoom-out">➖</button>
-        <button class="zoom-button" id="zoom-reset">Reset</button>
+        
         <script>
         const zoomInButton = document.getElementById('zoom-in');
         const zoomOutButton = document.getElementById('zoom-out');
         const zoomResetButton = document.getElementById('zoom-reset');
 
         zoomInButton.addEventListener('click', () => {
-            zoom(0.8); // Increase zoom level
+            zoom(1.2); // Increase zoom level
         });
 
         zoomOutButton.addEventListener('click', () => {
-            zoom(1.2); // Decrease zoom level
+            zoom(0.8); // Decrease zoom level
         });
 
         zoomResetButton.addEventListener('click', () => {
@@ -765,7 +779,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
 
             $response1 .= '<p style="font-size: 20px; color: #ffffff;">📌 Produto na <span style="color: #E8B35E;"><strong>Amazon</span></strong></p><img src="icones/amazon.png" alt="Amazon Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 10px; border-radius: 10px">';
 
-            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
+            $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 280px; height: 220px;';
             $response1 .= "<img src='$foto_formatada' alt='Imagem do Produto' style='$imgStyle'><br>";
 
             $response1 .= '<br><p>Titulo: <strong>'.$titulo_formatado.'</p></strong>';
