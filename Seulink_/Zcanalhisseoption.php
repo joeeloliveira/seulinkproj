@@ -76,10 +76,16 @@
             }
 
 
+            img[alt="Seulink"] {
+                width: 250px;
+                height: 150px;
+                margin-left: 28%;
+            }
+
             img {
                 width: 250px;
                 height: 150px;
-                margin-left: 210px;
+                margin-left: 10px;
             }
 
             h4 {
@@ -518,35 +524,35 @@
                             <li data-value="madeira" value="madeira">
                                 <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/madeira.png" alt="Imagem 10"></li>
                             <li data-value="pague_menos" value="pague_menos">
-                                <img style="width: 27px; height: 25px; margin-left: 1px;" src="icones/paguemenos.png" alt="Imagem 10"></li>
+                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/paguemenos.png" alt="Imagem 10"></li>
                             <li data-value="droga_raia" value="droga_raia">
-                                <img style="width: 27px; height: 25px; margin-left: 1px;" src="icones/drogasraia.png" alt="Imagem 10"></li>
+                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/drogasraia.png" alt="Imagem 10"></li>
                             <li data-value="drogasil" value="drogasil">
-                                <img style="width: 27px; height: 25px; margin-left: 1px;" src="icones/drogasil.png" alt="Imagem 10"></li>
+                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/drogasil.png" alt="Imagem 10"></li>
                             <li data-value="max_titanium" value="max_titanium">
-                                <img style="width: 27px; height: 25px; margin-left: 1px;" src="icones/max.jpg" alt="Imagem 10"></li>
+                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/max.jpg" alt="Imagem 10"></li>
                             <li data-value="integral_medica" value="integral_medica">
-                                <img style="width: 27px; height: 25px; margin-left: 1px;" src="icones/integral.png" alt="Imagem 10"></li>
+                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/integral.png" alt="Imagem 10"></li>
                             <li data-value="new_nutrition" value="new_nutrition">
-                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/nutrition.png" alt="Imagem 10"></li>
+                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/nutrition.png" alt="Imagem 10"></li>
                             <li data-value="steam" value="steam">
-                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/steam.png" alt="Imagem 10"></li>
+                                <img style="width: 35px; height: 35px; margin-left: 0px;" src="icones/steam.png" alt="Imagem 10"></li>
                             <li data-value="microsoft" value="microsoft">
-                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/xbox.png" alt="Imagem 10"></li>
+                                <img style="width: 35px; height: 35px; margin-left: 0px;" src="icones/xbox.png" alt="Imagem 10"></li>
                             <li data-value="playstation" value="playstation">
-                                <img style="width: 25px; height: 22px; margin-left: 1px;" src="icones/sony2.png" alt="Imagem 10"></li>
+                                <img style="width: 35px; height: 30px; margin-left: 0px;" src="icones/sony.png" alt="Imagem 10"></li>
                             <li data-value="ubisoft" value="ubisoft">
-                                <img style="width: 25px; height: 27px; margin-left: 1px;" src="icones/ubisoft.png" alt="Imagem 10"></li>
+                                <img style="width: 35px; height: 37px; margin-left: -0.1px;" src="icones/ubisoft.png" alt="Imagem 10"></li>
                             <li data-value="gog" value="gog">
-                                <img style="width: 25px; height: 27px; margin-left: 1px;" src="icones/gog.png" alt="Imagem 10"></li>
+                                <img style="width: 35px; height: 37px; margin-left: -0.1px;" src="icones/gog.png" alt="Imagem 10"></li>
                             <li data-value="battlenet" value="battlenet">
-                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/battle.png" alt="Imagem 10"></li>
+                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/battle.png" alt="Imagem 10"></li>
                             <li data-value="nuuvem" value="nuuvem">
-                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/nuuvem.png" alt="Imagem 10"></li>
+                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/nuuvem.png" alt="Imagem 10"></li>
                             <li data-value="g2a" value="g2a">
-                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/g2a.png" alt="Imagem 10"></li>
+                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/g2a.png" alt="Imagem 10"></li>
                             <li data-value="eneba" value="eneba">
-                                <img style="width: 25px; height: 25px; margin-left: 1px;" src="icones/eneba.png" alt="Imagem 10"></li>
+                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/eneba.png" alt="Imagem 10"></li>
                         </ul>
                     </div>
                 </div>
