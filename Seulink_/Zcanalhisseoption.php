@@ -844,14 +844,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $titulo_formatado = str_replace('",', '', $titulo_formatado);
             
 
-            $preco = getStr($resp, 'formatedAmount\":\"', '\"');
-            $preco_formatado = str_replace('formatedAmount\":\"', '', $preco);
+            $coisa = getStr($resp, 'skuPropIds\":\"691\",\"skuVal\":{\"availQuantity\":', ',');
+            $coisa_ = str_replace('skuPropIds\":\"691\",\"skuVal\":{\"availQuantity\":', '', $coisa);
+            $coisa_ = str_replace(',', '', $coisa_);
+
+
+            $preco = getStr($resp, ''.$coisa_.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
+            $preco_formatado = str_replace(''.$coisa_.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $preco);
             $preco_formatado = str_replace('\"', '', $preco_formatado);
+
+
+            $preco2 = getStr($resp, '{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
+            $preco_formatado_ = str_replace('{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $preco2);
+            $preco_formatado_ = str_replace('\"', '', $preco_formatado_);
+
 
             $imagem = getStr($resp, '<meta property="og:image" content="', '"/>');
             $foto_formatada = str_replace('<meta property="og:image" content="', '', $imagem);
             $foto_formatada = str_replace('"/>', '', $foto_formatada);
-
+        
             $response1 .= '<p style="font-size: 20px; color: #E8B35E;">📌 Produto na <span style="color: #E8935E;"><strong>ALIEXPRESS</span></strong></p><img src="icones/aliex.png" alt="aliex Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 10px; border-radius: 10px">';
 
             $imgStyle = 'border: 3px solid #ddd; border-radius: 30px; box-shadow: 0 0 5px; width: 250px; height: 180px;';
@@ -859,8 +870,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
 
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
 
-            $response1 .= "<p>Preço: <strong>$preco_formatado</p></strong>";
-
+            if(!empty($preco_formatado)){
+                $response1 .= "<p>Preço: <strong>$preco_formatado</p></strong>";
+            }elseif(!empty($preco_formatado_)){
+                $response1 .= "<p>Preço: <strong>$preco_formatado_</p></strong>";
+            }
+            
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
         }
         elseif ($escolha == "banggood")
