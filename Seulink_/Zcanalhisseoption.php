@@ -2500,7 +2500,7 @@ $htmlContent = '<!DOCTYPE html>
                 <button class="zoom-button" id="zoom-in">➕</button>
                 <button class="zoom-button" id="zoom-out">➖</button>
                 <button class="zoom-button" id="zoom-reset">Reset </button>
-        <img src="logooo1.png" alt="Seulink" style="width: 250px; height: 150px; margin-left: 71%; margin-top: -10%;">
+        <img src="logooo1.png" alt="Seulink" style="width: 260px; height: 160px; margin-left: 71%; margin-top: -12%;">
         
         <center>
         <a href="" target="_blank" style="color: #7F93DC; font-size: 18px; animation: mudarCor 5s infinite, mudarCorBorda 5s infinite; border: 2px dashed; border-radius: 10px; padding: 5px;"><strong> 💾 CLIQUE AQUI</strong>, SEUS LINKS GERADOS ↩</a></p></center>
