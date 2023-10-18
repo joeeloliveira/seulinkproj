@@ -9,248 +9,253 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seulink.link</title>
     <style>
-            /* Reset de margens e preenchimentos padrão */
-            body, html {
-                background: linear-gradient(180deg, #0F1115 0%, #17191C 100%);
-                font-family: "Lucida Console", Courier, monospace;
-                margin: 0;
-                padding: 0;
-                height: 100vh;
+    /* Reset de margens e preenchimentos padrão */
+    body, html {
+        background: linear-gradient(180deg, #0F1115 0%, #17191C 100%);
+        font-family: "Lucida Console", Courier, monospace;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
             }
 
-            /* Estilos da barra superior */
-            .topbar {
-                width: 100%; /* Largura total da página */
-                height: 38px; /* Altura da barra superior (aumentada para tornar a linha azul visível) */
-                background-color: white; /* Cor da barra superior */
-                position: fixed; /* Fixa a barra superior na parte superior da página */
-                top: 0;
-                left: 0;
-            }
+    /* Estilos da barra superior */
+    .topbar {
+        width: 100%; /* Largura total da página */
+        height: 38px; /* Altura da barra superior (aumentada para tornar a linha azul visível) */
+        background-color: white; /* Cor da barra superior */
+        position: fixed; /* Fixa a barra superior na parte superior da página */
+        top: 0;
+        left: 0;
+    }
 
-            .bottom-bar {
-                background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%); /* Cor de fundo da barra */
-                width: 100%; /* Largura total da página */
-                height: 70px; /* Altura da barra */
-                position: fixed; /* Fixa a barra na parte inferior da página */
-                bottom: 0; /* Coloca a barra na parte inferior */
-                left: 0; /* Alinha a barra à esquerda */
-            }
+    .bottom-bar {
+        background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%); /* Cor de fundo da barra */
+        width: 100%; /* Largura total da página */
+        height: 70px; /* Altura da barra */
+        position: fixed; /* Fixa a barra na parte inferior da página */
+        bottom: 0; /* Coloca a barra na parte inferior */
+        left: 0; /* Alinha a barra à esquerda */
+    }
 
-            /* Estilos para as linhas brancas */
-            .white-line {
-                background-color: #fff; /* Cor da linha branca */
-                height: 3px; /* Altura da linha */
-                width: 100%; /* Largura igual à .bottom-bar */
-                margin-top: -65px;
-                bottom: 100px; /* Alinha a linha com a parte inferior da .bottom-bar */
-                left: 0; /* Alinha a linha com a parte esquerda da .bottom-bar */
-            }
+    /* Estilos para as linhas brancas */
+    .white-line {
+        background-color: #fff; /* Cor da linha branca */
+        height: 3px; /* Altura da linha */
+        width: 100%; /* Largura igual à .bottom-bar */
+        margin-top: -65px;
+        bottom: 100px; /* Alinha a linha com a parte inferior da .bottom-bar */
+        left: 0; /* Alinha a linha com a parte esquerda da .bottom-bar */
+    }
 
-            h8 {
-                font-size: 12px;
-                font-family: Verdana, Arial, Helvetica, sans-serif;
-                color: #0C1312; /* Cor do texto */
-                position: fixed; /* Fixa o texto à esquerda */
-                top: 0;
-                right: 10px; /* Espaço à esquerda */
-                margin-top: 18px; /* Espaço acima do texto */
-            }
+    h8 {
+        font-size: 12px;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        color: #0C1312; /* Cor do texto */
+        position: fixed; /* Fixa o texto à esquerda */
+        top: 0;
+        right: 10px; /* Espaço à esquerda */
+        margin-top: 18px; /* Espaço acima do texto */
+    }
 
-            /* Estilos da linha azul */
-            .blue-line {
-                width: 100%;
-                height: 4px; /* Altura da linha azul (1px para ser fina) */
-                background-color: #31C4B9; /* Cor da linha azul */
-                position: fixed; /* Fixa a linha azul na parte superior da página */
-                top: 38px; /* Coloca a linha abaixo da barra branca */
-                left: 0;
-            }
+    /* Estilos da linha azul */
+    .blue-line {
+        width: 100%;
+        height: 4px; /* Altura da linha azul (1px para ser fina) */
+        background-color: #31C4B9; /* Cor da linha azul */
+        position: fixed; /* Fixa a linha azul na parte superior da página */
+        top: 38px; /* Coloca a linha abaixo da barra branca */
+        left: 0;
+    }
 
-            /* Estilos do conteúdo principal */
-            .content {
-                margin-top: 31px; /* Deixa um espaço acima do conteúdo principal para a barra e a linha */
-                padding: 20px; /* Adicione preenchimento conforme necessário */
-                /* Outros estilos do conteúdo principal */
-            }
+    /* Estilos do conteúdo principal */
+    .content {
+        margin-top: 31px; /* Deixa um espaço acima do conteúdo principal para a barra e a linha */
+        padding: 20px; /* Adicione preenchimento conforme necessário */
+        /* Outros estilos do conteúdo principal */
+    }
 
 
-            img {
-                width: 250px;
-                height: 150px;
-                margin-left: 10px;
-            }
+    img {
+        width: 250px;
+        height: 150px;
+        margin-left: 10px;
+    }
 
-            h4 {
-                text-align: left;
-                font-size: 21px;
-                color: #1D9BB9; /* Cor inicial */
-                animation: mudarCor 2s linear infinite alternate;/* 5 segundos de duração */
-            }
+    h4 {
+        text-align: left;
+        font-size: 21px;
+        color: #1D9BB9; /* Cor inicial */
+        animation: mudarCor 2s linear infinite alternate;/* 5 segundos de duração */
+    }
 
-            h6 {
-                text-align: left;
-                font-size: 15px;
-                color: #ffffff; /* Cor inicial */
-            }
+    h6 {
+        text-align: left;
+        font-size: 15px;
+        color: #ffffff; /* Cor inicial */
+    }
 
-            @keyframes mudarCor {
-            0% {
-                color: #1D9BB9; /* Azul mais claro */
-            }
-            25% {
-                color: #15B1B1; /* Azul claro */
-            }
-            50% {
-                color: #15A0C1; /* Azul escuro */
-            }
-            75% {
-                color: #158FB1; /* Azul mais escuro */
-            }
-            100% {
-                color: #15A0C1; /* Volta para o azul escuro */
-            }
+    @keyframes mudarCor {
+    0% {
+        color: #1D9BB9; /* Azul mais claro */
+    }
+    25% {
+        color: #15B1B1; /* Azul claro */
+    }
+    50% {
+        color: #15A0C1; /* Azul escuro */
+    }
+    75% {
+        color: #158FB1; /* Azul mais escuro */
+    }
+    100% {
+        color: #15A0C1; /* Volta para o azul escuro */
+    }
+}
+
+    /* Estilos CSS aqui, se necessário */
+    input[type="url"] {
+        animation: mudarCor 0.8s linear infinite alternate;
+        width: 75%;
+        padding: 10px;
+        margin-bottom: 55px;
+        border: 2px solid #fff;
+        border-radius: 7px;
+        background-color: #0F1115;
+        color: #ffffff;
+        font-family: "Lucida Console", Courier, monospace;
+    }
+
+    select {
+        width: 100%;
+        padding: 13px;
+        margin-bottom: 15px;
+        border: 2px solid #fff;
+        border-radius: 7px;
+        background-color: #0A0C0F;
+        color: #ffffff;
+        font-family: "Lucida Console", Courier, monospace;
+    }
+
+    /* Estilo personalizado para o select */
+    .custom-select {
+        position: relative;
+        width: 80%;
+        overflow: hidden;
+    }
+
+    .custom-select select {
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        color: #ffffff;
+        cursor: pointer;
+        padding: 10px;
+        padding-right: 30px; /* Espaço para a seta personalizada */
+    }
+
+    /* Estilos do segundo container vazio */
+    .container-right {
+        height: 600px;
+        width: 880px;
+        margin-right: 1px; /* Margem à direita */
+        background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%);
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        overflow-y: auto;
+        padding-top: 40px;
+        padding-right: 20px; /* Padding à direita para manter a mesma largura do texto */
+        padding-bottom: 25px;
+        max-height: 650px;
+        max-width: 880px;
+        position: fixed; /* Fixa o contêiner à direita */
+        top: 50px; /* Ajuste a posição vertical conforme necessário */
+        right: 20px;
+        margin-left: 10px;
+}
+
+/* Regra de mídia para largura de tela entre 1920px e 2560px */
+
+    /* Estilos da barra de rolagem */
+    .container-right::-webkit-scrollbar {
+            width: 15px; /* Largura da barra de rolagem */
         }
 
-            /* Estilos CSS aqui, se necessário */
-            input[type="url"] {
-                animation: mudarCor 0.8s linear infinite alternate;
-                width: 75%;
-                padding: 10px;
-                margin-bottom: 55px;
-                border: 2px solid #fff;
-                border-radius: 7px;
-                background-color: #0F1115;
-                color: #ffffff;
-                font-family: "Lucida Console", Courier, monospace;
-            }
+        /* Estilo do polegar da barra de rolagem (a parte que você move) */
+        .container-right::-webkit-scrollbar-thumb {
+            background-color: #31C4B9; /* Cor do polegar da barra de rolagem */
+            border-radius: 5px; /* Raio do polegar da barra de rolagem */
+        }
 
-            select {
-                width: 100%;
-                padding: 13px;
-                margin-bottom: 15px;
-                border: 2px solid #fff;
-                border-radius: 7px;
-                background-color: #0A0C0F;
-                color: #ffffff;
-                font-family: "Lucida Console", Courier, monospace;
-            }
+        /* Estilo da trilha da barra de rolagem (a parte de fundo) */
+        .container-right::-webkit-scrollbar-track {
+            background-color: #0F1115; /* Cor do fundo da barra de rolagem */
+            border-radius: 5px; /* Raio da trilha da barra de rolagem */
+        }
+        #zoom-controls {
+            display: inline-block;
+            margin: 10px;
+        }
 
-            /* Estilo personalizado para o select */
-            .custom-select {
-                position: relative;
-                width: 80%;
-                overflow: hidden;
-            }
+        .zoom-button {
+            background-color: #0F1115;
+            color: #fff;
+            font-family: "Lucida Console", Courier, monospace;
+            font-size: 13px;
+            padding: 5px 10px;
+            border: 2px solid #fff;
+            border-radius: 7px;
+            cursor: pointer;
+            position: relative;
+            top: -17%;
+            left: 1%;
+        }
 
-            .custom-select select {
-                width: 100%;
-                border: none;
-                outline: none;
-                background-color: transparent;
-                color: #ffffff;
-                cursor: pointer;
-                padding: 10px;
-                padding-right: 30px; /* Espaço para a seta personalizada */
-            }
-
-            .botao-adicionar {
-                background: radial-gradient(50% 50% at 50% 50%, #2DC6C8 0%, #2DFBA4 100%); /* Cor de fundo em RGB */
-                color: #fff; /* Cor do texto */
-                border: none;
-                padding: 5px 10px;
-                border-radius: 3px;
-                cursor: pointer;
-                margin-top: 10px;
-                font-family: "Lucida Console", Courier, monospace; /* Tipo de fonte desejada */
-                transition: background 6s; /* Transição mais suave */
-            }
-
-            .botao-adicionar:hover {
-                background: linear-gradient(to bottom, #2DC6C8, #2DFBA4); /* Gradiente RGB ao passar o mouse */
-            }
-
-            .botao-remover {
-                background: linear-gradient(180deg, #FF5862 0%, #2E5692 100%); /* Cor de fundo em RGB */
-                color: #fff; /* Cor do texto */
-                border: none;
-                padding: 5px 10px;
-                border-radius: 3px;
-                cursor: pointer;
-                margin-top: 10px;
-                font-family: "Lucida Console", Courier, monospace; /* Tipo de fonte desejada */
-                transition: background 6s; /* Transição mais suave */
-            }
-
-            .botao-remover:hover {
-                background: linear-gradient(to bottom, #FF5862, #2E5692); /* Gradiente RGB ao passar o mouse */
-            }
-
-            input[type="submit"] {
-                background: radial-gradient(80% 80% at 80% 80%, #2DC6C8 0%, #2E5692 100%); /* Cor de fundo em RGB */
-                color: #fff; /* Cor do texto */
-                border: none;
-                padding: 10px 20px;
-                border-radius: 10px;
-                cursor: pointer;
-                font-family: "Lucida Console", Courier, monospace; /* Tipo de fonte desejada */
-                transition: background 5s; /* Transição mais suave */
-                width: 200px;
-                height: 40px;
-                margin: 0 auto; /* Centraliza horizontalmente */
-                display: block; /* Para que a margem funcione */
-            }
-
-            input[type="submit"]:hover {
-                background: linear-gradient(to bottom, #2DC6C8, #2E5692); /* Gradiente RGB ao passar o mouse */
-            }
-
-            /* Estilos do segundo container vazio */
-            .container-right {
-                height: 500px;
-                width: 780px;
-                margin-right: 1px; /* Margem à direita */
-                background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%);
-                border-radius: 10px;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-                display: inline-block;
-                overflow-y: auto;
-                padding-top: 40px;
-                padding-right: 20px; /* Padding à direita para manter a mesma largura do texto */
-                padding-bottom: 25px;
-                max-height: 500px;
-                max-width: 800px;
-                position: fixed; /* Fixa o contêiner à direita */
-                top: 50px; /* Ajuste a posição vertical conforme necessário */
-                right: 20px; /* Ajuste a posição horizontal conforme necessário */
-            }
-
-            /* Estilos da barra de rolagem */
-            .container-right::-webkit-scrollbar {
-                    width: 15px; /* Largura da barra de rolagem */
-                }
-
-                /* Estilo do polegar da barra de rolagem (a parte que você move) */
-                .container-right::-webkit-scrollbar-thumb {
-                    background-color: #31C4B9; /* Cor do polegar da barra de rolagem */
-                    border-radius: 5px; /* Raio do polegar da barra de rolagem */
-                }
-
-                /* Estilo da trilha da barra de rolagem (a parte de fundo) */
-                .container-right::-webkit-scrollbar-track {
-                    background-color: #0F1115; /* Cor do fundo da barra de rolagem */
-                    border-radius: 5px; /* Raio da trilha da barra de rolagem */
-                }
-
-            </style>
-</head>
-<body>
+        </style>
+    </style>
+    </head>
     <div class="topbar"></div>
     <div class="blue-line"></div>
     <h7 style="font-size: 15px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #0C1312; position: fixed; top: 0; left: 50%; transform: translateX(-50%);margin-top: 8px;">
     Copyright © 2023 <strong>seulink.link</strong> – Todos os direitos reservados.</h7>
     <h8>Desenvolvido por <strong>Leoj</strong> <a href="https://github.com/joeeloliveira" target="_blank"><i class="fab fa-github"></i></a>.</h8>
+
+    <img src="logozao.png" alt="Seulink2" style="width: 710px; height: 580px; margin-top: 13%;">
+
+   
+    <div class="container-right">
+    <div class="content-wrapper">
+        </div>
+        <br>
+        <h7 style="color: #EDF0F3; position: relative;
+            top: -17%;
+            left: 1%;
+            font-size: 15px;
+            ">🔎 Zoom ↪ </h7>
+                <button class="zoom-button" id="zoom-in">➕</button>
+                <button class="zoom-button" id="zoom-out">➖</button>
+                <button class="zoom-button" id="zoom-reset">Reset </button>
+        <img src="logooo1.png" alt="Seulink" style="width: 250px; height: 150px; margin-left: 39%; margin-top: -5%;">
+        
+        <center>
+        <a href="" target="_blank" style="color: #7F93DC; font-size: 18px; animation: mudarCor 5s infinite, mudarCorBorda 5s infinite; border: 2px dashed; border-radius: 10px; padding: 5px;"><strong> 💾 CLIQUE AQUI</strong>, SEUS LINKS GERADOS ↩</a></p></center><br>
+
+        
         <style>
+            @keyframes changeColor {
+                    0% { color: #158FB1; } /* Cor inicial */
+                    25% { color: #32A7C3; } /* Cor intermediária */
+                    50% { color: #31C4B9; } /* Cor intermediária */
+                    75% { color: #32A7C3 } /* Cor intermediária */
+                    100% { color: #158FB1; } /* Cor final, igual à inicial */
+                }
+
+                
+                #color-changing-text {
+                    animation: changeColor 5s linear infinite; /* 5 segundos de duração */
+                }
+
                 /* Estilos da barra de rolagem */
                 .container::-webkit-scrollbar {
                     width: 15px; /* Largura da barra de rolagem */
@@ -270,117 +275,56 @@
 
                 .container {
                     height: 500px;
-                    width: 780px;
+                    width: 750px;
                     margin-left: 20px;
                     margin-top: 50px;
-                    background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%);
+                    background-color: #0F1115;
                     border-radius: 10px;
                     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
                     display: inline-block;
                     overflow-y: auto;
-                    padding-top: 20px;
+                    padding-top: 40px;
                     padding-left: 20px;
                     padding-bottom: 25px;
                     max-height: 500px;
                     max-width: 800px;
                 }
-                @keyframes mudarCorBorda {
-                    0% {
-                    border-color: #7F93DC;
-                    }
-                    25% {
-                    border-color: #FF0000; /* Cor da borda no quarto do tempo da animação */
-                    }
-                    50% {
-                    border-color: #00FF00; /* Cor da borda na metade do tempo da animação */
-                    }
-                    75% {
-                    border-color: #FFFF00; /* Cor da borda em três quartos do tempo da animação */
-                    }
-                    100% {
-                    border-color: #7F93DC;
-                    }
-                }
+
         </style>
-                <div class="container">
+        <script>
+        const zoomInButton = document.getElementById('zoom-in');
+        const zoomOutButton = document.getElementById('zoom-out');
+        const zoomResetButton = document.getElementById('zoom-reset');
 
-        <img src="logooo1.png" alt="Seulink">
-        <h4>⇵ Escolha o website: </h4>
-        <form action="" method="post">
-            <div id="campos">
-                <div>
-                    <select name="escolha[]" style="font-size: 18px;">
-                        <option value="">⨠ Escolha o website desejado</option>
-                        <option value="" style="color: white; background: #56E1DB;">⨠ 🛍️ E-COMMERCE</option>
-                        <option value="amazon">AMAZON</option>
-                        <option value="kabum">KABUM</option>
-                        <option value="magazine">MAGAZINE LUIZA</option>
-                        <option value="aliexpress">ALIEXPRESS</option>
-                    </select>
-                    <h6><strong>Copie e cole</strong> o url abaixo ↴ </h6>
-                    <input type="url" name="link[]">
-                    <button type="button" class="botao-remover" onclick="removerCampo(this)">- Remover</button>
-                </div>
-            </div>
-            <button type="button" class="botao-adicionar" onclick="adicionarCampo()">+ Adicionar</button>
-            <br>
-            <input type="submit" style="width: 200px; height: 40px;" value="Gerar link" name="gerar_link">
-            <br>
-        </form>
-    </div>
+        zoomInButton.addEventListener('click', () => {
+            zoom(1.2); // Increase zoom level
+        });
 
-    <div class="bottom-bar">
+        zoomOutButton.addEventListener('click', () => {
+            zoom(0.8); // Decrease zoom level
+        });
+
+        zoomResetButton.addEventListener('click', () => {
+            resetZoom(); // Reset zoom to 100%
+        });
+
+        function zoom(level) {
+            const currentZoom = parseFloat(document.body.style.zoom) || 1;
+            const newZoom = currentZoom * level;
+            document.body.style.zoom = newZoom;
+        }
+
+        function resetZoom() {
+            document.body.style.zoom = 1;
+        }
+       
+    </script>
+        <div class="bottom-bar">
         <p style="margin-left: 10px; margin-top: 25px; font-size: 20px; color: white;">🌐Seulink<strong>.link</strong></p>
-        <p style="margin-left: 35px; margin-top: -20px; font-size: 10px; color: #E2E7E9;">encurte seus links com facilidade, use <a href="https://seulink.link/" target="_blank">seulink.link</p></a>
+        <p style="margin-left: 35px; margin-top: -20px; font-size: 10px; color: #E2E7E9;">encurte seus links com facilidade, use <a href="https://seulink.link/" target="_blank">seulink.link :)</p>
         <div class="white-line"></div>
     </div>
-
-    <!-- SCRIPT DAS TABELAS !-->
-    <script>
-            let contadorCampos = 1;
-
-            function adicionarCampo() {
-                contadorCampos++;
-                var campos = document.getElementById("campos");
-                var campoClone = campos.firstElementChild.cloneNode(true);
-                var select = campoClone.querySelector('select');
-                var linkInput = campoClone.querySelector('input[type="url"]');
-                select.name = "escolha[]";
-                linkInput.name = "link[]";
-                campoClone.querySelector('button').addEventListener('click', function() {
-                    removerCampo(this);
-                });
-                campos.appendChild(campoClone);
-            }
-
-            function removerCampo(botao) {
-                var campo = botao.parentNode;
-                campo.parentNode.removeChild(campo);
-            }
-
-            function atualizarConteudo() {
-                var escolhas = document.getElementsByName("escolha[]");
-                var links = document.getElementsByName("link[]");
-
-                var response1 = "";
-
-                for (var i = 0; i < escolhas.length; i++) {
-                    var escolha = escolhas[i].value;
-                    var link = links[i].value;
-
-                    // Validação do link aqui (se necessário)
-
-                    // Código para buscar informações do produto aqui
-
-                    // Montar a resposta com as informações do produto
-                    var produtoInfo = "Escolha: " + escolha + "<br>Link: " + link + "<br><br>";
-
-                    response1 += produtoInfo;
-                }
-
-                document.getElementById("container-right").innerHTML = response1;
-            }
-            </script>
-    <!-- SCRIPT DAS TABELAS !-->
-</body>
+    </a>
+    ' . $response1 . '
+<br><br></body>
 </html>

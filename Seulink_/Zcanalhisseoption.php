@@ -2275,12 +2275,12 @@ $htmlContent = '<!DOCTYPE html>
     <style>
     /* Reset de margens e preenchimentos padrão */
     body, html {
-        background-color: #0A0C0F;
-font-family: "Lucida Console", Courier, monospace;
-margin: 0;
-padding: 0;
-height: 100vh;
-    }
+        background: linear-gradient(180deg, #0F1115 0%, #17191C 100%);
+        font-family: "Lucida Console", Courier, monospace;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+            }
 
     /* Estilos da barra superior */
     .topbar {
@@ -2293,7 +2293,7 @@ height: 100vh;
     }
 
     .bottom-bar {
-        background-color: #0F1115; /* Cor de fundo da barra */
+        background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%); /* Cor de fundo da barra */
         width: 100%; /* Largura total da página */
         height: 70px; /* Altura da barra */
         position: fixed; /* Fixa a barra na parte inferior da página */
@@ -2418,63 +2418,12 @@ height: 100vh;
         padding-right: 30px; /* Espaço para a seta personalizada */
     }
 
-    .botao-adicionar {
-        background: #1D9BB9; /* Cor de fundo em RGB */
-        color: #fff; /* Cor do texto */
-        border: none;
-        padding: 5px 10px;
-        border-radius: 3px;
-        cursor: pointer;
-        margin-top: 10px;
-        font-family: "Lucida Console", Courier, monospace; /* Tipo de fonte desejada */
-        transition: background 6s; /* Transição mais suave */
-    }
-
-    .botao-adicionar:hover {
-        background: linear-gradient(to bottom, #1D9BB9, #32A7C3); /* Gradiente RGB ao passar o mouse */
-    }
-
-    .botao-remover {
-        background: #F07580; /* Cor de fundo em RGB */
-        color: #fff; /* Cor do texto */
-        border: none;
-        padding: 5px 10px;
-        border-radius: 3px;
-        cursor: pointer;
-        margin-top: 10px;
-        font-family: "Lucida Console", Courier, monospace; /* Tipo de fonte desejada */
-        transition: background 6s; /* Transição mais suave */
-    }
-
-    .botao-remover:hover {
-        background: linear-gradient(to bottom, #F07580, #E95553); /* Gradiente RGB ao passar o mouse */
-    }
-
-    input[type="submit"] {
-        background: #1D9BB9; /* Cor de fundo em RGB */
-        color: #fff; /* Cor do texto */
-        border: none;
-        padding: 10px 20px;
-        border-radius: 10px;
-        cursor: pointer;
-        font-family: "Lucida Console", Courier, monospace; /* Tipo de fonte desejada */
-        transition: background 5s; /* Transição mais suave */
-        width: 200px;
-        height: 40px;
-        margin: 0 auto; /* Centraliza horizontalmente */
-        display: block; /* Para que a margem funcione */
-    }
-
-    input[type="submit"]:hover {
-        background: linear-gradient(to bottom, #1D9BB9, #32A7C3); /* Gradiente RGB ao passar o mouse */
-    }
-
     /* Estilos do segundo container vazio */
     .container-right {
-        height: 500px;
-        width: 780px;
+        height: 600px;
+        width: 880px;
         margin-right: 1px; /* Margem à direita */
-        background-color: #0F1115;
+        background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%);
         border-radius: 10px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         display: inline-block;
@@ -2482,8 +2431,8 @@ height: 100vh;
         padding-top: 40px;
         padding-right: 20px; /* Padding à direita para manter a mesma largura do texto */
         padding-bottom: 25px;
-        max-height: 550px;
-        max-width: 780px;
+        max-height: 650px;
+        max-width: 880px;
         position: fixed; /* Fixa o contêiner à direita */
         top: 50px; /* Ajuste a posição vertical conforme necessário */
         right: 20px;
@@ -2508,6 +2457,26 @@ height: 100vh;
             background-color: #0F1115; /* Cor do fundo da barra de rolagem */
             border-radius: 5px; /* Raio da trilha da barra de rolagem */
         }
+        #zoom-controls {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .zoom-button {
+            background-color: #0F1115;
+            color: #fff;
+            font-family: "Lucida Console", Courier, monospace;
+            font-size: 13px;
+            padding: 5px 10px;
+            border: 2px solid #fff;
+            border-radius: 7px;
+            cursor: pointer;
+            position: relative;
+            top: -17%;
+            left: 1%;
+        }
+
+        </style>
     </style>
     </head>
     <div class="topbar"></div>
@@ -2516,17 +2485,28 @@ height: 100vh;
     Copyright © 2023 <strong>seulink.link</strong> – Todos os direitos reservados.</h7>
     <h8>Desenvolvido por <strong>Leoj</strong> <a href="https://github.com/joeeloliveira" target="_blank"><i class="fab fa-github"></i></a>.</h8>
 
+    <img src="logozao.png" alt="Seulink2" style="width: 710px; height: 580px; margin-top: 13%;">
 
    
     <div class="container-right">
     <div class="content-wrapper">
         </div>
-        <img src="logooo1.png" alt="Seulink" style="width: 250px; height: 150px; margin-top: -50px;">
-        <p id="color-changing-text" style="font-size: 25px; text-align: center; color: white; margin-top: 10px;">SEUS <strong>LINKS</strong> GERADOS ↷ </p>
+        <br><br>
+        <h7 style="color: #EDF0F3; position: relative;
+            top: -17%;
+            left: 1%;
+            font-size: 15px;
+            ">🔎 Zoom ↪ </h7>
+                <button class="zoom-button" id="zoom-in">➕</button>
+                <button class="zoom-button" id="zoom-out">➖</button>
+                <button class="zoom-button" id="zoom-reset">Reset </button>
+        <img src="logooo1.png" alt="Seulink" style="width: 250px; height: 150px; margin-left: 71%; margin-top: -10%;">
+        
+        <center>
+        <a href="" target="_blank" style="color: #7F93DC; font-size: 18px; animation: mudarCor 5s infinite, mudarCorBorda 5s infinite; border: 2px dashed; border-radius: 10px; padding: 5px;"><strong> 💾 CLIQUE AQUI</strong>, SEUS LINKS GERADOS ↩</a></p></center>
 
         
         <style>
-
             @keyframes changeColor {
                     0% { color: #158FB1; } /* Cor inicial */
                     25% { color: #32A7C3; } /* Cor intermediária */
@@ -2575,11 +2555,40 @@ height: 100vh;
                 }
 
         </style>
+        <script>
+        const zoomInButton = document.getElementById("zoom-in");
+        const zoomOutButton = document.getElementById("zoom-out");
+        const zoomResetButton = document.getElementById("zoom-reset");
+
+        zoomInButton.addEventListener("click", () => {
+            zoom(1.2); // Increase zoom level
+        });
+
+        zoomOutButton.addEventListener("click", () => {
+            zoom(0.8); // Decrease zoom level
+        });
+
+        zoomResetButton.addEventListener("click", () => {
+            resetZoom(); // Reset zoom to 100%
+        });
+
+        function zoom(level) {
+            const currentZoom = parseFloat(document.body.style.zoom) || 1;
+            const newZoom = currentZoom * level;
+            document.body.style.zoom = newZoom;
+        }
+
+        function resetZoom() {
+            document.body.style.zoom = 1;
+        }
+       
+    </script>
         <div class="bottom-bar">
         <p style="margin-left: 10px; margin-top: 25px; font-size: 20px; color: white;">🌐Seulink<strong>.link</strong></p>
         <p style="margin-left: 35px; margin-top: -20px; font-size: 10px; color: #E2E7E9;">encurte seus links com facilidade, use <a href="https://seulink.link/" target="_blank">seulink.link :)</p>
         <div class="white-line"></div>
     </div>
+    </a>
     ' . $response1 . '
 <br><br></body>
 </html>';
