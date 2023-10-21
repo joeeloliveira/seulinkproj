@@ -227,7 +227,7 @@
     <div class="container-right">
     <div class="content-wrapper">
         </div>
-        <br>
+        <br><br><br>
         <h7 style="color: #EDF0F3; position: relative;
             top: -17%;
             left: 1%;
@@ -236,10 +236,8 @@
                 <button class="zoom-button" id="zoom-in">➕</button>
                 <button class="zoom-button" id="zoom-out">➖</button>
                 <button class="zoom-button" id="zoom-reset">Reset </button>
-        <img src="logooo1.png" alt="Seulink" style="width: 250px; height: 150px; margin-left: 39%; margin-top: -5%;">
-        
         <center>
-        <a href="" target="_blank" style="color: #7F93DC; font-size: 18px; animation: mudarCor 5s infinite, mudarCorBorda 5s infinite; border: 2px dashed; border-radius: 10px; padding: 5px;"><strong> 💾 CLIQUE AQUI</strong>, SEUS LINKS GERADOS ↩</a></p></center><br>
+        <a href="" target="_blank" style="color: #7F93DC; font-size: 20px; animation: mudarCor 5s infinite, mudarCorBorda 5s infinite; border: 2px dashed; border-radius: 10px; padding: 5px;"><strong> 💾 CLIQUE AQUI</strong>, SEUS LINKS GERADOS ↩</a></p></center>
 
         
         <style>

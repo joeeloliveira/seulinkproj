@@ -2260,7 +2260,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
 
 // Código para gerar um nome de arquivo aleatório
 $randomFileName = uniqid() . '.html';
-
+$espaco = "  ";
 // Conteúdo HTML completo para o arquivo gerado
 $htmlContent = '<!DOCTYPE html>
 <html lang="pt-BR">
@@ -2472,8 +2472,8 @@ $htmlContent = '<!DOCTYPE html>
             border-radius: 7px;
             cursor: pointer;
             position: relative;
-            top: -17%;
-            left: 1%;
+            top: -5.5%;
+            left: 12%;
         }
 
         </style>
@@ -2491,20 +2491,14 @@ $htmlContent = '<!DOCTYPE html>
     <div class="container-right">
     <div class="content-wrapper">
         </div>
-        <br><br>
-        <h7 style="color: #EDF0F3; position: relative;
-            top: -17%;
-            left: 1%;
-            font-size: 15px;
-            ">🔎 Zoom ↪ </h7>
+        
                 <button class="zoom-button" id="zoom-in">➕</button>
                 <button class="zoom-button" id="zoom-out">➖</button>
-                <button class="zoom-button" id="zoom-reset">Reset </button>
-        <img src="logooo1.png" alt="Seulink" style="width: 260px; height: 160px; margin-left: 71%; margin-top: -12%;">
-        
+                <button class="zoom-button" id="zoom-reset">Reset </button><br>
         <center>
-        <a href="" target="_blank" style="color: #7F93DC; font-size: 18px; animation: mudarCor 5s infinite, mudarCorBorda 5s infinite; border: 2px dashed; border-radius: 10px; padding: 5px;"><strong> 💾 CLIQUE AQUI</strong>, SEUS LINKS GERADOS ↩</a></p></center>
+        <a href="" target="_blank" style="color: #7F93DC; font-size: 21px; animation: mudarCor 5s infinite, mudarCorBorda 5s infinite; border: 2px dashed; border-radius: 10px; padding: 5px;"><strong> 💾 CLIQUE AQUI</strong>, SEUS LINKS GERADOS ↩</a></p></center>
 
+        <h7 style="color: #EDF0F3; position: relative; top: -20%; left: 1%; font-size: 15px;">🔎 Zoom ↪ </h7>
         
         <style>
             @keyframes changeColor {
@@ -2554,6 +2548,24 @@ $htmlContent = '<!DOCTYPE html>
                     max-width: 800px;
                 }
 
+                @keyframes mudarCorBorda {
+                    0% {
+                    border-color: #7F93DC;
+                    }
+                    25% {
+                    border-color: #FF0000; /* Cor da borda no quarto do tempo da animação */
+                    }
+                    50% {
+                    border-color: #00FF00; /* Cor da borda na metade do tempo da animação */
+                    }
+                    75% {
+                    border-color: #FFFF00; /* Cor da borda em três quartos do tempo da animação */
+                    }
+                    100% {
+                    border-color: #7F93DC;
+                    }
+                }
+
         </style>
         <script>
         const zoomInButton = document.getElementById("zoom-in");
@@ -2589,7 +2601,7 @@ $htmlContent = '<!DOCTYPE html>
         <div class="white-line"></div>
     </div>
     </a>
-    ' . $response1 . '
+    '. '<h5 style="margin-left: 2%;">' . $response1 . '<h5>' .'
 <br><br></body>
 </html>';
 
@@ -2637,7 +2649,7 @@ if(isset($_POST["gerar_link"])) {
     </script>
 <?php
     error_reporting(0);
-    echo $response1; // Exibe todas as informações coletadas
+    echo '<h5 style="margin-left: 2%;">' . $response1 . '</h5>'; // Exibe todas as informações coletadas
     $consultas = fopen("linksConsultados.txt", "a");
     fwrite($consultas, $response1);
     fclose($consultas);
