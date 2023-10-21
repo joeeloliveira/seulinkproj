@@ -2496,9 +2496,12 @@ $htmlContent = '<!DOCTYPE html>
                 <button class="zoom-button" id="zoom-out">➖</button>
                 <button class="zoom-button" id="zoom-reset">Reset </button><br>
         <center>
-        <a href="" target="_blank" style="color: #7F93DC; font-size: 21px; animation: mudarCor 5s infinite, mudarCorBorda 5s infinite; border: 2px dashed; border-radius: 10px; padding: 5px;"><strong> 💾 CLIQUE AQUI</strong>, SEUS LINKS GERADOS ↩</a></p></center>
+        <a href="" target="_blank" style="color: #7F93DC; font-size: 21px; animation: mudarCor 5s infinite, mudarCorBorda 5s infinite; border: 2px dashed; border-radius: 10px; padding: 5px;"><strong> 💾 CLIQUE AQUI</strong>, PARA COPIAR SEU LINK ↩</a></p></center>
 
-        <h7 style="color: #EDF0F3; position: relative; top: -20%; left: 1%; font-size: 15px;">🔎 Zoom ↪ </h7>
+        <h7 style="color: #EDF0F3; position: relative; top: -21%; left: 1%; font-size: 15px;">🔎 Zoom ↪ </h7>
+        
+        <a href="" target="_blank"><button style="position: relative; top: -20%; left: 77.5%; font-size: 15px; border-radius: 7px; padding: 5px 10px;">↩</button></a>
+        <h7 style="color: #EDF0F3; position: relative; top: -20%; left: 77.5%; font-size: 15px;"> Voltar </h7>
         
         <style>
             @keyframes changeColor {
