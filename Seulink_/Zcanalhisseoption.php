@@ -2495,14 +2495,17 @@ $htmlContent = '<!DOCTYPE html>
                 <button class="zoom-button" id="zoom-in">➕</button>
                 <button class="zoom-button" id="zoom-out">➖</button>
                 <button class="zoom-button" id="zoom-reset">Reset </button><br>
-        <center>
-        <a href="" target="_blank" style="color: #7F93DC; font-size: 21px; animation: mudarCor 5s infinite, mudarCorBorda 5s infinite; border: 2px dashed; border-radius: 10px; padding: 5px;"><strong> 💾 CLIQUE AQUI</strong>, PARA COPIAR SEU LINK ↩</a></p></center>
+        
+        <h7 style="color: #EDF0F3; position: relative; top: -11.1%; left: 1.1%; font-size: 15px;">🔎 Zoom ↪ </h7>
 
-        <h7 style="color: #EDF0F3; position: relative; top: -21%; left: 1%; font-size: 15px;">🔎 Zoom ↪ </h7>
-        
-        <a href="" target="_blank"><button style="position: relative; top: -20%; left: 77.5%; font-size: 15px; border-radius: 7px; padding: 5px 10px;">↩</button></a>
-        <h7 style="color: #EDF0F3; position: relative; top: -20%; left: 77.5%; font-size: 15px;"> Voltar </h7>
-        
+        <h7 style="color: #EDF0F3; position: relative; top: 5%; left: 18.2%; font-size: 15px;">✔️Seulink : </h7>
+        <input type="text" id="url" size="50" readonly style="font-size: 16px; color: #576366; margin-left: 42%; border-radius: 10px;">
+    <script>
+        // Obtém a URL atual e a exibe no campo de entrada de texto
+        document.getElementById("url").value = window.location.href;
+    </script>
+
+
         <style>
             @keyframes changeColor {
                     0% { color: #158FB1; } /* Cor inicial */
@@ -2625,31 +2628,6 @@ if(isset($_POST["gerar_link"])) {
     echo $var1 . $randomFileName . $var2;
 }
 ?>
-<script>
-        function copiarConteudo() {
-            // Seleciona o conteúdo da variável $randomFileName
-            var conteudo = "<?php echo $randomFileName; ?>";
-            
-            // Cria um elemento de entrada de texto para copiar o conteúdo
-            var input = document.createElement("input");
-            input.setAttribute("value", conteudo);
-            
-            // Adiciona o elemento de entrada de texto à página
-            document.body.appendChild(input);
-            
-            // Seleciona o texto no elemento de entrada de texto
-            input.select();
-            
-            // Copia o texto para a área de transferência
-            document.execCommand("copy");
-            
-            // Remove o elemento de entrada de texto da página
-            document.body.removeChild(input);
-            
-            // Exibe uma mensagem de confirmação
-            alert("Conteúdo copiado para a área de transferência!");
-        }
-    </script>
 <?php
     error_reporting(0);
     echo '<h5 style="margin-left: 2%;">' . $response1 . '</h5>'; // Exibe todas as informações coletadas
