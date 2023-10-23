@@ -842,87 +842,119 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
             $titulo = getStr($resp, '"subject":"', '",');
             $titulo_formatado = str_replace('"subject":"', '', $titulo);
             $titulo_formatado = str_replace('",', '', $titulo_formatado);
+
+
+            //--puxando desconto produto
+
+            $puxardesconto90 = getStr($resp, 'discount\":\"90\",\"discountTips\":\"', '\"');
+            $puxardesconto_90 = str_replace('discount\":\"90\",\"discountTips\":\"', '', $puxardesconto90);
+            $puxardesconto_90 = str_replace('\"', '', $puxardesconto_90);
+
+            $puxardesconto80 = getStr($resp, 'discount\":\"80\",\"discountTips\":\"', '\"');
+            $puxardesconto_80 = str_replace('discount\":\"80\",\"discountTips\":\"', '', $puxardesconto80);
+            $puxardesconto_80 = str_replace('\"', '', $puxardesconto_80);
+
+            $puxardesconto70 = getStr($resp, 'discount\":\"70\",\"discountTips\":\"', '\"');
+            $puxardesconto_70 = str_replace('discount\":\"70\",\"discountTips\":\"', '', $puxardesconto70);
+            $puxardesconto_70 = str_replace('\"', '', $puxardesconto_70);
+
+            $puxardesconto60 = getStr($resp, 'discount\":\"60\",\"discountTips\":\"', '\"');
+            $puxardesconto_60 = str_replace('discount\":\"60\",\"discountTips\":\"', '', $puxardesconto60);
+            $puxardesconto_60 = str_replace('\"', '', $puxardesconto_60);
+
+            $puxardesconto50 = getStr($resp, 'discount\":\"50\",\"discountTips\":\"', '\"');
+            $puxardesconto_50 = str_replace('discount\":\"50\",\"discountTips\":\"', '', $puxardesconto50);
+            $puxardesconto_50 = str_replace('\"', '', $puxardesconto_50);
+
+            $puxardesconto40 = getStr($resp, 'discount\":\"40\",\"discountTips\":\"', '\"');
+            $puxardesconto_40 = str_replace('discount\":\"40\",\"discountTips\":\"', '', $puxardesconto40);
+            $puxardesconto_40 = str_replace('\"', '', $puxardesconto_40);
+
+            $puxardesconto30 = getStr($resp, 'discount\":\"30\",\"discountTips\":\"', '\"');
+            $puxardesconto_30 = str_replace('discount\":\"30\",\"discountTips\":\"', '', $puxardesconto30);
+            $puxardesconto_30 = str_replace('\"', '', $puxardesconto_30);
+
+            $puxardesconto20 = getStr($resp, 'discount\":\"20\",\"discountTips\":\"', '\"');
+            $puxardesconto_20 = str_replace('discount\":\"20\",\"discountTips\":\"', '', $puxardesconto20);
+            $puxardesconto_20 = str_replace('\"', '', $puxardesconto_20);
+
+            $puxardesconto10 = getStr($resp, 'discount\":\"10\",\"discountTips\":\"', '\"');
+            $puxardesconto_10 = str_replace('discount\":\"10\",\"discountTips\":\"', '', $puxardesconto10);
+            $puxardesconto_10 = str_replace('\"', '', $puxardesconto_10);
+
+
+            //--puxando inventory code
+
+            $inventory90 = getStr($resp, 'discount\":\"90\",\"discountTips\":\"'.$puxardesconto_90.'\",\"hideOriPrice\":false,\"inventory\":', ',\"');
+            $inventory_90 = str_replace('discount\":\"90\",\"discountTips\":\"'.$puxardesconto_90.'\",\"hideOriPrice\":false,\"inventory\":', '', $inventory90);
+            $inventory_90 = str_replace(',\"', '', $inventory_90);
+
+            $inventory80 = getStr($resp, 'discount\":\"80\",\"discountTips\":\"'.$puxardesconto_80.'\",\"hideOriPrice\":false,\"inventory\":', ',\"');
+            $inventory_80 = str_replace('discount\":\"80\",\"discountTips\":\"'.$puxardesconto_80.'\",\"hideOriPrice\":false,\"inventory\":', '', $inventory80);
+            $inventory_80 = str_replace(',\"', '', $inventory_80);
+
+            $inventory70 = getStr($resp, 'discount\":\"70\",\"discountTips\":\"'.$puxardesconto_70.'\",\"hideOriPrice\":false,\"inventory\":', ',\"');
+            $inventory_70 = str_replace('discount\":\"70\",\"discountTips\":\"'.$puxardesconto_70.'\",\"hideOriPrice\":false,\"inventory\":', '', $inventory70);
+            $inventory_70 = str_replace(',\"', '', $inventory_70);
+
+            $inventory60 = getStr($resp, 'discount\":\"60\",\"discountTips\":\"'.$puxardesconto_60.'\",\"hideOriPrice\":false,\"inventory\":', ',\"');
+            $inventory_60 = str_replace('discount\":\"60\",\"discountTips\":\"'.$puxardesconto_60.'\",\"hideOriPrice\":false,\"inventory\":', '', $inventory60);
+            $inventory_60 = str_replace(',\"', '', $inventory_60);
+
+            $inventory50 = getStr($resp, 'discount\":\"50\",\"discountTips\":\"'.$puxardesconto_50.'\",\"hideOriPrice\":false,\"inventory\":', ',\"');
+            $inventory_50 = str_replace('discount\":\"50\",\"discountTips\":\"'.$puxardesconto_50.'\",\"hideOriPrice\":false,\"inventory\":', '', $inventory50);
+            $inventory_50 = str_replace(',\"', '', $inventory_50);
+
+            $inventory40 = getStr($resp, 'discount\":\"40\",\"discountTips\":\"'.$puxardesconto_40.'\",\"hideOriPrice\":false,\"inventory\":', ',\"');
+            $inventory_40 = str_replace('discount\":\"40\",\"discountTips\":\"'.$puxardesconto_40.'\",\"hideOriPrice\":false,\"inventory\":', '', $inventory40);
+            $inventory_40 = str_replace(',\"', '', $inventory_40);
+
+            $inventory30 = getStr($resp, 'discount\":\"30\",\"discountTips\":\"'.$puxardesconto_30.'\",\"hideOriPrice\":false,\"inventory\":', ',\"');
+            $inventory_30 = str_replace('discount\":\"30\",\"discountTips\":\"'.$puxardesconto_30.'\",\"hideOriPrice\":false,\"inventory\":', '', $inventory30);
+            $inventory_30 = str_replace(',\"', '', $inventory_30);
+
+            $inventory20 = getStr($resp, 'discount\":\"20\",\"discountTips\":\"'.$puxardesconto_20.'\",\"hideOriPrice\":false,\"inventory\":', ',\"');
+            $inventory_20 = str_replace('discount\":\"20\",\"discountTips\":\"'.$puxardesconto_20.'\",\"hideOriPrice\":false,\"inventory\":', '', $inventory20);
+            $inventory_20 = str_replace(',\"', '', $inventory_20);
+
+            $inventory10 = getStr($resp, 'discount\":\"10\",\"discountTips\":\"'.$puxardesconto_10.'\",\"hideOriPrice\":false,\"inventory\":', ',\"');
+            $inventory_10 = str_replace('discount\":\"10\",\"discountTips\":\"'.$puxardesconto_10.'\",\"hideOriPrice\":false,\"inventory\":', '', $inventory10);
+            $inventory_10 = str_replace(',\"', '', $inventory_10);
+
             
+            //--fim do puxamento dos preço errado
 
-            $coisa = getStr($resp, 'skuPropIds\":\"691\",\"skuVal\":{\"availQuantity\":', ',');
-            $coisa_ = str_replace('skuPropIds\":\"691\",\"skuVal\":{\"availQuantity\":', '', $coisa);
-            $coisa_ = str_replace(',', '', $coisa_);
-
-
-            //--puxando produto 90%
-
-            $coisa90 = getStr($resp, 'discount\":\"90\",\"discountTips\":\"', '\"');
-            $coisa_90 = str_replace('discount\":\"90\",\"discountTips\":\"', '', $coisa90);
-            $coisa_90 = str_replace('\"', '', $coisa_90);
-
-            $coisa900 = getStr($resp, 'discount\":\"90\",\"discountTips\":\"'.$coisa_90.'\",\"hideOriPrice\":false,\"inventory\":', ',\"');
-            $coisa_900 = str_replace('discount\":\"90\",\"discountTips\":\"'.$coisa_90.'\",\"hideOriPrice\":false,\"inventory\":', '', $coisa900);
-            $coisa_900 = str_replace(',\"', '', $coisa_900);
+            $precoDesconto90 = getStr($resp, ''.$puxardesconto_90.'\",\"hideOriPrice\":false,\"inventory\":'.$inventory_90.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
+            $precoDesconto90_ = str_replace(''.$puxardesconto_90.'\",\"hideOriPrice\":false,\"inventory\":'.$inventory_90.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $precoDesconto90);
+            $precoDesconto90_ = str_replace('\"', '', $precoDesconto90_);
 
 
-            //--puxando produto 80%
-
-            $coisa80 = getStr($resp, 'discount\":\"80\",\"discountTips\":\"', '\"');
-            $coisa_80 = str_replace('discount\":\"80\",\"discountTips\":\"', '', $coisa80);
-            $coisa_80 = str_replace('\"', '', $coisa_80);
-
-            $coisa800 = getStr($resp, 'discount\":\"80\",\"discountTips\":\"'.$coisa_80.'\",\"hideOriPrice\":false,\"inventory\":', ',\"');
-            $coisa_800 = str_replace('discount\":\"80\",\"discountTips\":\"'.$coisa_80.'\",\"hideOriPrice\":false,\"inventory\":', '', $coisa800);
-            $coisa_800 = str_replace(',\"', '', $coisa_800);
+            $precoDesconto80 = getStr($resp, ''.$puxardesconto_80.'\",\"hideOriPrice\":false,\"inventory\":'.$inventory_80.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
+            $precoDesconto80_ = str_replace(''.$puxardesconto_80.'\",\"hideOriPrice\":false,\"inventory\":'.$inventory_80.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $precoDesconto80);
+            $precoDesconto80_ = str_replace('\"', '', $precoDesconto80_);
 
 
-            //--puxando produto 70%
-
-            $coisa70 = getStr($resp, 'discount\":\"70\",\"discountTips\":\"', '\"');
-            $coisa_70 = str_replace('discount\":\"70\",\"discountTips\":\"', '', $coisa70);
-            $coisa_70 = str_replace('\"', '', $coisa_70);
-
-            $coisa700 = getStr($resp, 'discount\":\"70\",\"discountTips\":\"'.$coisa_70.'\",\"hideOriPrice\":false,\"inventory\":', ',\"');
-            $coisa_700 = str_replace('discount\":\"70\",\"discountTips\":\"'.$coisa_70.'\",\"hideOriPrice\":false,\"inventory\":', '', $coisa700);
-            $coisa_700 = str_replace(',\"', '', $coisa_700);
+            $precoDesconto70 = getStr($resp, ''.$puxardesconto_70.'\",\"hideOriPrice\":false,\"inventory\":'.$inventory_70.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
+            $precoDesconto70_ = str_replace(''.$puxardesconto_70.'\",\"hideOriPrice\":false,\"inventory\":'.$inventory_70.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $precoDesconto70);
+            $precoDesconto70_ = str_replace('\"', '', $precoDesconto70_);
 
 
-            // PUXAR PREÇO 90%OFF
-            $preco90 = getStr($resp, ''.$coisa_900.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
-            $preco_formatado90 = str_replace(''.$coisa_900.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $preco90);
-            $preco_formatado90 = str_replace('\"', '', $preco_formatado90);
+            $precoDesconto60 = getStr($resp, ''.$puxardesconto_60.'\",\"hideOriPrice\":false,\"inventory\":'.$inventory_60.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
+            $precoDesconto60_ = str_replace(''.$puxardesconto_60.'\",\"hideOriPrice\":false,\"inventory\":'.$inventory_60.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $precoDesconto60);
+            $precoDesconto60_ = str_replace('\"', '', $precoDesconto60_);
 
-            // PUXAR PREÇO 80%OFF
-            $preco80 = getStr($resp, ''.$coisa_800.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
-            $preco_formatado80 = str_replace(''.$coisa_800.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $preco80);
-            $preco_formatado80 = str_replace('\"', '', $preco_formatado80);
 
-            // PUXAR PREÇO 70%OFF
-            $preco70 = getStr($resp, ''.$coisa_70.'\",\"hideOriPrice\":false,\"inventory\":'.$coisa_700.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
-            $preco_formatado70 = str_replace(''.$coisa_70.'\",\"hideOriPrice\":false,\"inventory\":'.$coisa_700.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $preco70);
-            $preco_formatado70 = str_replace('\"', '', $preco_formatado70);
+            $precoDesconto50 = getStr($resp, ''.$puxardesconto_50.'\",\"hideOriPrice\":false,\"inventory\":'.$inventory_50.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
+            $precoDesconto50_ = str_replace(''.$puxardesconto_50.'\",\"hideOriPrice\":false,\"inventory\":'.$inventory_50.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $precoDesconto50);
+            $precoDesconto60_ = str_replace('\"', '', $precoDesconto50_);
+
             
-            // PUXAR PREÇO 60%OFF
-            $preco60 = getStr($resp, ''.$coisa_60.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
-            $preco_formatado60 = str_replace(''.$coisa_60.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $preco60);
-            $preco_formatado60 = str_replace('\"', '', $preco_formatado60);
+            // outra palhaçada
 
-            // PUXAR PREÇO 50%OFF
-            $preco50 = getStr($resp, ''.$coisa_50.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
-            $preco_formatado50 = str_replace(''.$coisa_50.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $preco50);
-            $preco_formatado50 = str_replace('\"', '', $preco_formatado50);
-
-            // PUXAR PREÇO 40%OFF
-            $preco40 = getStr($resp, ''.$coisa_40.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
-            $preco_formatado40 = str_replace(''.$coisa_40.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $preco40);
-            $preco_formatado40 = str_replace('\"', '', $preco_formatado40);
-
-            // PUXAR PREÇO 30%OFF
-            $preco30 = getStr($resp, ''.$coisa_30.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
-            $preco_formatado30 = str_replace(''.$coisa_30.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $preco30);
-            $preco_formatado30 = str_replace('\"', '', $preco_formatado30);
-
-            // fim da palhaçada do aliex
-
-            $preco = getStr($resp, ''.$coisa_.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
-            $preco_formatado = str_replace(''.$coisa_.',\"isActivity\":true,\"optionalWarrantyPrice\":[],\"skuActivityAmount\":{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $preco);
-            $preco_formatado = str_replace('\"', '', $preco_formatado);
-
+            $preco = getStr($resp, '<meta property="og:title" content="', 'R$');
+            $preco_formatado = str_replace('<meta property="og:title" content="', '', $preco);
+            $preco_formatado = str_replace('R$', '', $preco_formatado);
+            $preco_formatado = str_replace('.', ',', $preco_formatado);
 
             $preco2 = getStr($resp, '{\"currency\":\"BRL\",\"formatedAmount\":\"', '\"');
             $preco_formatado_ = str_replace('{\"currency\":\"BRL\",\"formatedAmount\":\"', '', $preco2);
@@ -940,20 +972,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gerar_link"])){
 
             $response1 .= "<br><p>Titulo: <strong>$titulo_formatado</p></strong>";
 
-            if(!empty($preco_formatado90)){
-                $response1 .= "<p>Preço: <strong>$preco_formatado90</p></strong>";
-            }elseif(!empty($preco_formatado80)){
-                $response1 .= "<p>Preço: <strong>$preco_formatado80</p></strong>";
-            }elseif(!empty($preco_formatado70)){
-                $response1 .= "<p>Preço: <strong>$preco_formatado70</p></strong>";
-            }elseif(!empty($preco_formatado)){
-                $response1 .= "<p>Preço: <strong>$preco_formatado</p></strong>";
+            if(!empty($preco_formatado)){
+                $response1 .= "<p>Preço: <strong>R$ $preco_formatado</p></strong>";
+            }elseif(!empty($precoDesconto90_)){
+                $response1 .= "<p>Preço: <strong>$precoDesconto90_</p></strong>";
+            }elseif(!empty($precoDesconto80_)){
+                $response1 .= "<p>Preço: <strong>$precoDesconto80_</p></strong>";
+            }elseif(!empty($precoDesconto70_)){
+                $response1 .= "<p>Preço: <strong>$precoDesconto70_</p></strong>";
+            }elseif(!empty($precoDesconto60_)){
+                $response1 .= "<p>Preço: <strong>$precoDesconto60_</p></strong>";
+            }elseif(!empty($precoDesconto50_)){
+                $response1 .= "<p>Preço: <strong>$precoDesconto50_</p></strong>";
             }elseif(!empty($preco_formatado_)){
                 $response1 .= "<p>Preço: <strong>$preco_formatado_</p></strong>";
             }
             
             $response1 .= ">Link do produto: <a href=\"$linkValidado\" target=\"_blank\">$linkValidado</a><br><hr><br>";
-            echo $coisa_90;
         }
         elseif ($escolha == "banggood")
         {
