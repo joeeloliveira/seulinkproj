@@ -2611,8 +2611,12 @@ $htmlContent = '<!DOCTYPE html>
     <h7 style="font-size: 15px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #0C1312; position: fixed; top: 0; left: 50%; transform: translateX(-50%);margin-top: 8px;">
     Copyright © 2023 <strong>seulink.link</strong> – Todos os direitos reservados.</h7>
     <h8>Desenvolvido por <strong>Leoj</strong> <a href="https://github.com/joeeloliveira" target="_blank"><i class="fab fa-github"></i></a>.</h8>
-
-    <img src="logozao.png" alt="Seulink2" style="width: 710px; height: 550px; margin-top: 13%;">
+    
+    <a href="https://seulink.link" target="_blank">
+    <img src="seulinkis.png" alt="Seulink3" style="width: 420px; height: 360px; margin-top: -2.8%; margin-left: -3%;">
+    </a>
+    <br>
+    <img src="logozao.png" alt="Seulink2" style="width: 710px; height: 550px; margin-top: -10%; margin-left: 10%;">
 
    
     <div class="container-right">
