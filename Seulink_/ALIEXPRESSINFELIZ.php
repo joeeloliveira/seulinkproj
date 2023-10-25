@@ -217,7 +217,7 @@
             /* Estilos do segundo container vazio */
             .container-right {
                 height: 500px;
-                width: 600px;
+                width: 620px;
                 margin-right: 1px; /* Margem à direita */
                 background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%);
                 border-radius: 10px;
@@ -412,6 +412,7 @@
         }
 
         </style>
+        
                 <div class="container">
 
                 <h7 style="color: #EDF0F3; position: relative;
@@ -635,8 +636,22 @@
             <input type="submit" style="width: 200px; height: 40px;" value="Gerar link" name="gerar_link">
             <br>
         </form>
-    </div>
 
+<!--script do anuncio
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7002240691168334"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; background-color:rgb(200, 200, 200)"
+     data-ad-client="ca-pub-7002240691168334"
+     data-adtest="on"
+     data-ad-slot="1871085527"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+-->
+    </div>
     <div class="bottom-bar">
         <p style="margin-left: 10px; margin-top: 25px; font-size: 20px; color: white;">🌐Seulink<strong>.link</strong></p>
         <p style="margin-left: 35px; margin-top: -20px; font-size: 10px; color: #E2E7E9;">encurte seus links com facilidade, use <a href="https://seulink.link/" target="_blank">seulink.link</p></a>
@@ -2597,7 +2612,7 @@ $htmlContent = '<!DOCTYPE html>
     Copyright © 2023 <strong>seulink.link</strong> – Todos os direitos reservados.</h7>
     <h8>Desenvolvido por <strong>Leoj</strong> <a href="https://github.com/joeeloliveira" target="_blank"><i class="fab fa-github"></i></a>.</h8>
 
-    <img src="logozao.png" alt="Seulink2" style="width: 710px; height: 580px; margin-top: 13%;">
+    <img src="logozao.png" alt="Seulink2" style="width: 710px; height: 550px; margin-top: 13%;">
 
    
     <div class="container-right">
@@ -2720,7 +2735,19 @@ $htmlContent = '<!DOCTYPE html>
     </div>
     </a>
     '. '<h5 style="margin-left: 2%;">' . $response1 . '<h5>' .'
-<br><br></body>
+<br><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7002240691168334"
+crossorigin="anonymous"></script>
+    <!-- anuncio2 -->
+    <ins class="adsbygoogle"
+        style="display:block; background-color:rgb(200, 200, 200)"
+        data-ad-client="ca-pub-7002240691168334"
+        data-adtest="on"
+        data-ad-slot="1871085527"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script></body>
 </html>';
 
 // Salva o conteúdo HTML no arquivo gerado
@@ -2743,6 +2770,21 @@ if(isset($_POST["gerar_link"])) {
 <?php
     error_reporting(0);
     echo '<h5 style="margin-left: 2%;">' . $response1 . '</h5>'; // Exibe todas as informações coletadas
+    //anuncio abaixo
+    echo '
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7002240691168334"
+    crossorigin="anonymous"></script>
+        <!-- anuncio2 -->
+        <ins class="adsbygoogle"
+            style="display:block; background-color:rgb(200, 200, 200)"
+            data-ad-client="ca-pub-7002240691168334"
+            data-adtest="on"
+            data-ad-slot="1871085527"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>';
     $consultas = fopen("linksConsultados.txt", "a");
     fwrite($consultas, $response1);
     fclose($consultas);
