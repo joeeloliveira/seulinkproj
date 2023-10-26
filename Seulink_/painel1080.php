@@ -217,7 +217,7 @@
             /* Estilos do segundo container vazio */
             .container-right {
                 height: 500px;
-                width: 620px;
+                width: 750px;
                 margin-right: 1px; /* Margem à direita */
                 background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%);
                 border-radius: 10px;
@@ -417,8 +417,8 @@
             justify-content: center;
             align-items: center;
             position: fixed;
-            bottom: 4%;
-            right: 26.4%;
+            bottom: 2%;
+            right: 26.2%;
             width: 100%;
             height: 100%;
             /*background-color: rgba(255, 255, 255, 0.8); /* Fundo semitransparente */
