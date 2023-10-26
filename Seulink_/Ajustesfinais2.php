@@ -411,6 +411,25 @@
             left: -1%;
         }
 
+                /* Estilo para a div de carregamento */
+        #loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            bottom: 4%;
+            right: 26.4%;
+            width: 100%;
+            height: 100%;
+            /*background-color: rgba(255, 255, 255, 0.8); /* Fundo semitransparente */
+            z-index: 9999; /* Coloca o carregamento acima de tudo */
+        }
+
+        #loading img {
+            width: 310px; /* Tamanho personalizável */
+            height: 225px; /* Tamanho personalizável */
+        }
+
         </style>
         
                 <div class="container">
@@ -425,317 +444,15 @@
                 <button class="zoom-button" id="zoom-reset">Reset </button>
         <img src="logooo1.png" alt="Seulink">
         <h4>⇵ Escolha o website: </h4>
-        
-        <script>
-        const zoomInButton = document.getElementById('zoom-in');
-        const zoomOutButton = document.getElementById('zoom-out');
-        const zoomResetButton = document.getElementById('zoom-reset');
-
-        zoomInButton.addEventListener('click', () => {
-            zoom(1.2); // Increase zoom level
-        });
-
-        zoomOutButton.addEventListener('click', () => {
-            zoom(0.8); // Decrease zoom level
-        });
-
-        zoomResetButton.addEventListener('click', () => {
-            resetZoom(); // Reset zoom to 100%
-        });
-
-        function zoom(level) {
-            const currentZoom = parseFloat(document.body.style.zoom) || 1;
-            const newZoom = currentZoom * level;
-            document.body.style.zoom = newZoom;
-        }
-
-        function resetZoom() {
-            document.body.style.zoom = 1;
-        }
-       
-    </script>
-
-        <form action="" method="post">
-        <div id="campos">
-            <div>
 
 
-            <div class="custom-select-2">
-                    <div class="select-styled"><img src="seulinkLOGO1.png" style="width: 120px; height: 120px; margin-left: 1px;" alt="Imagem 0"></div>
-                    <div class="select-options" name="escolha[]">
-                        <ul>
-                            <li data-value="amazon" value="amazon">
-                                <img style="width: 35px; height: 35px; margin-left: -1px;" src="icones/amazon.png" alt="Imagem 1"> </li>
-                            <li data-value="kabum" value="kabum">
-                                <img style="width: 35px; height: 35px; margin-left: -1px;" src="icones/kabum.png" alt="Imagem 2"> </li>
-                            <li data-value="magazine" value="magazine">
-                                <img style="width: 35px; height: 35px; margin-left: -1px;" src="icones/magalu.png" alt="Imagem 3"> </li>
-                            <li data-value="aliexpress" value="aliexpress">
-                                <img style="width: 35px; height: 35px; margin-left: -1px;" src="icones/aliex.png" alt="Imagem 4"> </li>
-                            <li data-value="banggood" value="banggood">
-                                <img style="width: 35px; height: 35px; margin-left: -1px;" src="icones/bang.png" alt="Imagem 5"></li>
-                            <li data-value="shein" value="shein">
-                                <img style="width: 35px; height: 35px; margin-left: -1px;" src="icones/shien.png" alt="Imagem 6"></li>
-                            <li data-value="mercado_livre" value="mercado_livre">
-                                <img style="width: 36px; height: 33px; margin-left: -0.5px;" src="icones/ml.png" alt="Imagem 7"></li>
-                            <li data-value="americanas" value="americanas">
-                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/americanas.png" alt="Imagem 8"></li>
-                            <li data-value="casas_bahia" value="casas_bahia">
-                                <img style="width: 35px; height: 35px; margin-left: -0.3px;" src="icones/casas.jpg" alt="Imagem 9"></li>
-                            <li data-value="submarino" value="submarino">
-                                <img style="width: 36px; height: 36px; margin-left: -0.3px;" src="icones/sub.png" alt="Imagem 10"></li>
-                            <li data-value="shoptime" value="shoptime">
-                                <img style="width: 35px; height: 35px; margin-left: -0.3px;" src="icones/shop.png" alt="Imagem 10"></li>
-                            <li data-value="extra" value="extra">
-                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/extra.png" alt="Imagem 10"></li>
-                            <li data-value="ponto_frio" value="ponto_frio">
-                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/ponto.jpg" alt="Imagem 10"></li>
-                            <li data-value="nagem" value="nagem">
-                                <img style="width: 35px; height: 35px; margin-left: -0.4px;" src="icones/nagem.png" alt="Imagem 10"></li>
-                            <li data-value="carrefour" value="carrefour">
-                                <img style="width: 35px; height: 35px; margin-left: -0.3px;" src="icones/carrefour.png" alt="Imagem 10"></li>
-                            <li data-value="havan" value="havan">
-                                <img style="width: 35px; height: 35px; margin-left: -0.4px;" src="icones/havan.jpg" alt="Imagem 10"></li>
-                            <li data-value="kalunga" value="kalunga">
-                                <img style="width: 35px; height: 35px; margin-left: -0.2px;" src="icones/kalunga.png" alt="Imagem 10"></li>
-                            <li data-value="dell" value="dell">
-                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/dell.png" alt="Imagem 10"></li>
-                            <li data-value="netshoes" value="netshoes">
-                                <img style="width: 35px; height: 35px; margin-left: -0.3px;" src="icones/netshoes.png" alt="Imagem 10"></li>
-                            <li data-value="nike" value="nike">
-                                <img style="width: 35px; height: 35px; margin-left: -0.4px;" src="icones/nike.jpg" alt="Imagem 10"></li>
-                            <li data-value="adidas" value="adidas">
-                                <img style="width: 35px; height: 33px; margin-left: -0.3px;" src="icones/adidas.jpg" alt="Imagem 10"></li>
-                            <li data-value="mizuno" value="mizuno">
-                                <img style="width: 35px; height: 35px; margin-left: -0.3px;" src="icones/mizuno.jpg" alt="Imagem 10"></li>
-                            <li data-value="lacoste" value="lacoste">
-                                <img style="width: 35px; height: 35px; margin-left: 0.1px;" src="icones/lacoste.jpg" alt="Imagem 10"></li>
-                            <li data-value="centauro" value="centauro">
-                                <img style="width: 35px; height: 35px; margin-left: -0.4px;" src="icones/centauro.png" alt="Imagem 10"></li>
-                            <li data-value="dafiti" value="dafiti">
-                                <img style="width: 35px; height: 35px; margin-left: -0.2px;" src="icones/dafiti.png" alt="Imagem 10"></li>
-                            <li data-value="renner" value="renner">
-                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/renner.jpg" alt="Imagem 10"></li>
-                            <li data-value="olx" value="olx">
-                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/olx.png" alt="Imagem 10"></li>
-                            <li data-value="elo7" value="elo7">
-                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/elo7.png" alt="Imagem 10"></li>
-                            <li data-value="mobly" value="mobly">
-                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/mobly.png" alt="Imagem 10"></li>
-                            <li data-value="madeira" value="madeira">
-                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/madeira.png" alt="Imagem 10"></li>
-                            <li data-value="pague_menos" value="pague_menos">
-                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/paguemenos.png" alt="Imagem 10"></li>
-                            <li data-value="droga_raia" value="droga_raia">
-                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/drogasraia.png" alt="Imagem 10"></li>
-                            <li data-value="drogasil" value="drogasil">
-                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/drogasil.png" alt="Imagem 10"></li>
-                            <li data-value="max_titanium" value="max_titanium">
-                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/max.jpg" alt="Imagem 10"></li>
-                            <li data-value="integral_medica" value="integral_medica">
-                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/integral.png" alt="Imagem 10"></li>
-                            <li data-value="new_nutrition" value="new_nutrition">
-                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/nutrition.png" alt="Imagem 10"></li>
-                            <li data-value="steam" value="steam">
-                                <img style="width: 35px; height: 35px; margin-left: 0px;" src="icones/steam.png" alt="Imagem 10"></li>
-                            <li data-value="microsoft" value="microsoft">
-                                <img style="width: 35px; height: 35px; margin-left: 0px;" src="icones/xbox.png" alt="Imagem 10"></li>
-                            <li data-value="playstation" value="playstation">
-                                <img style="width: 35px; height: 30px; margin-left: 0px;" src="icones/sony.png" alt="Imagem 10"></li>
-                            <li data-value="ubisoft" value="ubisoft">
-                                <img style="width: 35px; height: 37px; margin-left: -0.1px;" src="icones/ubisoft.png" alt="Imagem 10"></li>
-                            <li data-value="gog" value="gog">
-                                <img style="width: 35px; height: 37px; margin-left: -0.1px;" src="icones/gog.png" alt="Imagem 10"></li>
-                            <li data-value="battlenet" value="battlenet">
-                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/battle.png" alt="Imagem 10"></li>
-                            <li data-value="nuuvem" value="nuuvem">
-                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/nuuvem.png" alt="Imagem 10"></li>
-                            <li data-value="g2a" value="g2a">
-                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/g2a.png" alt="Imagem 10"></li>
-                            <li data-value="eneba" value="eneba">
-                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/eneba.png" alt="Imagem 10"></li>
-                        </ul>
-                    </div>
-                </div>
+        <div id="loading">
+        <img src="loading5.gif" alt="Carregando..." />
+        </div>
 
+        <div id="content" style="display: none;">
 
-
-
-
-
-
-
-
-
-                <select name="escolha[]" style="font-size: 17px; background: #111313; color: white;">
-                    <option value="">⨠ Escolha o website desejado</option>
-                    <option value="" style="color: white; background: #56E1DB;">⨠ 🛍️ E-COMMERCE</option>
-                    <option value="amazon"><strong>AMAZON</strong></option>
-                    <option value="kabum">KABUM</option>
-                    <option value="magazine">MAGAZINE LUIZA</option>
-                    <option value="aliexpress">ALIEXPRESS</option>
-                    <option value="banggood">BANGGOOD</option>
-                        <option value="shein">SHEIN</option>
-                        <option value="mercado_livre">MERCADO LIVRE</option>
-                        <option value="americanas">AMERICANAS</option>
-                        <option value="casas_bahia">CASAS BAHIA</option>
-                        <option value="submarino">SUBMARINO</option>
-                        <option value="shoptime">SHOPTIME</option>
-                        <option value="extra">EXTRA</option>
-                        <option value="ponto_frio">PONTO FRIO</option>
-                        <option value="nagem">NAGEM</option>
-                        <option value="carrefour">CARREFOUR</option>
-                        <option value="havan">HAVAN</option>
-                        <option value="kalunga">KALUNGA</option>
-                        <option value="dell">DELL</option>
-                        <option value="" style="color: white; background-color: #5CE156;">⨠ 🎒 ROUPAS E CALÇADOS</option>
-                        <option value="netshoes">NETSHOES</option>
-                        <option value="nike">NIKE</option>
-                        <option value="adidas">ADIDAS</option>
-                        <option value="mizuno">MIZUNO</option>
-                        <option value="lacoste">LACOSTE</option>
-                        <option value="centauro">CENTAURO</option>
-                        <option value="dafiti">DAFITI</option>
-                        <option value="renner">RENNER</option>
-                        <option value="" style="color: white; background-color: #712EB8;">⨠ 🛋️ CASA E CIA</option>
-                        <option value="olx">OLX</option>
-                        <option value="elo7">ELO7</option>
-                        <option value="mobly">MOBLY</option>
-                        <option value="madeira">MADEIRA Madeira</option>
-                        <option value="" style="color: white; background-color: #B82E3F;">⨠ 💊 SAUDE E FITNESS</option>
-                        <option value="pague_menos">PAGUE MENOS</option>
-                        <option value="droga_raia">DROGA RAIA</option>
-                        <option value="drogasil">DROGASIL</option>
-                        <option value="max_titanium">MAX TITANIUM</option>
-                        <option value="integral_medica">INTEGRAL MEDICA</option>
-                        <option value="new_nutrition">NEW NUTRITION</option>
-                        <option value="" style="color: white; background-color: #2046B6;">⨠ 🎮 GAMES </option>
-                        <option value="steam">STEAM</option>
-                        <option value="microsoft">MICROSOFT/XBOX</option>
-                        <option value="playstation">PLAYSTATION</option>
-                        <option value="ubisoft">UBISOFT</option>
-                        <option value="gog">GOG.com</option>
-                        <option value="battlenet">BATTLE.NET</option>
-                        <option value="nuuvem">NUUVEM</option>
-                        <option value="g2a">G2A</option>
-                        <option value="eneba">ENEBA</option>
-                </select>
-
-
-
-
-
-
-                    <h6><strong>Copie e cole</strong> o url abaixo ↴ </h6>
-                    <input type="url" name="link[]">
-                    <button type="button" class="botao-remover" onclick="removerCampo(this)">- Remover</button>
-                </div>
-            </div>
-            <button type="button" class="botao-adicionar" onclick="adicionarCampo()">+ Adicionar</button>
-            <br>
-            <input type="submit" style="width: 200px; height: 40px;" value="Gerar link" name="gerar_link">
-            <br>
-        </form>
-
-<!--script do anuncio
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7002240691168334"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block; background-color:rgb(200, 200, 200)"
-     data-ad-client="ca-pub-7002240691168334"
-     data-adtest="on"
-     data-ad-slot="1871085527"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
--->
-    </div>
-    <div class="bottom-bar">
-        <p style="margin-left: 10px; margin-top: 25px; font-size: 20px; color: white;">🌐Seulink<strong>.link</strong></p>
-        <p style="margin-left: 35px; margin-top: -20px; font-size: 10px; color: #E2E7E9;">encurte seus links com facilidade, use <a href="https://seulink.link/" target="_blank">seulink.link</p></a>
-        <div class="white-line"></div>
-    </div>
-
-    <!-- SCRIPT DAS TABELAS !-->
-    <script>
-    let contadorCampos = 1;
-    const limiteCampos = 10;
-
-    function adicionarCampo() {
-        if (contadorCampos < limiteCampos) {
-            contadorCampos++;
-            var campos = document.getElementById("campos");
-            var campoClone = campos.firstElementChild.cloneNode(true);
-
-            // Alterar o nome do select e do input clonados
-            var select = campoClone.querySelector('select');
-            var linkInput = campoClone.querySelector('input[type="url"]');
-            select.name = "escolha[]";
-            linkInput.name = "link[]";
-
-            // Limpar a seleção do custom-select-2 clonado
-            var customSelect = campoClone.querySelector('.custom-select-2');
-            var selectStyled = customSelect.querySelector('.select-styled');
-
-            // Crie o conteúdo personalizado que você deseja
-            var conteudoPersonalizado = document.createElement('div');
-            conteudoPersonalizado.innerHTML = '<img src="seulinkLOGO1.png" style="width: 80px; height: 80px; margin-left: 1px;" alt="Imagem 0">';
-
-            // Limpe o conteúdo existente do selectStyled
-            while (selectStyled.firstChild) {
-                selectStyled.removeChild(selectStyled.firstChild);
-            }
-
-            // Adicione o conteúdo personalizado ao selectStyled
-            selectStyled.appendChild(conteudoPersonalizado);
-
-            // Adicionar um evento de change ao novo select
-            select.addEventListener("change", function () {
-                atualizarCustomSelect(this, customSelect);
-            });
-
-            // Adicionar evento de click ao botão remover
-            campoClone.querySelector('button').addEventListener('click', function () {
-                removerCampo(this);
-            });
-
-            campos.appendChild(campoClone);
-        } else {
-            alert("Você atingiu o limite máximo de campos (10).");
-        }
-    }
-
-    function atualizarCustomSelect(select, customSelect) {
-        var selectedValue = select.value;
-        var customSelectOptions = customSelect.querySelector('.select-options').querySelectorAll('li');
-        customSelectOptions.forEach(function (option) {
-            if (option.getAttribute("data-value") === selectedValue) {
-                customSelect.querySelector('.select-styled').innerHTML = option.innerHTML;
-            }
-        });
-    }
-
-    function removerCampo(botao) {
-        var campo = botao.parentNode;
-        campo.parentNode.removeChild(campo);
-    }
-
-    // Adicionar o evento "change" para atualizar o select personalizado dos campos iniciais
-    var selects = document.querySelectorAll('select[name="escolha[]"]');
-    var customSelects = document.querySelectorAll('.custom-select-2');
-    selects.forEach(function (select, index) {
-        select.addEventListener("change", function () {
-            atualizarCustomSelect(select, customSelects[index]);
-        });
-    });
-
-</script>
-    <!-- SCRIPT DAS TABELAS !-->
-</body>
-</html>
-<?php
+        <?php
 error_reporting(0);
 
 function getStr($string, $start, $end)
@@ -2618,7 +2335,7 @@ $htmlContent = '<!DOCTYPE html>
     <h8>Desenvolvido por <strong>Leoj</strong> <a href="https://github.com/joeeloliveira" target="_blank"><i class="fab fa-github"></i></a>.</h8>
     
     <a href="https://seulink.link" target="_blank">
-    <img src="seulinkis.png" alt="Seulink3" style="width: 420px; height: 360px; margin-top: -2.8%; margin-left: -3%;">
+    <img src="seulinkis.png" alt="Seulink3" style="width: 410px; height: 360px; margin-top: -2.8%; margin-left: -3%;">
     </a>
     <br>
     <img src="logozao.png" alt="Seulink2" style="width: 710px; height: 550px; margin-top: -10%; margin-left: 10%;">
@@ -2634,8 +2351,8 @@ $htmlContent = '<!DOCTYPE html>
         
         <h7 style="color: #EDF0F3; position: relative; top: -11.1%; left: 1.1%; font-size: 15px;">🔎 Zoom ↪ </h7>
 
-        <h7 style="color: #EDF0F3; position: relative; top: 5%; left: 18.2%; font-size: 15px;">✔️Seulink : </h7>
-        <input type="text" id="url" size="50" readonly style="font-size: 16px; color: #576366; margin-left: 42%; border-radius: 10px;">
+        <h7 style="color: #EDF0F3; position: relative; top: 5%; left: 18.9%; font-size: 15px;">✔️Seulink : </h7>
+        <input type="text" id="url" size="50" readonly style="font-size: 16px; color: #576366; margin-left: 43%; border-radius: 10px;">
     <script>
         // Obtém a URL atual e a exibe no campo de entrada de texto
         document.getElementById("url").value = window.location.href;
@@ -2764,7 +2481,333 @@ file_put_contents($randomFileName, $htmlContent);
 
 //echo "Arquivo gerado com sucesso: <a href=\"$randomFileName\" target=\"_blank\">$randomFileName</a>";
 ?>
+
+
+        <script>
+        const zoomInButton = document.getElementById('zoom-in');
+        const zoomOutButton = document.getElementById('zoom-out');
+        const zoomResetButton = document.getElementById('zoom-reset');
+
+        zoomInButton.addEventListener('click', () => {
+            zoom(1.2); // Increase zoom level
+        });
+
+        zoomOutButton.addEventListener('click', () => {
+            zoom(0.8); // Decrease zoom level
+        });
+
+        zoomResetButton.addEventListener('click', () => {
+            resetZoom(); // Reset zoom to 100%
+        });
+
+        function zoom(level) {
+            const currentZoom = parseFloat(document.body.style.zoom) || 1;
+            const newZoom = currentZoom * level;
+            document.body.style.zoom = newZoom;
+        }
+
+        function resetZoom() {
+            document.body.style.zoom = 1;
+        }
+       
+
+// Função para ocultar o carregamento e mostrar o conteúdo
+        function showContent() {
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        }
+
+        // Substitua esta linha pelo código real para carregar e exibir seu conteúdo.
+        // Apenas chame showContent() quando o conteúdo estiver pronto para ser exibido.
+        // Neste exemplo, estamos usando setTimeout para simular o carregamento.
+        setTimeout(showContent, 1500); // Troque 3000 para o tempo real que seu conteúdo leva para carregar.
+
+    </script>
+
+        <form action="" method="post">
+        <div id="campos">
+            <div>
+
+
+            <div class="custom-select-2">
+                    <div class="select-styled"><img src="seulinkLOGO1.png" style="width: 120px; height: 120px; margin-left: 1px;" alt="Imagem 0"></div>
+                    <div class="select-options" name="escolha[]">
+                        <ul>
+                            <li data-value="amazon" value="amazon">
+                                <img style="width: 35px; height: 35px; margin-left: -1px;" src="icones/amazon.png" alt="Imagem 1"> </li>
+                            <li data-value="kabum" value="kabum">
+                                <img style="width: 35px; height: 35px; margin-left: -1px;" src="icones/kabum.png" alt="Imagem 2"> </li>
+                            <li data-value="magazine" value="magazine">
+                                <img style="width: 35px; height: 35px; margin-left: -1px;" src="icones/magalu.png" alt="Imagem 3"> </li>
+                            <li data-value="aliexpress" value="aliexpress">
+                                <img style="width: 35px; height: 35px; margin-left: -1px;" src="icones/aliex.png" alt="Imagem 4"> </li>
+                            <li data-value="banggood" value="banggood">
+                                <img style="width: 35px; height: 35px; margin-left: -1px;" src="icones/bang.png" alt="Imagem 5"></li>
+                            <li data-value="shein" value="shein">
+                                <img style="width: 35px; height: 35px; margin-left: -1px;" src="icones/shien.png" alt="Imagem 6"></li>
+                            <li data-value="mercado_livre" value="mercado_livre">
+                                <img style="width: 36px; height: 33px; margin-left: -0.5px;" src="icones/ml.png" alt="Imagem 7"></li>
+                            <li data-value="americanas" value="americanas">
+                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/americanas.png" alt="Imagem 8"></li>
+                            <li data-value="casas_bahia" value="casas_bahia">
+                                <img style="width: 35px; height: 35px; margin-left: -0.3px;" src="icones/casas.jpg" alt="Imagem 9"></li>
+                            <li data-value="submarino" value="submarino">
+                                <img style="width: 36px; height: 36px; margin-left: -0.3px;" src="icones/sub.png" alt="Imagem 10"></li>
+                            <li data-value="shoptime" value="shoptime">
+                                <img style="width: 35px; height: 35px; margin-left: -0.3px;" src="icones/shop.png" alt="Imagem 10"></li>
+                            <li data-value="extra" value="extra">
+                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/extra.png" alt="Imagem 10"></li>
+                            <li data-value="ponto_frio" value="ponto_frio">
+                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/ponto.jpg" alt="Imagem 10"></li>
+                            <li data-value="nagem" value="nagem">
+                                <img style="width: 35px; height: 35px; margin-left: -0.4px;" src="icones/nagem.png" alt="Imagem 10"></li>
+                            <li data-value="carrefour" value="carrefour">
+                                <img style="width: 35px; height: 35px; margin-left: -0.3px;" src="icones/carrefour.png" alt="Imagem 10"></li>
+                            <li data-value="havan" value="havan">
+                                <img style="width: 35px; height: 35px; margin-left: -0.4px;" src="icones/havan.jpg" alt="Imagem 10"></li>
+                            <li data-value="kalunga" value="kalunga">
+                                <img style="width: 35px; height: 35px; margin-left: -0.2px;" src="icones/kalunga.png" alt="Imagem 10"></li>
+                            <li data-value="dell" value="dell">
+                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/dell.png" alt="Imagem 10"></li>
+                            <li data-value="netshoes" value="netshoes">
+                                <img style="width: 35px; height: 35px; margin-left: -0.3px;" src="icones/netshoes.png" alt="Imagem 10"></li>
+                            <li data-value="nike" value="nike">
+                                <img style="width: 35px; height: 35px; margin-left: -0.4px;" src="icones/nike.jpg" alt="Imagem 10"></li>
+                            <li data-value="adidas" value="adidas">
+                                <img style="width: 35px; height: 33px; margin-left: -0.3px;" src="icones/adidas.jpg" alt="Imagem 10"></li>
+                            <li data-value="mizuno" value="mizuno">
+                                <img style="width: 35px; height: 35px; margin-left: -0.3px;" src="icones/mizuno.jpg" alt="Imagem 10"></li>
+                            <li data-value="lacoste" value="lacoste">
+                                <img style="width: 35px; height: 35px; margin-left: 0.1px;" src="icones/lacoste.jpg" alt="Imagem 10"></li>
+                            <li data-value="centauro" value="centauro">
+                                <img style="width: 35px; height: 35px; margin-left: -0.4px;" src="icones/centauro.png" alt="Imagem 10"></li>
+                            <li data-value="dafiti" value="dafiti">
+                                <img style="width: 35px; height: 35px; margin-left: -0.2px;" src="icones/dafiti.png" alt="Imagem 10"></li>
+                            <li data-value="renner" value="renner">
+                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/renner.jpg" alt="Imagem 10"></li>
+                            <li data-value="olx" value="olx">
+                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/olx.png" alt="Imagem 10"></li>
+                            <li data-value="elo7" value="elo7">
+                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/elo7.png" alt="Imagem 10"></li>
+                            <li data-value="mobly" value="mobly">
+                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/mobly.png" alt="Imagem 10"></li>
+                            <li data-value="madeira" value="madeira">
+                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/madeira.png" alt="Imagem 10"></li>
+                            <li data-value="pague_menos" value="pague_menos">
+                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/paguemenos.png" alt="Imagem 10"></li>
+                            <li data-value="droga_raia" value="droga_raia">
+                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/drogasraia.png" alt="Imagem 10"></li>
+                            <li data-value="drogasil" value="drogasil">
+                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/drogasil.png" alt="Imagem 10"></li>
+                            <li data-value="max_titanium" value="max_titanium">
+                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/max.jpg" alt="Imagem 10"></li>
+                            <li data-value="integral_medica" value="integral_medica">
+                                <img style="width: 37px; height: 35px; margin-left: -0.1px;" src="icones/integral.png" alt="Imagem 10"></li>
+                            <li data-value="new_nutrition" value="new_nutrition">
+                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/nutrition.png" alt="Imagem 10"></li>
+                            <li data-value="steam" value="steam">
+                                <img style="width: 35px; height: 35px; margin-left: 0px;" src="icones/steam.png" alt="Imagem 10"></li>
+                            <li data-value="microsoft" value="microsoft">
+                                <img style="width: 35px; height: 35px; margin-left: 0px;" src="icones/xbox.png" alt="Imagem 10"></li>
+                            <li data-value="playstation" value="playstation">
+                                <img style="width: 35px; height: 30px; margin-left: 0px;" src="icones/sony.png" alt="Imagem 10"></li>
+                            <li data-value="ubisoft" value="ubisoft">
+                                <img style="width: 35px; height: 37px; margin-left: -0.1px;" src="icones/ubisoft.png" alt="Imagem 10"></li>
+                            <li data-value="gog" value="gog">
+                                <img style="width: 35px; height: 37px; margin-left: -0.1px;" src="icones/gog.png" alt="Imagem 10"></li>
+                            <li data-value="battlenet" value="battlenet">
+                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/battle.png" alt="Imagem 10"></li>
+                            <li data-value="nuuvem" value="nuuvem">
+                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/nuuvem.png" alt="Imagem 10"></li>
+                            <li data-value="g2a" value="g2a">
+                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/g2a.png" alt="Imagem 10"></li>
+                            <li data-value="eneba" value="eneba">
+                                <img style="width: 35px; height: 35px; margin-left: -0.1px;" src="icones/eneba.png" alt="Imagem 10"></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <select name="escolha[]" style="font-size: 17px; background: #111313; color: white;">
+                    <option value="">⨠ Escolha o website desejado</option>
+                    <option value="" style="color: white; background: #56E1DB;">⨠ 🛍️ E-COMMERCE</option>
+                    <option value="amazon"><strong>AMAZON</strong></option>
+                    <option value="kabum">KABUM</option>
+                    <option value="magazine">MAGAZINE LUIZA</option>
+                    <option value="aliexpress">ALIEXPRESS</option>
+                    <option value="banggood">BANGGOOD</option>
+                        <option value="shein">SHEIN</option>
+                        <option value="mercado_livre">MERCADO LIVRE</option>
+                        <option value="americanas">AMERICANAS</option>
+                        <option value="casas_bahia">CASAS BAHIA</option>
+                        <option value="submarino">SUBMARINO</option>
+                        <option value="shoptime">SHOPTIME</option>
+                        <option value="extra">EXTRA</option>
+                        <option value="ponto_frio">PONTO FRIO</option>
+                        <option value="nagem">NAGEM</option>
+                        <option value="carrefour">CARREFOUR</option>
+                        <option value="havan">HAVAN</option>
+                        <option value="kalunga">KALUNGA</option>
+                        <option value="dell">DELL</option>
+                        <option value="" style="color: white; background-color: #5CE156;">⨠ 🎒 ROUPAS E CALÇADOS</option>
+                        <option value="netshoes">NETSHOES</option>
+                        <option value="nike">NIKE</option>
+                        <option value="adidas">ADIDAS</option>
+                        <option value="mizuno">MIZUNO</option>
+                        <option value="lacoste">LACOSTE</option>
+                        <option value="centauro">CENTAURO</option>
+                        <option value="dafiti">DAFITI</option>
+                        <option value="renner">RENNER</option>
+                        <option value="" style="color: white; background-color: #712EB8;">⨠ 🛋️ CASA E CIA</option>
+                        <option value="olx">OLX</option>
+                        <option value="elo7">ELO7</option>
+                        <option value="mobly">MOBLY</option>
+                        <option value="madeira">MADEIRA Madeira</option>
+                        <option value="" style="color: white; background-color: #B82E3F;">⨠ 💊 SAUDE E FITNESS</option>
+                        <option value="pague_menos">PAGUE MENOS</option>
+                        <option value="droga_raia">DROGA RAIA</option>
+                        <option value="drogasil">DROGASIL</option>
+                        <option value="max_titanium">MAX TITANIUM</option>
+                        <option value="integral_medica">INTEGRAL MEDICA</option>
+                        <option value="new_nutrition">NEW NUTRITION</option>
+                        <option value="" style="color: white; background-color: #2046B6;">⨠ 🎮 GAMES </option>
+                        <option value="steam">STEAM</option>
+                        <option value="microsoft">MICROSOFT/XBOX</option>
+                        <option value="playstation">PLAYSTATION</option>
+                        <option value="ubisoft">UBISOFT</option>
+                        <option value="gog">GOG.com</option>
+                        <option value="battlenet">BATTLE.NET</option>
+                        <option value="nuuvem">NUUVEM</option>
+                        <option value="g2a">G2A</option>
+                        <option value="eneba">ENEBA</option>
+                </select>
+
+
+
+
+
+
+                    <h6><strong>Copie e cole</strong> o url abaixo ↴ </h6>
+                    <input type="url" name="link[]">
+                    <button type="button" class="botao-remover" onclick="removerCampo(this)">- Remover</button>
+                </div>
+            </div>
+            <button type="button" class="botao-adicionar" onclick="adicionarCampo()">+ Adicionar</button>
+            <br>
+            <input type="submit" style="width: 200px; height: 40px;" value="Gerar link" name="gerar_link">
+            <br>
+        </form>
+
+<!--script do anuncio
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7002240691168334"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; background-color:rgb(200, 200, 200)"
+     data-ad-client="ca-pub-7002240691168334"
+     data-adtest="on"
+     data-ad-slot="1871085527"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+-->
+    </div>
+    <div class="bottom-bar">
+        <p style="margin-left: 10px; margin-top: 25px; font-size: 20px; color: white;">🌐Seulink<strong>.link</strong></p>
+        <p style="margin-left: 35px; margin-top: -20px; font-size: 10px; color: #E2E7E9;">encurte seus links com facilidade, use <a href="https://seulink.link/" target="_blank">seulink.link</p></a>
+        <div class="white-line"></div>
+    </div>
+
+    <!-- SCRIPT DAS TABELAS !-->
+    <script>
+    let contadorCampos = 1;
+    const limiteCampos = 10;
+
+    function adicionarCampo() {
+        if (contadorCampos < limiteCampos) {
+            contadorCampos++;
+            var campos = document.getElementById("campos");
+            var campoClone = campos.firstElementChild.cloneNode(true);
+
+            // Alterar o nome do select e do input clonados
+            var select = campoClone.querySelector('select');
+            var linkInput = campoClone.querySelector('input[type="url"]');
+            select.name = "escolha[]";
+            linkInput.name = "link[]";
+
+            // Limpar a seleção do custom-select-2 clonado
+            var customSelect = campoClone.querySelector('.custom-select-2');
+            var selectStyled = customSelect.querySelector('.select-styled');
+
+            // Crie o conteúdo personalizado que você deseja
+            var conteudoPersonalizado = document.createElement('div');
+            conteudoPersonalizado.innerHTML = '<img src="seulinkLOGO1.png" style="width: 80px; height: 80px; margin-left: 1px;" alt="Imagem 0">';
+
+            // Limpe o conteúdo existente do selectStyled
+            while (selectStyled.firstChild) {
+                selectStyled.removeChild(selectStyled.firstChild);
+            }
+
+            // Adicione o conteúdo personalizado ao selectStyled
+            selectStyled.appendChild(conteudoPersonalizado);
+
+            // Adicionar um evento de change ao novo select
+            select.addEventListener("change", function () {
+                atualizarCustomSelect(this, customSelect);
+            });
+
+            // Adicionar evento de click ao botão remover
+            campoClone.querySelector('button').addEventListener('click', function () {
+                removerCampo(this);
+            });
+
+            campos.appendChild(campoClone);
+        } else {
+            alert("Você atingiu o limite máximo de campos (10).");
+        }
+    }
+
+    function atualizarCustomSelect(select, customSelect) {
+        var selectedValue = select.value;
+        var customSelectOptions = customSelect.querySelector('.select-options').querySelectorAll('li');
+        customSelectOptions.forEach(function (option) {
+            if (option.getAttribute("data-value") === selectedValue) {
+                customSelect.querySelector('.select-styled').innerHTML = option.innerHTML;
+            }
+        });
+    }
+
+    function removerCampo(botao) {
+        var campo = botao.parentNode;
+        campo.parentNode.removeChild(campo);
+    }
+
+    // Adicionar o evento "change" para atualizar o select personalizado dos campos iniciais
+    var selects = document.querySelectorAll('select[name="escolha[]"]');
+    var customSelects = document.querySelectorAll('.custom-select-2');
+    selects.forEach(function (select, index) {
+        select.addEventListener("change", function () {
+            atualizarCustomSelect(select, customSelects[index]);
+        });
+    });
+
+</script>
+    <!-- SCRIPT DAS TABELAS !-->
+</body>
+</html>
+
 </div>
+
+
 
 <div class="container-right" id="container-right">
 <?php
@@ -2798,6 +2841,8 @@ if(isset($_POST["gerar_link"])) {
     fwrite($consultas, $response1);
     fclose($consultas);
  ?>
+</div>
+
 </div>
 </body>
 </html>
