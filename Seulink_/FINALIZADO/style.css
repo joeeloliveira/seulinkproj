@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+body {
+    background: linear-gradient(180deg, #0F1115 0%, #17191C 100%);
+        font-family: "Lucida Console", Courier, monospace;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+}
+
+.topbar {
+        width: 100%; /* Largura total da página */
+        height: 38px; /* Altura da barra superior (aumentada para tornar a linha azul visível) */
+        background-color: white; /* Cor da barra superior */
+        position: fixed; /* Fixa a barra superior na parte superior da página */
+        top: 0;
+        left: 0;
+    }
+
+
+.blue-line {
+        width: 100%;
+        height: 4px; /* Altura da linha azul (1px para ser fina) */
+        background-color: #31C4B9; /* Cor da linha azul */
+        position: fixed; /* Fixa a linha azul na parte superior da página */
+        top: 38px; /* Coloca a linha abaixo da barra branca */
+        left: 0;
+}
+
+h8 {
+        font-size: 12px;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        color: #0C1312; /* Cor do texto */
+        position: fixed; /* Fixa o texto à esquerda */
+        top: 0;
+        right: 10px; /* Espaço à esquerda */
+        margin-top: 18px; /* Espaço acima do texto */
+}
+
+h7 {
+    font-size: 15px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #0C1312; position: fixed; top: 0; left: 50%; transform: translateX(-50%);margin-top: 8px;
+}
+
+
+
+/* achei porra em baixo, ai so alterar pra ficar aceitavel no mobile */
+
+        #zoom-controls {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .zoom-button {
+            background-color: #0F1115;
+            color: #fff;
+            font-family: "Lucida Console", Courier, monospace;
+            font-size: 13px;
+            padding: 5px 10px;
+            border: 2px solid #fff;
+            border-radius: 7px;
+            cursor: pointer;
+            position: relative;
+            top: -5.5%;
+            left: 12%;
+        }
+
+
+        #features {
+    width: 500px;
+    background: #222;
+    color: #eee;
+    padding: 30px;
+}
+
+#features-container {
+    width: 500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 50px;
+}
+
+.feature {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    background: #333;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+        .seulink-image {
+        width: 410px;
+        height: 360px;
+        margin-top: -2.8%;
+        margin-left: -3%;
+    }
