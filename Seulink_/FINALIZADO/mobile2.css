@@ -1,0 +1,214 @@
+body {
+    background: linear-gradient(180deg, #0F1115 0%, #17191C 100%);
+    font-family: "Roboto", sans-serif; /* Alterei a fonte */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.topbar {
+    width: 100%;
+    height: 3.9%;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.blue-line {
+    width: 100%;
+    height: 4px;
+    background-color: #31C4B9;
+    position: fixed;
+    top: 32px;
+    left: 0;
+}
+
+h8 {
+    font-size: 0.4rem;
+    color: #0C1312;
+    position: fixed;
+    top: 0;
+    right: 8px;
+    margin-top: 20px;
+}
+
+h7 {
+    font-size: 0.5rem; /* Reduzi o tamanho da fonte */
+    color: #0C1312;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5px;
+}
+
+h9 {
+    font-size: 0.5rem; /* Reduzi o tamanho da fonte */
+    color: #EDF0F3;
+    position: relative;
+    top: -2%;
+    left: -2%;
+    margin-top: 1px;
+}
+
+#showcase-container {
+    display: flex;
+    flex-direction: column; /* Modificado para uma coluna para dispositivos móveis */
+    align-items: center; /* Centraliza o conteúdo */
+}
+
+.feature {
+    width: 85%; /* Largura total para ocupar a largura da tela */
+    height: 450px; /* Altura ajustável com base no conteúdo */
+    max-height: 450px;
+    background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px 0; /* Espaçamento entre recursos */
+    margin-top: 10%;
+    margin-left: 7.5%;
+    padding-bottom: 5%;
+    padding-top: 1%;
+    overflow: auto;
+}
+
+.feature::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+/* Estilo do polegar da barra de rolagem (a parte que você move) */
+.feature::-webkit-scrollbar-thumb {
+    background-color: #31C4B9; /* Cor do polegar da barra de rolagem */
+    border-radius: 3px; /* Raio do polegar da barra de rolagem */
+}
+
+/* Estilo da trilha da barra de rolagem (a parte de fundo) */
+.feature::-webkit-scrollbar-track {
+    background-color: #0F1115; /* Cor do fundo da barra de rolagem */
+    border-radius: 3px; /* Raio da trilha da barra de rolagem */
+}
+
+img[alt="Seulink3"] {
+    width: 130px;
+    height: 120px;
+    margin-top: -6.2%;
+    margin-left: -4%;
+}
+
+img[alt="Seulink2"] {
+    width: 80px;
+    height: 60px;
+    margin-top: -31%;
+    margin-left: 19%;
+}
+
+img[alt="Seulink4"] {
+    width: 80px;
+    height: 60px;
+    margin-top: -12%;
+    margin-left: 78%;
+}
+
+h12 {
+    font-size: 0.8rem; /* Reduzi o tamanho da fonte */
+    color: #EDF0F3;
+    position: relative;
+    top: -1%;
+    left: 16%;
+    margin-top: 1px;
+}
+
+#url {
+    font-size: 0.8rem;
+    color: #576366;
+    margin-left: 35%;
+    margin-top: -7.5%;
+    border-radius: 10px;
+    width: 65%;
+}
+
+img[alt="Seulink"] {
+    width: 150px;
+    height: 95px;
+    margin-left: 57%;
+}
+
+h4 {
+    text-align: left;
+    font-size: 0.8rem;
+    color: #1D9BB9; /* Cor inicial */
+    animation: mudarCor 2s linear infinite alternate;/* 5 segundos de duração */
+}
+
+@keyframes mudarCor {
+    0% {
+        color: #1D9BB9; /* Azul mais claro */
+    }
+    25% {
+        color: #15B1B1; /* Azul claro */
+    }
+    50% {
+        color: #15A0C1; /* Azul escuro */
+    }
+    75% {
+        color: #158FB1; /* Azul mais escuro */
+    }
+    100% {
+        color: #15A0C1; /* Volta para o azul escuro */
+    }
+}
+
+
+h6 {
+    text-align: left;
+    font-size: 0.8rem;
+    margin-top: 2%;
+    color: #ffffff; /* Cor inicial */
+}
+
+input[type="url"] {
+    animation: mudarCor 0.8s linear infinite alternate;
+    width: 84.7%;
+    padding: 3px;
+    border: 2px solid #fff;
+    border-radius: 7px;
+    margin-bottom: 5%;
+    margin-top: 0.1%;
+    background-color: #0F1115;
+    color: #ffffff;
+    font-family: "Lucida Console", Courier, monospace;
+}
+
+h10 {
+    font-size: 0.9rem;
+    margin-left: -15%;
+    color: #ffffff; /* Cor inicial */
+}
+
+h11 {
+    font-size: 0.9rem;
+    margin-left: -6%;
+    color: #ffffff; /* Cor inicial */
+}
+
+.bottom-bar {
+    background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%); /* Cor de fundo da barra */
+    width: 100%; /* Largura total da página */
+    height: 70px; /* Altura da barra */
+    position: fixed; /* Fixa a barra na parte inferior da página */
+    bottom: 0; /* Coloca a barra na parte inferior */
+    left: 0; /* Alinha a barra à esquerda */
+}
+
+.white-line {
+    background-color: #fff; /* Cor da linha branca */
+    height: 3px; /* Altura da linha */
+    width: 100%; /* Largura igual à .bottom-bar */
+    margin-top: -53px;
+    bottom: 100px; /* Alinha a linha com a parte inferior da .bottom-bar */
+    left: 0; /* Alinha a linha com a parte esquerda da .bottom-bar */
+}
+
+
