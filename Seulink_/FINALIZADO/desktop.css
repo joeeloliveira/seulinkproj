@@ -75,7 +75,7 @@ h9 {
 }
 
 .feature::-webkit-scrollbar {
-    width: 8px; /* Largura da barra de rolagem */
+    width: 3px; /* Largura da barra de rolagem */
 }
 
 /* Estilo do polegar da barra de rolagem (a parte que você move) */
@@ -89,6 +89,7 @@ h9 {
     background-color: #0F1115; /* Cor do fundo da barra de rolagem */
     border-radius: 3px; /* Raio da trilha da barra de rolagem */
 }
+
 
 
 img[alt="Seulink3"] {

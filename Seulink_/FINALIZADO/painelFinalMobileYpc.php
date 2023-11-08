@@ -21,6 +21,9 @@
         Copyright © 2023 <strong>seulink.link</strong> <p>- Todos os direitos reservados.</p>
     </h7><br>
     <h8>Desenvolvido por <strong>Leoj</strong> <a href="https://github.com/joeeloliveira" target="_blank"><i class="fab fa-github"></i></a>.</h8>
+
+
+
     <header id="showcase">
         <div id="showcase-container">
             <div class="feature">
@@ -195,6 +198,7 @@
             <input type="submit" style="width: 150px; height: 40px;" value="Gerar link" name="gerar_link">
             </form>
         </div>
+
         <div class="bottom-bar">
         <p style="margin-left: 8px; margin-top: 25px; font-size: 15px; color: white; font-family: 'Lucida Console', Courier, monospace;">🌐Seulink<strong>.link</strong></p>
         <p style="margin-left: 28px; margin-top: -20px; font-size: 8px; color: #E2E7E9; font-family: 'Lucida Console', Courier, monospace;">encurte seus links com facilidade, use <a href="https://seulink.link/" target="_blank">seulink.link</p></a>
@@ -274,9 +278,6 @@
         });
     });
     </script>
-
-    <!-- About -->
-    
 </body>
 
 </html>
@@ -1978,6 +1979,21 @@ $htmlContent = '<!DOCTYPE html>
     </script>
         <br>
         '. '<h5 style="margin-left: 2%;">' . $response1 . '<h5>' .'
+        <br><br>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7002240691168334"
+    crossorigin="anonymous"></script>
+        <!-- anuncio2 -->
+        <ins class="adsbygoogle"
+            style="display:block; background-color:rgb(200, 200, 200)"
+            data-ad-client="ca-pub-7002240691168334"
+            data-adtest="on"
+            data-ad-slot="1871085527"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
     </div>
 
 
@@ -2030,7 +2046,7 @@ if(isset($_POST["gerar_link"])) {
     fclose($consultas);
  ?>
 </div>
-
 </div>
 </body>
 </html>
+

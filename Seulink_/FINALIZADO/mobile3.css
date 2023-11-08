@@ -8,7 +8,7 @@ body {
 
 .topbar {
     width: 100%;
-    height: 5.4%;
+    height: 3.9%;
     background-color: white;
     position: fixed;
     top: 0;
@@ -17,24 +17,24 @@ body {
 
 .blue-line {
     width: 100%;
-    height: 6px;
+    height: 4px;
     background-color: #31C4B9;
     position: fixed;
-    top: 39px;
+    top: 32px;
     left: 0;
 }
 
 h8 {
-    font-size: 0.65rem;
+    font-size: 0.4rem;
     color: #0C1312;
     position: fixed;
     top: 0;
-    right: 4px;
-    margin-top: 25px;
+    right: 8px;
+    margin-top: 20px;
 }
 
 h7 {
-    font-size: 0.69rem; /* Reduzi o tamanho da fonte */
+    font-size: 0.5rem; /* Reduzi o tamanho da fonte */
     color: #0C1312;
     position: fixed;
     top: 0;
@@ -59,16 +59,16 @@ h9 {
 }
 
 .feature {
-    width: 45%; /* Largura total para ocupar a largura da tela */
-    height: 350px; /* Altura ajustável com base no conteúdo */
-    max-height: 350px;
+    width: 85%; /* Largura total para ocupar a largura da tela */
+    height: 320px; /* Altura ajustável com base no conteúdo */
+    max-height: 320px;
     background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 25px;
+    padding: 5px;
     border-radius: 5px;
     margin: 10px 0; /* Espaçamento entre recursos */
-    margin-top: 2%;
-    padding-bottom: 1%;
+    margin-top: 10%;
+    padding-bottom: 5%;
     padding-top: 1%;
     overflow: auto;
 }
@@ -90,35 +90,15 @@ h9 {
 }
 
 
-h12 {
-    font-size: 1.1rem; /* Reduzi o tamanho da fonte */
-    color: #EDF0F3;
-    position: relative;
-    top: -1%;
-    left: 17%;
-    margin-top: 1px;
-}
-
-#url {
-    font-size: 1.1rem;
-    color: #576366;
-    margin-left: 26%;
-    margin-top: -3%;
-    border-radius: 10px;
-    width: 65%;
-}
-
 img[alt="Seulink"] {
-    width: 210px;
-    height: 135px;
-    margin-left: 71%;
-    margin-top: -1%;
+    width: 150px;
+    height: 95px;
+    margin-left: 57%;
 }
 
 h4 {
     text-align: left;
-    font-size: 1.1rem;
-    margin-top: -3%;
+    font-size: 0.8rem;
     color: #1D9BB9; /* Cor inicial */
     animation: mudarCor 2s linear infinite alternate;/* 5 segundos de duração */
 }
@@ -142,58 +122,13 @@ h4 {
 }
 
 
-h6 {
-    text-align: left;
-    font-size: 0.8rem;
-    margin-top: 2%;
-    color: #ffffff; /* Cor inicial */
-}
-
-
-
-h10 {
-    font-size: 0.9rem;
-    margin-left: -15%;
-    color: #ffffff; /* Cor inicial */
-}
-
-h11 {
-    font-size: 0.9rem;
-    margin-left: -6%;
-    color: #ffffff; /* Cor inicial */
-}
-
-
-.bottom-bar {
-    background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%); /* Cor de fundo da barra */
-    width: 100%; /* Largura total da página */
-    height: 65px; /* Altura da barra */
-    position: fixed; /* Fixa a barra na parte inferior da página */
-    bottom: 0; /* Coloca a barra na parte inferior */
-    left: 0; /* Alinha a barra à esquerda */
-}
-
-.white-line {
-    background-color: #fff; /* Cor da linha branca */
-    height: 3px; /* Altura da linha */
-    width: 100%; /* Largura igual à .bottom-bar */
-    margin-top: -53px;
-    bottom: 100px; /* Alinha a linha com a parte inferior da .bottom-bar */
-    left: 0; /* Alinha a linha com a parte esquerda da .bottom-bar */
-}
-
-
-
-
-
-
 .custom-select-2 {
     position: relative;
     width: 34px;
     height: 26.5px;
     left: 85%;
-    margin-bottom: -3.8%;
-    margin-left: 0.5%;
+    margin-bottom: -8%;
+    margin-left: 1%;
 }
 
 .select-styled {
@@ -246,6 +181,13 @@ h11 {
 
 .select-options li:hover {
     background-color: #111313;
+} 
+
+h6 {
+    text-align: left;
+    font-size: 0.8rem;
+    margin-top: 2%;
+    color: #ffffff; /* Cor inicial */
 }
 
 input[type="url"] {
@@ -254,7 +196,7 @@ input[type="url"] {
     padding: 3px;
     border: 2px solid #fff;
     border-radius: 7px;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
     margin-top: 0.1%;
     background-color: #0F1115;
     color: #ffffff;
@@ -278,13 +220,26 @@ input[type="url"] {
     background: linear-gradient(to bottom, #FF5862, #2E5692); /* Gradiente RGB ao passar o mouse */
 }
 
+h10 {
+    font-size: 0.9rem;
+    margin-left: -15%;
+    color: #ffffff; /* Cor inicial */
+}
+
+h11 {
+    font-size: 0.9rem;
+    margin-left: -6%;
+    color: #ffffff; /* Cor inicial */
+}
+
+
 .botao-adicionar {
     background: radial-gradient(50% 50% at 50% 50%, #2DC6C8 0%, #2DFBA4 100%); /* Cor de fundo em RGB */
     color: #fff; /* Cor do texto */
     border: none;
     margin-left: 0.5%;
     padding: 5px 10px;
-    margin-bottom: 1%;
+    margin-bottom: 5%;
     border-radius: 5px;
     cursor: pointer;
     font-family: "Lucida Console", Courier, monospace; /* Tipo de fonte desejada */
@@ -314,19 +269,37 @@ input[type="submit"]:hover {
     background: linear-gradient(to bottom, #2DC6C8, #2E5692); /* Gradiente RGB ao passar o mouse */
 }
 
+.bottom-bar {
+    background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%); /* Cor de fundo da barra */
+    width: 100%; /* Largura total da página */
+    height: 80px; /* Altura da barra */
+    position: fixed; /* Fixa a barra na parte inferior da página */
+    bottom: 0; /* Coloca a barra na parte inferior */
+    left: 0; /* Alinha a barra à esquerda */
+}
+
+.white-line {
+    background-color: #fff; /* Cor da linha branca */
+    height: 3px; /* Altura da linha */
+    width: 100%; /* Largura igual à .bottom-bar */
+    margin-top: -53px;
+    bottom: 100px; /* Alinha a linha com a parte inferior da .bottom-bar */
+    left: 0; /* Alinha a linha com a parte esquerda da .bottom-bar */
+}
+
 .feature-right {
-    width: 45%; /* Largura total para ocupar a largura da tela */
-    height: 280px; /* Altura ajustável com base no conteúdo */
-    max-height: 280px;
+    width: 85%; /* Largura total para ocupar a largura da tela */
+    height: 320px; /* Altura ajustável com base no conteúdo */
+    max-height: 320px;
     background: radial-gradient(80% 80% at 50% 50%, #17191C 0%, #0F1115 100%);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 5px;
     border-radius: 5px;
     margin: 10px 0; /* Espaçamento entre recursos */
-    margin-top: 0.4%;
-    margin-left: 27.3%;
-    padding-bottom: 4%;
-    padding-top: 2%;
+    margin-top: 10%;
+    margin-left: 7%;
+    padding-bottom: 5%;
+    padding-top: 1%;
     overflow: auto;
 }
 
@@ -345,3 +318,4 @@ input[type="submit"]:hover {
     background-color: #0F1115; /* Cor do fundo da barra de rolagem */
     border-radius: 3px; /* Raio da trilha da barra de rolagem */
 }
+

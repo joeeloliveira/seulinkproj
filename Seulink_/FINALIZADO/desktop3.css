@@ -1,0 +1,491 @@
+body {
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,193,253,1) 100%);
+    font-family: "Roboto", sans-serif; /* Alterei a fonte */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vh;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.white-line {
+    width: 100%;
+    height: 3px;
+    background-color:white;
+    position: absolute;
+    top: 106.8%;
+    left: 0;
+}
+
+.topbar {
+    width: 100%;
+    height: 14%;
+    background-color: rgba(80,220,222, 0.8);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+h {
+    font-size: 2.1rem;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    margin-top: 2.1%;
+    font-family: 'PatchworkRegular';
+    transition: color 0.3s;
+    z-index: 2;
+}
+
+
+h1 {
+    font-size: 1.4rem;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 28%;
+    margin-top: 3%;
+    font-family: 'BabelStoneModernRegular';
+    transition: color 0.3s;
+    z-index: 2;
+}
+
+h1:hover {
+    color: #31C4B9; /* Nova cor do texto ao passar o mouse */
+}
+
+
+h2 {
+    font-size: 1.4rem;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 36%;
+    margin-top: 3%;
+    font-family: 'BabelStoneModernRegular';
+    transition: color 0.3s;
+    z-index: 2;
+}
+
+h2:hover {
+    color: #31C4B9; /* Nova cor do texto ao passar o mouse */
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 43.9%;
+    margin-top: 3%;
+    font-family: 'BabelStoneModernRegular';
+    transition: color 0.3s;
+    z-index: 2;
+}
+
+h3:hover {
+    color: #31C4B9; /* Nova cor do texto ao passar o mouse */
+}
+
+h4 {
+    font-size: 1.4rem;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 55.3%;
+    margin-top: 3%;
+    font-family: 'BabelStoneModernRegular';
+    transition: color 0.3s;
+    z-index: 2;
+}
+
+h4:hover {
+    color: #31C4B9; /* Nova cor do texto ao passar o mouse */
+}
+
+h5 {
+    font-size: 5rem;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    margin-top: 17%;
+    font-family: 'BedsteadRegular';
+}
+
+h6 {
+    font-size: 1.2rem;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    margin-top: 29.5%;
+    font-family: 'BabelStoneModernRegular';
+}
+
+
+img[alt="Seulink"] {
+    width: 420px;
+    height: 415px;
+    margin-left: 1000px;
+    margin-top: 220px;
+    position: absolute;
+}
+
+.github-icon {
+    width: 50px; /* Largura da div quadrada */
+    height: 50px; /* Altura da div quadrada */
+    background-color: white; /* Cor de fundo para o ícone do GitHub */
+    border-radius: 10px; /* Borda arredondada para o ícone do GitHub */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+    position: fixed; /* Define a posição absoluta */
+    top: 4.7%; /* Distância do topo */
+    right: 300px; /* Distância da direita */
+    z-index: 2;
+  }
+
+img[alt="gitIcone"] {
+    width: 30px;
+    height: 30px;
+}
+
+.github-icon:hover {
+    background-color: #BBF1F1; /* Nova cor de fundo ao passar o mouse */
+  }
+  
+
+.telegram-icon {
+    width: 50px; /* Largura da div quadrada */
+    height: 50px; /* Altura da div quadrada */
+    background-color: white; /* Cor de fundo para o ícone do GitHub */
+    border-radius: 10px; /* Borda arredondada para o ícone do GitHub */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+    position: fixed; /* Define a posição absoluta */
+    top: 4.7%; /* Distância do topo */
+    right: 230px; /* Distância da direita */
+    z-index: 2;
+  }
+  
+img[alt="telegramIcone"] {
+    width: 40px;
+    height: 40px;
+}
+
+.telegram-icon:hover {
+    background-color: #BBF1F1; /* Nova cor de fundo ao passar o mouse */
+  }
+
+.instagram-icon {
+    width: 50px; /* Largura da div quadrada */
+    height: 50px; /* Altura da div quadrada */
+    background-color: white; /* Cor de fundo para o ícone do GitHub */
+    border-radius: 10px; /* Borda arredondada para o ícone do GitHub */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+    position: fixed; /* Define a posição absoluta */
+    top: 4.7%; /* Distância do topo */
+    right: 160px; /* Distância da direita */
+    z-index: 2;
+  }
+  
+img[alt="instagramIcone"] {
+    width: 40px;
+    height: 40px;
+}
+
+
+.instagram-icon:hover {
+    background-color: #BBF1F1; /* Nova cor de fundo ao passar o mouse */
+  }
+
+.acesse-button {
+    background-color: #1375A4; /* Cor de fundo do botão */
+    color: white; /* Cor do texto no botão */
+    font-size: 16px; /* Tamanho do texto no botão */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 15px; /* Borda arredondada para o botão */
+    padding: 10px 20px; /* Preenchimento interno do botão */
+    cursor: pointer; /* Altera o cursor para uma mão quando passa por cima */
+    transition: background-color 0.3s, color 0.3s; /* Adiciona uma transição suave para a cor do botão e do texto */
+    width: 35%;
+    height: 6.5%;
+    margin-left: 21%;
+    margin-top: 74%;
+    font-family: 'BedsteadRegular';
+  }
+  
+  .acesse-button:hover {
+    background-color: #0F1115; /* Nova cor de fundo ao passar o mouse */
+    color: #53C0C6; /* Nova cor do texto ao passar o mouse */
+  }
+
+h7 {
+    font-size: 1.4rem;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-top: 51.5%;
+    font-family: 'RichEatinAllCaps';
+}
+
+img[alt="nuvem"] {
+    width: 600px;
+    height: 280px;
+    margin-top: 7%;
+    margin-left: -10%;
+    position: absolute;
+    z-index: 1;
+}
+
+img[alt="nuvem2"] {
+    width: 600px;
+    height: 280px;
+    margin-top: 7%;
+    margin-left: 30%;
+    position: absolute;
+    z-index: 1;
+}
+
+img[alt="nuvem3"] {
+    width: 700px;
+    height: 420px;
+    margin-top: 4%;
+    margin-left: 9%;
+    position: absolute;
+    z-index: 1;
+}
+
+img[alt="nuvem4"] {
+    width: 700px;
+    height: 420px;
+    margin-top: 4%;
+    margin-left: 46%;
+    position: absolute;
+    z-index: 1;
+}
+
+img[alt="nuvem5"] {
+    width: 600px;
+    height: 280px;
+    margin-top: 7%;
+    margin-left: 74%;
+    position: absolute;
+    z-index: 1;
+}
+
+img[alt="balao1"] {
+    width: 460px;
+    height: 360px;
+    margin-top: 25%;
+    margin-left: 3%;
+    position: absolute;
+    z-index: 1;
+    filter: blur(0.3px);
+}
+
+img[alt="cogumelo"] {
+    width: 70px;
+    height: 70px;
+    margin-top: 28%;
+    margin-left: 21%;
+    position: absolute;
+    z-index: 1;
+}
+
+h7 {
+    font-size: 1.1rem;
+    color: #112450;
+    position: absolute;
+    left: 10%;
+    margin-left: 7.1%;
+    margin-top: 70.8%;
+    font-family: 'PixelOperatorHB8Regular';
+    z-index: 1;
+}
+
+h8 {
+    font-size: 1.15rem;
+    color: #112450;
+    position: absolute;
+    left: 10%;
+    margin-left: 0.5%;
+    margin-top: 73%;
+    font-family: 'PixelOperatorHB8Regular';
+    z-index: 1;
+}
+
+h9 {
+    font-size: 0.75rem;
+    color: white;
+    position: absolute;
+    left: 10%;
+    margin-left: 3.7%;
+    margin-top: 36.7%;
+    font-family: 'PixelOperatorHB8Regular';
+    z-index: 1;
+}
+
+h10 {
+    font-size: 0.9rem;
+    color: #507902;
+    position: absolute;
+    left: 10%;
+    margin-left: 20.5%;
+    margin-top: 42.5%;
+    font-family: 'PixelOperatorHB8Regular';
+    z-index: 1;
+}
+
+h11 {
+    font-size: 0.8rem;
+    color: #507902;
+    position: absolute;
+    left: 10%;
+    margin-left: 20.5%;
+    margin-top: 43.7%;
+    font-family: 'PixelOperatorHB8Regular';
+    z-index: 1;
+}
+
+h12 {
+    font-size: 0.7rem;
+    color: #507902;
+    position: absolute;
+    left: 10%;
+    margin-left: 20.5%;
+    margin-top: 44.9%;
+    font-family: 'PixelOperatorHB8Regular';
+    z-index: 1;
+}
+
+h13 {
+    font-size: 0.7rem;
+    color: #507902;
+    position: absolute;
+    left: 10%;
+    margin-left: 20.5%;
+    margin-top: 45.9%;
+    font-family: 'PixelOperatorHB8Regular';
+    z-index: 1;
+}
+
+h14 {
+    font-size: 0.75rem;
+    color: #000000;
+    position: absolute;
+    left: 10%;
+    margin-left: 22%;
+    margin-top: 47%;
+    font-family: 'PixelOperatorHB8Regular';
+    z-index: 1;
+}
+
+img[alt="balao2"] {
+    width: 540px;
+    height: 420px;
+    margin-top: 34.5%;
+    margin-left: 19%;
+    position: absolute;
+    z-index: 1;
+    filter: blur(0.3px);
+}
+
+
+img[alt="coisinha"] {
+    width: 100%;
+    height: 1200px;
+    margin-top: 19%;
+    position: absolute;
+    filter: blur(1px);
+}
+
+img[alt="bota"] {
+    width: 80px;
+    height: 80px;
+    margin-top: 39%;
+    margin-left: 26%;
+    position: absolute;
+    z-index: 1;
+}
+
+
+img[alt="balao3"] {
+    width: 450px;
+    height: 400px;
+    margin-top: 47.4%;
+    margin-left: 4.8%;
+    position: absolute;
+    z-index: 1;
+    filter: blur(0.3px);
+}
+
+img[alt="giro"] {
+    width: 80px;
+    height: 80px;
+    margin-top: 52%;
+    margin-left: 9%;
+    position: absolute;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#url {
+    font-size: 1.1rem;
+    color: #576366;
+    margin-left: 26%;
+    margin-top: -3%;
+    border-radius: 10px;
+    width: 65%;
+}
+
+
+
+@keyframes mudarCor {
+    50% {
+        color: #15A0C1; /* Azul escuro */
+    }
+    75% {
+        color: #158FB1; /* Azul mais escuro */
+    }
+    100% {
+        color: #112450; /* Volta para o azul escuro */
+    }
+}
+
+.white-line {
+    background-color: #fff; /* Cor da linha branca */
+    height: 3px; /* Altura da linha */
+    width: 100%; /* Largura igual à .bottom-bar */
+    margin-top: -53px;
+    bottom: 100px; /* Alinha a linha com a parte inferior da .bottom-bar */
+    left: 0; /* Alinha a linha com a parte esquerda da .bottom-bar */
+}
+
+
+
+
+
