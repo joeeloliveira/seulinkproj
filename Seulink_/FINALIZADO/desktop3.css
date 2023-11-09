@@ -232,15 +232,6 @@ img[alt="instagramIcone"] {
     color: #53C0C6; /* Nova cor do texto ao passar o mouse */
   }
 
-h7 {
-    font-size: 1.4rem;
-    color: white;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    margin-top: 51.5%;
-    font-family: 'RichEatinAllCaps';
-}
 
 img[alt="nuvem"] {
     width: 600px;
@@ -307,90 +298,101 @@ img[alt="cogumelo"] {
 }
 
 h7 {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     color: #112450;
     position: absolute;
     left: 10%;
     margin-left: 7.1%;
     margin-top: 70.8%;
-    font-family: 'PixelOperatorHB8Regular';
+    font-family: 'Lower Pixel', sans-serif;
     z-index: 1;
 }
 
 h8 {
-    font-size: 1.15rem;
+    font-size: 1.6rem;
     color: #112450;
     position: absolute;
     left: 10%;
-    margin-left: 0.5%;
-    margin-top: 73%;
-    font-family: 'PixelOperatorHB8Regular';
+    margin-left: 2.1%;
+    margin-top: 72.8%;
+    font-family: 'Lower Pixel', sans-serif;
     z-index: 1;
 }
 
 h9 {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     color: white;
     position: absolute;
     left: 10%;
-    margin-left: 3.7%;
+    margin-left: 4.7%;
     margin-top: 36.7%;
-    font-family: 'PixelOperatorHB8Regular';
+    font-family: 'Lower Pixel', sans-serif;
     z-index: 1;
 }
 
 h10 {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: #507902;
     position: absolute;
     left: 10%;
     margin-left: 20.5%;
     margin-top: 42.5%;
-    font-family: 'PixelOperatorHB8Regular';
+    font-family: 'Lower Pixel', sans-serif;
     z-index: 1;
 }
 
 h11 {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     color: #507902;
     position: absolute;
     left: 10%;
     margin-left: 20.5%;
-    margin-top: 43.7%;
-    font-family: 'PixelOperatorHB8Regular';
+    margin-top: 43.6%;
+    font-family: 'Lower Pixel', sans-serif;
     z-index: 1;
 }
 
 h12 {
-    font-size: 0.7rem;
+    font-size: 1.1rem;
     color: #507902;
     position: absolute;
     left: 10%;
     margin-left: 20.5%;
-    margin-top: 44.9%;
-    font-family: 'PixelOperatorHB8Regular';
+    margin-top: 44.7%;
+    font-family: 'Lower Pixel', sans-serif;
     z-index: 1;
 }
 
 h13 {
-    font-size: 0.7rem;
+    font-size: 1.1rem;
     color: #507902;
     position: absolute;
     left: 10%;
     margin-left: 20.5%;
     margin-top: 45.9%;
-    font-family: 'PixelOperatorHB8Regular';
+    font-family: 'Lower Pixel', sans-serif;
     z-index: 1;
 }
 
 h14 {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     color: #000000;
     position: absolute;
     left: 10%;
-    margin-left: 22%;
-    margin-top: 47%;
-    font-family: 'PixelOperatorHB8Regular';
+    margin-left: 23%;
+    margin-top: 47.1%;
+    font-family: 'Lower Pixel', sans-serif;
+    z-index: 1;
+}
+
+h15 {
+    font-size: 1.1rem;
+    color: #507902;
+    position: absolute;
+    left: 10%;
+    margin-left: 4.1%;
+    margin-top: 54.9%;
+    font-family: 'Lower Pixel', sans-serif;
     z-index: 1;
 }
 
@@ -434,10 +436,10 @@ img[alt="balao3"] {
 }
 
 img[alt="giro"] {
-    width: 80px;
-    height: 80px;
-    margin-top: 52%;
-    margin-left: 9%;
+    width: 90px;
+    height: 90px;
+    margin-top: 51%;
+    margin-left: 24%;
     position: absolute;
     z-index: 1;
 }

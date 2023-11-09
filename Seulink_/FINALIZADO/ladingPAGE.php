@@ -12,6 +12,10 @@
     <link href="https://fontlibrary.org//face/babelstone-modern" rel="stylesheet">
     <link href="https://fontlibrary.org//face/pixel-operator" rel="stylesheet">
 
+    <link href="https://fonts.cdnfonts.com/css/lower-pixel" rel="stylesheet">
+
+
+
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 <script src="https://jaukia.github.io/zoomooz/jquery.zoomooz.min.js"></script>
 <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-Qt9Hug5NfnQDGMoaQYXN1+PiQvda7poO7/5k4qAmMN6evu0oDFMJTyjqaoTGHdqf" crossorigin="anonymous">
@@ -103,8 +107,8 @@
 
 
 <img src="balao3.png" alt="balao3">
-<img src="giro.gif" alt="giro">
-
+<img src="giro.png" alt="giro">
+<h15><strong>LIKES, COMENTARIOS</strong></h15>
 
 
 <img src="coisa1.gif" alt="coisinha">
